@@ -6,5 +6,6 @@ django-crispy-forms==2.1
 django-summernote==0.8.20.0
 pillow==10.3.0
 printify==0.0.1
+psycopg2==2.9.9
 sqlparse==0.5.0
 whitenoise==6.6.0
