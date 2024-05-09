@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-%#l_k+=_2l5=&@17ba%(4**r&k&j7!m^lqf&%o+$6(&+c5s)2r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', '.gitpod.io']
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', '.gitpod.io', '.amazon.com', '.amazonaws.com']
 
 
 # Application definition
@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_summernote',
+    "crispy_forms",
+    "crispy_bootstrap5",
 
 
     'home',
@@ -101,6 +103,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+]
+
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -112,13 +123,14 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #         }
 # }
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dbversewear',
-        'USER': os.environ.get("DATABASE_USER"),
-        'PASSWORD': os.environ.get("DATABASE_PASSWORD"),
-        'HOST': os.environ.get("DATABASE_URL"),
+        'USER': 'richard',
+        'PASSWORD': 'password',
+        'HOST': 'database-1.cv8oui8cgs7r.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
     },
 }
