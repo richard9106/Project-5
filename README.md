@@ -3,7 +3,7 @@
 
 # Verse Wear 
 
-# Remember Mee! Game
+# The appp Name
 
 Verse Wear it's a E-commerce when we sell T-shirts with really nice hip-hop frases.
 
