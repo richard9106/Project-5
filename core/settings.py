@@ -51,6 +51,10 @@ INSTALLED_APPS = [
 
 
     'home',
+    'memberships',
+    'classes',
+    'payments',
+    'users',
 ]
 
 SITE_ID = 1
