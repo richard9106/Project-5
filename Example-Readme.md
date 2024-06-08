@@ -1,4 +1,4 @@
-# Project Name - GarageGuru
+# Project Name - Iron Haven Fitness
 
 
 * [Link to Deployed Project](https://garageguru2023-9cc8e49ac2b8.herokuapp.com/)

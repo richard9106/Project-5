@@ -9,15 +9,21 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 if os.path.isfile('env.py'):
     import env
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Cloudinary imports
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,7 +35,7 @@ SECRET_KEY = 'django-insecure-%#l_k+=_2l5=&@17ba%(4**r&k&j7!m^lqf&%o+$6(&+c5s)2r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', '.gitpod.io', '.amazon.com', '.amazonaws.com']
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', '.gitpod.io', ]
 
 
 # Application definition
@@ -48,6 +54,7 @@ INSTALLED_APPS = [
     'django_summernote',
     "crispy_forms",
     "crispy_bootstrap5",
+    'cloudinary',
 
 
     'home',
@@ -129,14 +136,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbversewear',
-        'USER': 'richard',
-        'PASSWORD': 'password',
-        'HOST': 'database-1.cv8oui8cgs7r.us-east-1.rds.amazonaws.com',
-        'PORT': '5432',
-    },
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
@@ -189,11 +189,18 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Cloudinary configuration
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUD_NAME'),
+    api_key=os.environ.get('CLOUD_API_KEY'),
+    api_secret=os.environ.get('CLOUD_SECRET_KEY')
+)
