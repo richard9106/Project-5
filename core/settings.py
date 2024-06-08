@@ -14,6 +14,8 @@ import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+# import sys
+import dj_database_url
 
 if os.path.isfile('env.py'):
     import env
@@ -54,7 +56,7 @@ INSTALLED_APPS = [
     'django_summernote',
     "crispy_forms",
     "crispy_bootstrap5",
-    'cloudinary',
+    'cloudinary_storage',
 
 
     'home',
@@ -66,10 +68,6 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-ACCOUNT_AUTHENTICATION_METHOD = "username_email"
-ACCOUNT_EMAIL_REQUIRED = True
-LOGIN_REDIRECT_URL = '/accounts/login/'
-LOGOUT_REDIRECT_URL = '/'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
@@ -84,8 +82,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
-
-
     'allauth.account.middleware.AccountMiddleware',
 
 ]
@@ -136,7 +132,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default':dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
@@ -145,6 +141,8 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.herokuapp.com",
     "https://*.gitpod.io/",
 ]
+
+
 
 
 
@@ -166,6 +164,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+LOGIN_REDIRECT_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = '/'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
