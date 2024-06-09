@@ -1,0 +1,11 @@
+/*------------Globals*/
+
+body,p,div{
+    color: black;
+}
+
+.logo{
+    width: 100px;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,26 @@
+/*------------Globals*/
+
+.nav-link{
+    color:white!important;
+}
+
+nav,
+    .offcanvas {
+      background-color: #1e293b;
+    }
+    .navbar-toggler {
+      border: none;
+    }
+    .navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    .navbar-toggler-icon{
+      color:white!important;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-nav > li:hover {
+        background-color: #0dcaf0;
+      }
+    }

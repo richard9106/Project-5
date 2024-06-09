@@ -1,33 +1,100 @@
-<div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav w-auto mx-auto">
+{% load static %}
+
+<!--New Navbar for mobile-->
+<div class="container-fluid">
+  
+
+  <!-- NAV BUTTON  -->
+  <button
+    class="navbar-toggler "
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#menuLateral"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- OFFCANVAS MAIN CONTAINER START -->
+  <section class="offcanvas offcanvas-start" id="menuLateral" tabindex="-1">
+    <div class="offcanvas-header" data-bs-theme="dark">
+      <img src="{%static 'images/logo1.png'%}" class="logo" alt="logo iron heaven fitnes">
+      <button
+        class="btn-close"
+        type="button"
+        aria-label="Close"
+        data-bs-dismiss="offcanvas"
+      ></button>
+    </div>
+    <!-- OFF CANVAS MENU LINKS  START-->
+    <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
+      <ul class="navbar-nav w-auto ms-3 mx-lg-auto">
         <li class="nav-item dropdown">
-            <a class="logo-font fw-bold  nav-link text-black me-5" href="#" id="all-products-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Accessories
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href= "#"  class="dropdown-item">Most Popular</a>
-                <a href= "#"  class="dropdown-item ">Special offers</a>
-                <a href= "#"  class="dropdown-item ">By Category</a>
-                <a href= "#"  class="dropdown-item">All Products</a>
-            </div>
+          <a
+            class="logo-font fw-bold nav-link me-5"
+            href="#"
+            id="products-link"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Accessories
+          </a>
+          <div
+            class="dropdown-menu border-0"
+            aria-labelledby="all-products-link"
+          >
+            <a href="#" class="dropdown-item">Most Popular</a>
+            <a href="#" class="dropdown-item">Special offers</a>
+            <a href="#" class="dropdown-item">By Category</a>
+            <a href="#" class="dropdown-item">All Products</a>
+          </div>
         </li>
 
         <li class="nav-item">
-            <a class="logo-font fw-bold nav-link text-black me-5" href="#" id="clothing-link" >
-                Activities
-            </a>
+          <a
+            class=" fw-bold nav-link me-5"
+            href="#"
+            id="activities-link"
+          >
+            Activities
+          </a>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font fw-bold  nav-link text-black me-5" href="#" id="homeware-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Memberships
-            </a>
+          <a
+            class="fw-bold nav-link me-5"
+            href="#"
+            id="membership-link"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Memberships
+          </a>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font fw-bold  nav-link text-black" href="#" id="specials-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Contact
-            </a>
+          <a
+            class=" fw-bold nav-link"
+            href="#"
+            id="contact-link"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Contact
+          </a>
         </li>
-    </ul>
+      </ul>
+      <!-- enlaces redes sociales -->
+
+      <div class="d-lg-none align-self-center py-3">
+        <a href=""><i class="bi bi-twitter px-2 text-info fs-2"></i></a>
+        <a href=""><i class="bi bi-facebook px-2 text-info fs-2"></i></a>
+        <a href=""><i class="bi bi-github px-2 text-info fs-2"></i></a>
+        <a href=""><i class="bi bi-whatsapp px-2 text-info fs-2"></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- OFFCANVAS MAIN CONTAINER END  -->
 </div>
