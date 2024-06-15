@@ -1,7 +1,14 @@
 /*------------Globals*/
+body{
+    background-color: #0C1523;
+}
 
 body,p,div{
-    color: black;
+    color: white;
+}
+
+li{
+    list-style: none;
 }
 
 .logo{
@@ -9,3 +16,13 @@ body,p,div{
     margin: 0;
     padding: 0;
 }
+
+
+/*-----------------Utilities*/
+
+.main-color{
+    color:#F59B01;
+}
+
+/*-------------------Header*/
+

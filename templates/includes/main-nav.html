@@ -1,23 +1,32 @@
 {% load static %}
 
 <!--New Navbar for mobile-->
-<div class="container-fluid">
-  
+
+<div class="d-none d-lg-inline">
+  <a href="#" class="nav-link main-logo-link ">
+    <img src="{%static 'images/logo1.png'%}" class="logo" alt="logo iron heaven fitnes">
+  </a>
+</div>
+<div class="">
 
   <!-- NAV BUTTON  -->
   <button
-    class="navbar-toggler "
+    class="navbar-toggler"
     type="button"
     data-bs-toggle="offcanvas"
     data-bs-target="#menuLateral"
   >
     <span class="navbar-toggler-icon"></span>
   </button>
-
+  
   <!-- OFFCANVAS MAIN CONTAINER START -->
-  <section class="offcanvas offcanvas-start" id="menuLateral" tabindex="-1">
+  <section class="offcanvas offcanvas-start flex-grow-1" id="menuLateral" tabindex="-1">
     <div class="offcanvas-header" data-bs-theme="dark">
-      <img src="{%static 'images/logo1.png'%}" class="logo" alt="logo iron heaven fitnes">
+      <img
+        src="{%static 'images/logo1.png'%}"
+        class="logo "
+        alt="logo iron heaven fitnes"
+      />
       <button
         class="btn-close"
         type="button"
@@ -26,11 +35,11 @@
       ></button>
     </div>
     <!-- OFF CANVAS MENU LINKS  START-->
-    <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
+    <div class="offcanvas-body d-flex flex-md-column justify-content-between px-0">
       <ul class="navbar-nav w-auto ms-3 mx-lg-auto">
         <li class="nav-item dropdown">
           <a
-            class="logo-font fw-bold nav-link me-5"
+            class="logo-font nav-link me-5"
             href="#"
             id="products-link"
             data-bs-toggle="dropdown"
@@ -51,18 +60,14 @@
         </li>
 
         <li class="nav-item">
-          <a
-            class=" fw-bold nav-link me-5"
-            href="#"
-            id="activities-link"
-          >
+          <a class="nav-link me-5" href="#" id="activities-link">
             Activities
           </a>
         </li>
 
         <li class="nav-item dropdown">
           <a
-            class="fw-bold nav-link me-5"
+            class=" nav-link me-5"
             href="#"
             id="membership-link"
             data-bs-toggle="dropdown"
@@ -75,7 +80,7 @@
 
         <li class="nav-item dropdown">
           <a
-            class=" fw-bold nav-link"
+            class="nav-link"
             href="#"
             id="contact-link"
             data-bs-toggle="dropdown"
@@ -86,7 +91,9 @@
           </a>
         </li>
       </ul>
-      <!-- enlaces redes sociales -->
+
+      </div>
+      <!-- social media -->
 
       <div class="d-lg-none align-self-center py-3">
         <a href=""><i class="bi bi-twitter px-2 text-info fs-2"></i></a>
@@ -96,5 +103,57 @@
       </div>
     </div>
   </section>
+
+  <!-- User registration and shop car -->
+  <div>
+    <ul class="list-inline list-unstyled text-lg-right my-0">
+      <li class="list-inline-item dropdown">
+        <a
+          class=" nav-link"
+          href="#"
+          id="user-options"
+          data-bs-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <div class="text-center">
+            <div><i class="fas fa-user fa-lg"></i></div>
+            <p class="my-0">My Account</p>
+          </div>
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+          {% if request.user.is_authenticated %} 
+          {% if request.user.is_superuser %}
+          <a href="#" class="dropdown-item">Product Management</a>
+          {% endif %}
+          <a href="#" class="dropdown-item">My Profile</a>
+          <a href="{% url 'account_logout' %}" class="dropdown-item"
+            >Logout</a>
+          {% else %}
+          <a href="{% url 'account_signup' %}" class="dropdown-item"
+            >Register</a
+          >
+          <a href="{% url 'account_login' %}" class="dropdown-item"
+            >Login</a
+          >
+          {% endif %}
+        </div>
+      </li>
+      <li class="list-inline-item">
+        <a
+          class="{% if grand_total %}text-info fw-bold{% else %}text-black{% endif %} nav-link"
+          href="#"
+        >
+          <div class="text-center">
+            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+            <p class="my-0">
+              {% if grand_total %} ${{ grand_total|floatformat:2 }} 
+              {% else %} $0.00 {% endif %}
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
   <!-- OFFCANVAS MAIN CONTAINER END  -->
 </div>

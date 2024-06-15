@@ -5,9 +5,7 @@
 }
 
 nav,
-    .offcanvas {
-      background-color: #1e293b;
-    }
+    
     .navbar-toggler {
       border: none;
     }
@@ -22,5 +20,12 @@ nav,
     @media (max-width: 768px) {
       .navbar-nav > li:hover {
         background-color: #0dcaf0;
+      }
+      
+    }
+
+    @media(max-width:991px){
+      .offcanvas {
+        background-color: #0C1523;
       }
     }

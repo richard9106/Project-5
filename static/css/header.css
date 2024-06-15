@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+
+.slabo-27px-regular {
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+header{
+  min-height: 80vh;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/bg-gym.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-container{
+  display: grid;
+  min-height: 70vh;
+  align-items: center;
+}
+
+h1{
+  color: #f49b01;
+  font-size:15vh;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/*----------responsive header*/
+@media (max-width:991px){
+  header{
+    background-size: cover;
+    background-position: right top  ;
+  }
+}
+
+
+
+/*--------------------------end*/

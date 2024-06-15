@@ -1,7 +1,39 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+                <h1 class="slabo-27px-regular">
+                    fitnes <br/> training
+                </h1>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-check-double"></i>
+                        Resistance Traning
+                    </li>
+                    <li><i class="fa-solid fa-check-double"></i>
+                        Endurance Traning
+                    </li>
+                    <li><i class="fa-solid fa-check-double"></i>
+                        Personal Traning
+                    </li>
+                    <li><i class="fa-solid fa-check-double"></i>
+                        Cardio Exercises
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}
+
 
 {% block content %}
 
-<h1>Home page</h1>
 
 {% endblock %}
