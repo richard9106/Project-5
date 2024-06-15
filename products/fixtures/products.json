@@ -1,0 +1,158 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "banda-el-00125",
+            "name": "Training Band 25k",
+            "description":"Do you want to practice cross training with minimal equipment? We present to you the elastic training band, a light and easy-to-carry accessory.Vary your workouts with the Freeletics app. Resistant and easy to transport. You can use it for assistance or to stretch!",
+            "price": 10.99,
+            "category":4,
+            "rating": 4.6,
+            "image": "banda-elastica-1.avif"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "banda-el-00215",
+            "name": "Training Band 15k",
+            "description":"Do you want to practice cross training with minimal equipment? We present to you the elastic training band, a light and easy-to-carry accessory.Discover our elastic band with Freeletics, it is resistant and easy to transport, which makes it the ideal option to diversify your workouts.",
+            "price": 7.99,
+            "category":4,
+            "rating": 4,
+            "image": "banda-elastica-2.avif"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "banda-el-00335",
+            "name": "Training Band 35k",
+            "description":"Do you want to practice cross training with minimal equipment? We present to you the elastic training band, a light and easy-to-carry accessory.Vary your workouts with the Freeletics app. Resistant and easy to transport. You can use it for assistance or to stretch!",
+            "price": 15.99,
+            "category":4,
+            "rating": 4.8,
+            "image": "banda-elastica-3.avif"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "streetwear-crf-00111",
+            "name": "Cross-Traning Grips RXT",
+            "description":"Increase the effectiveness of your cross-training sessions with Picsil grips, tested and approved by the best athletes in the world.The most resistant and versatile grips on the market. Feel like the best athletes who use them for all types of exercises, training and competitions.",
+            "price": 35.99,
+            "category":1,
+            "rating": 4.5,
+            "image": "calleras-cross-1.avif"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "streetwear-crf-00122",
+            "name": "Cross-Traning Grips Gym-500",
+            "description":"Improve your cross-training sessions with Picsil leggings, unanimously recognized and recommended by the best athletes in the world. Firm, versatile and flexible. These grips have holes that make them easy to hold and are designed so that you feel protected at all times, whatever exercise you do.",
+            "price": 22.99,
+            "category":1,
+            "rating": 4.3,
+            "image": "calleras-cross.avif"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "GLO-AD-122",
+            "name": "Domyos 100 Adult CrossFitness Gym Gloves",
+            "description":"Our designers and our passionate bodybuilding coaches have designed these gloves for you.Light and resistant gloves that quickly evacuate sweating. Adhesive material on the palm, for a better grip.",
+            "price": 5.99,
+            "category":1,
+            "rating":3.3,
+            "image": "guantes-gimnasio.avif"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "GLO-AD-125",
+            "name": "Cross training gym gloves adult grip pad training",
+            "description":"Our designers and our passionate bodybuilding coaches have designed these weight training gloves for you, ideal for muscle strengthening. They have a non-slip coating that fits perfectly in the palm of your hand. They are ideal for strict pull-ups and barbell exercises.",
+            "price": 10.99,
+            "category":1,
+            "rating":5,
+            "image": "guantes-gimnasio-1.avif"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "PRO-WEY-12",
+            "name": "Gold Standard whey protein 24.2 G WHEY DOUBLE Chocolate FLAVOR 2.2 Kg",
+            "description":"develop or maintain muscle mass. Per dose: 24 g whey proteins to promote muscle development. Contains whey protein extracts and whey protein concentrate",
+            "price": 75.99,
+            "category":3,
+            "rating":4.8,
+            "image": "proteina-whey-1.avif"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "PRO-WEY-15",
+            "name": "SERIOUS MASS PROTEIN vanilla 2.7 Kg",
+            "description":"Designed to increase muscle mass and optimize muscle power Rich in complex carbohydrates, a blend of superior quality proteins Rich in complex carbohydrates, a mixture of high-quality proteins, choline and inositol. 50 g of proteins and 250 g of carbohydrates per serving.",
+            "price": 35.99,
+            "category":3,
+            "rating":3.8,
+            "image": "proteina-whey-2.avif"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "sku": "PRO-WEY-10",
+            "name": "Iso Whey Zero Protein 2.27 Kg Banana - Biotech USA",
+            "description":"Excellent source of proteins. Lactose-free. Gluten-free. Low in calories. Low in carbohydrates. Extremely high protein content: 88%.",
+            "price": 99.99,
+            "category":3,
+            "rating":5,
+            "image": "proteina-whey-3.avif"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "sku": "YGA-MT-011",
+            "name": "Yoga Mat / Yoga Mat 6mm Pink",
+            "description":"Inspired by Indian tradition and the roots of yoga, our team has designed this mat for gentle yoga and meditation.",
+            "price": 15.99,
+            "category":2,
+            "rating":3.5,
+            "image": "yoga-mat-1.avif"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "sku": "YGA-MT-022",
+            "name": "ECOFRIENDLY MAT YOGA MATT GRAY 189 CM X 69 CM X 4 MM",
+            "description":"Inspired by Indian tradition and the roots of yoga, our team has designed this mat for gentle yoga and meditation.If you are looking for authenticity, simplicity and softness, this mat transports you to the origins of yoga. We went to get their organic cotton from India.",
+            "price": 32.99,
+            "category":2,
+            "rating":4.8,
+            "image": "yoga-mat-2.avif"
+        }
+    }
+]

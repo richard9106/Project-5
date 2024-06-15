@@ -58,14 +58,17 @@
         {% block page_header %}
 
         {% endblock %}
+        <main>
+            <div class="container pt-5">
+                {% block content %}
+            
+                {% endblock %}
+            </div>
+        </main>
     </header>
 
    
-    <div>
-        {% block content %}
     
-        {% endblock %}
-    </div>
     
 </body>
 </html>

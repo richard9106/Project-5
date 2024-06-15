@@ -24,5 +24,10 @@ li{
     color:#F59B01;
 }
 
+.rv-white-bg{
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+
 /*-------------------Header*/
 

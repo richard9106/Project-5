@@ -3,7 +3,7 @@
 <!--New Navbar for mobile-->
 
 <div class="d-none d-lg-inline">
-  <a href="#" class="nav-link main-logo-link ">
+  <a href="{% url 'home' %}" class="nav-link main-logo-link ">
     <img src="{%static 'images/logo1.png'%}" class="logo" alt="logo iron heaven fitnes">
   </a>
 </div>
@@ -52,10 +52,10 @@
             class="dropdown-menu border-0"
             aria-labelledby="all-products-link"
           >
+            <a href="{% url 'all_products' %}" class="dropdown-item">All Products</a>
             <a href="#" class="dropdown-item">Most Popular</a>
             <a href="#" class="dropdown-item">Special offers</a>
             <a href="#" class="dropdown-item">By Category</a>
-            <a href="#" class="dropdown-item">All Products</a>
           </div>
         </li>
 
