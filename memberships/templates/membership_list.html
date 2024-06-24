@@ -1,7 +1,26 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block content %}
+{% block membership_content %}
 
-<h1>memberships</h1>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col membership-container">
+
+        </div>
+        <div class="col membership-container">
+            <div class="row">
+                {% for membership in membership_list %}
+                <div class="col">
+                    <h2>membership.name</h2>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
 
 {% endblock %}
