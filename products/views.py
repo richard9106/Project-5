@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Product, Category
@@ -58,3 +58,15 @@ def all_products(request):
         'current_sorting': current_sorting,
     }
     return render(request, "products.html", context)
+
+
+
+
+def product_detail(request, product_id):
+    """A view show individual info product"""
+
+    product = get_object_or_404(Product, pk=product_id)
+    context = {
+        'product': product,
+    }
+    return render(request, "product_detail.html", context)
