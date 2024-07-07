@@ -1,7 +1,53 @@
 {% extends "base.html" %}
 
-{% block content %}
-
-<h1>Classes List</h1>
-
+{% block content-gymclass %}
+<div class="container">
+    <div class="text-center py-3">
+        <h2>Classes</h2>
+    </div>
+    <div class="row">
+        {% for gymclass in classes %}
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">{{ gymclass.name }}</h3>
+                    <p class="card-text">{{ gymclass.description }}</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#reserveModal{{ gymclass.id }}">
+                        Reserve Class
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal para cada clase -->
+        <div class="modal fade" id="reserveModal{{ gymclass.id }}" tabindex="-1" role="dialog" aria-labelledby="reserveModalLabel{{ gymclass.id }}" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="reserveModalLabel{{ gymclass.id }}">Reserve Class</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>User Name:</strong> John Doe</p> <!-- Aquí puedes reemplazar "John Doe" con el nombre del usuario dinámicamente -->
+                        <p><strong>Class Name:</strong> {{ gymclass.name }}</p>
+                        <p><strong>Description:</strong> {{ gymclass.description }}</p>
+                        <p><strong>Day:</strong> Monday</p> <!-- Ejemplo: día de la semana -->
+                        <p><strong>Time:</strong> 10:00 AM</p> <!-- Ejemplo: hora -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Confirm Reservation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin del modal -->
+        
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

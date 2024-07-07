@@ -1,12 +1,22 @@
 """manage gym classes """
 from django.db import models
 from users.models import CustomUser
+from datetime import time
 
 class GymClass(models.Model):
     """ list of classes"""
     name = models.CharField(max_length=100)
     description = models.TextField()
-    schedule = models.DateTimeField()
+    day_of_week = models.CharField(max_length=10, choices=[
+        ('Monday', 'Monday'),
+        ('Tuesday', 'Tuesday'),
+        ('Wednesday', 'Wednesday'),
+        ('Thursday', 'Thursday'),
+        ('Friday', 'Friday'),
+        ('Saturday', 'Saturday'),
+        ('Sunday', 'Sunday'),
+    ], default="Monday")
+    time = models.TimeField(default=time(9, 0))
 
     def __str__(self):
         return self.name
