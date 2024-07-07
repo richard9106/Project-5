@@ -9,7 +9,7 @@
             "price": 10.99,
             "category":4,
             "rating": 4.6,
-            "image": "banda-elastica-1.avif"
+            "image": "banda-elastica-1.jpg"
         }
     },
     {
@@ -22,7 +22,7 @@
             "price": 7.99,
             "category":4,
             "rating": 4,
-            "image": "banda-elastica-2.avif"
+            "image": "banda-elastica-2.jpg"
         }
     },
     {
@@ -35,7 +35,7 @@
             "price": 15.99,
             "category":4,
             "rating": 4.8,
-            "image": "banda-elastica-3.avif"
+            "image": "banda-elastica-3.jpg"
         }
     },
     {
@@ -48,7 +48,7 @@
             "price": 35.99,
             "category":1,
             "rating": 4.5,
-            "image": "calleras-cross-1.avif"
+            "image": "calleras-cross-1.jpg"
         }
     },
     {
@@ -61,7 +61,7 @@
             "price": 22.99,
             "category":1,
             "rating": 4.3,
-            "image": "calleras-cross.avif"
+            "image": "calleras-cross.jpg"
         }
     },
     {
@@ -74,7 +74,7 @@
             "price": 5.99,
             "category":1,
             "rating":3.3,
-            "image": "guantes-gimnasio.avif"
+            "image": "guantes-gimnasio.jpg"
         }
     },
     {
@@ -87,7 +87,7 @@
             "price": 10.99,
             "category":1,
             "rating":5,
-            "image": "guantes-gimnasio-1.avif"
+            "image": "guantes-gimnasio-1.jpg"
         }
     },
     {
@@ -100,7 +100,7 @@
             "price": 75.99,
             "category":3,
             "rating":4.8,
-            "image": "proteina-whey-1.avif"
+            "image": "proteina-whey-1.jpg"
         }
     },
     {
@@ -113,7 +113,7 @@
             "price": 35.99,
             "category":3,
             "rating":3.8,
-            "image": "proteina-whey-2.avif"
+            "image": "proteina-whey-2.jpg"
         }
     },
     {
@@ -126,7 +126,7 @@
             "price": 99.99,
             "category":3,
             "rating":5,
-            "image": "proteina-whey-3.avif"
+            "image": "proteina-whey-3.jpg"
         }
     },
     {
@@ -139,7 +139,7 @@
             "price": 15.99,
             "category":2,
             "rating":3.5,
-            "image": "yoga-mat-1.avif"
+            "image": "yoga-mat-1.jpg"
         }
     },
     {
@@ -152,7 +152,7 @@
             "price": 32.99,
             "category":2,
             "rating":4.8,
-            "image": "yoga-mat-2.avif"
+            "image": "yoga-mat-2.jpg"
         }
     }
 ]

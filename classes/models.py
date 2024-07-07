@@ -17,6 +17,7 @@ class GymClass(models.Model):
         ('Sunday', 'Sunday'),
     ], default="Monday")
     time = models.TimeField(default=time(9, 0))
+    image = models.ImageField(upload_to='static/class_images/', default="images/default_class.jpg")
 
     def __str__(self):
         return self.name

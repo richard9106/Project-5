@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{% static 'css/nav.css'%}">
     <link rel="stylesheet" href="{% static 'css/header.css'%}">
     <link rel="stylesheet" href="{% static 'css/membership.css'%}">
+    <link rel="stylesheet" href="{% static 'css/classes.css'%}">
     {% endblock %}
 
     <!--Jquery-->
@@ -64,14 +65,52 @@
                 {% block content %}
             
                 {% endblock %}
+
+                {% block content-gymclass %}
+                
+                {% endblock %}
+               
             </div>
         </main>
     </header>
     
-    {% block content-gymclass %}
-    {% endblock %}
    
     
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Address: 123 Street, City, Country</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Follow Us</h3>
+                    <p>Facebook</p>
+                    <p>Instagram</p>
+                    <p>Twitter</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for updates.</p>
+                    <form action="#" method="post" class="form-inline">
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2024 Your Website. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     
 </body>
 </html>

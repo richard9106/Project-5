@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static%}
 
 {% block content-gymclass %}
 <div class="container">
@@ -7,14 +8,22 @@
     </div>
     <div class="row">
         {% for gymclass in classes %}
+
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
+                <img class="card-img-top" src="{% if gymclass.image %}{{ gymclass.image.url }}{% else %}{% static '/images/default_class.jpg' %}{% endif %}" alt="{{ gymclass.name }}">
                 <div class="card-body">
-                    <h3 class="card-title">{{ gymclass.name }}</h3>
-                    <p class="card-text">{{ gymclass.description }}</p>
+                    <div class="py-3">
+                        <h3 class="card-title text-center text-black">{{ gymclass.name }}</h3>
+                    </div>
+                    <p class="card-text text-black align-bottom">{{ gymclass.description }}</p>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#reserveModal{{ gymclass.id }}">
+                    <div class="text-black fw-bo ld d-flex justify-content-between my-3">
+                        <span>{{gymclass.day_of_week}}</span>
+                        <span>{{gymclass.time}}</span>
+                    </div>
+                    <button class="btn btn-large btn-outline-warning" data-toggle="modal" data-target="#reserveModal{{ gymclass.id }}">
                         Reserve Class
                     </button>
                 </div>
