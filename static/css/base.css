@@ -1,9 +1,10 @@
 /*------------Globals*/
 body{
     background-color: #0C1523;
+    color: black;
 }
 
-body,p,div{
+body,div{
     color: white;
 }
 
@@ -30,6 +31,12 @@ li{
     mix-blend-mode: darken;
     
 }
+.orange-color{
+    color: #ff6600;
+    border-color: #ff6600;
+
+}
+
 
 /*-------------------Product*/
 
@@ -45,4 +52,12 @@ li{
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(5px);
     border: 1.5px solid rgba(209, 213, 219, 0.3);
+}
+
+.price{
+    color: #ff6600!important;
+}
+
+footer{
+   background-color: #0F2435;
 }

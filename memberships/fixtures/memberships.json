@@ -1,0 +1,106 @@
+[
+    {
+        "model": "memberships.membership",
+        "pk": 1,
+        "fields": {
+            "name": "Basic Membership",
+            "price": "29.99"
+        }
+    },
+    {
+        "model": "memberships.membership",
+        "pk": 2,
+        "fields": {
+            "name": "Premium Membership",
+            "price": "49.99"
+        }
+    },
+    {
+        "model": "memberships.advantage",
+        "pk": 1,
+        "fields": {
+            "membership": 1,
+            "description": "Access to all gym areas"
+        }
+    },
+    {
+        "model": "memberships.advantage",
+        "pk": 2,
+        "fields": {
+            "membership": 1,
+            "description": "Group classes"
+        }
+    },
+    {
+        "model": "memberships.advantage",
+        "pk": 3,
+        "fields": {
+            "membership": 1,
+            "description": "Personal locker"
+        }
+    },
+    {
+        "model": "memberships.advantage",
+        "pk": 4,
+        "fields": {
+            "membership": 1,
+            "description": "Free Wi-Fi"
+        }
+    },
+    {
+        "model": "memberships.advantage",
+        "pk": 5,
+        "fields": {
+            "membership": 1,
+            "description": "24/7 access"
+        }
+    },
+    {
+        "model": "memberships.advantage",
+        "pk": 6,
+        "fields": {
+            "membership": 2,
+            "description": "Access to all gym areas"
+        }
+    },
+    {
+        "model": "memberships.advantage",
+        "pk": 7,
+        "fields": {
+            "membership": 2,
+            "description": "Group classes"
+        }
+    },
+    {
+        "model": "memberships.advantage",
+        "pk": 8,
+        "fields": {
+            "membership": 2,
+            "description": "Personal locker"
+        }
+    },
+    {
+        "model": "memberships.advantage",
+        "pk": 9,
+        "fields": {
+            "membership": 2,
+            "description": "Sauna access"
+        }
+    },
+    {
+        "model": "memberships.advantage",
+        "pk": 10,
+        "fields": {
+            "membership": 2,
+            "description": "Personal trainer"
+        }
+    },
+    {
+        "model": "memberships.advantage",
+        "pk": 11,
+        "fields": {
+            "membership": 2,
+            "description": "Free towels"
+        }
+    }
+]

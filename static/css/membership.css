@@ -1,3 +1,77 @@
-.membership-container{
+/* static/memberships/styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
 
+.container {
+    margin-top: 0px;
+}
+
+.mmb-title {
+    text-align: center;
+    color: #ffcc00; /* Yellow-orange color */
+    position: relative;
+    margin-bottom: 40px;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.mmb-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #ffcc00;
+    margin: 10px auto 0;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border: none;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6600;
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+}
+
+.list-group-item::before {
+    content: '\2714'; /* Unicode checkmark */
+    color: #ff6600;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.card-text {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #ff6600;
+    border-color: #ff6600;
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #cc5200;
+    border-color: #cc5200;
 }

@@ -4,7 +4,7 @@
 {% block content-gymclass %}
 <div class="container">
     <div class="text-center py-3">
-        <h2>Classes</h2>
+        <h2 class="text-center mb-4 mmb-title">Classes</h2>
     </div>
     <div class="row">
         {% for gymclass in classes %}
@@ -23,7 +23,7 @@
                         <span>{{gymclass.day_of_week}}</span>
                         <span>{{gymclass.time}}</span>
                     </div>
-                    <button class="btn btn-large btn-outline-warning" data-toggle="modal" data-target="#reserveModal{{ gymclass.id }}">
+                    <button class="btn btn-large btn-outline orange-color reserve-btn" data-toggle="modal" data-target="#reserveModal{{ gymclass.id }}">
                         Reserve Class
                     </button>
                 </div>
