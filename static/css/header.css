@@ -20,8 +20,9 @@ header{
 
 .header-container{
   display: grid;
-  min-height: 70vh;
+  min-height: 80vh;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 h1{
@@ -29,6 +30,10 @@ h1{
   font-size:15vh;
   line-height: 1;
   text-transform: uppercase;
+}
+
+.main-container{
+  padding-bottom: 50px;
 }
 
 /*----------responsive header*/

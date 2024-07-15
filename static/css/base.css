@@ -1,6 +1,6 @@
 /*------------Globals*/
 body{
-    background-color: #0C1523;
+    background-color: #0F2435!important;
     color: black;
 }
 
@@ -16,6 +16,10 @@ li{
     width: 100px;
     margin: 0;
     padding: 0;
+}
+
+.fs-6{
+    font-size: 15px!important;
 }
 
 
@@ -36,19 +40,71 @@ li{
     border-color: #ff6600;
 
 }
+.orange-color-two{
+    color: #F29E23;
+    border-color: #ff6600;
+}
+
+.up-remv{
+    text-decoration: none;
+    cursor: pointer;
+}
+.up-remv:hover{
+    scale: 1.1;
+}
+.update-link{
+    color: white;
+}
+
+.custom-button{
+    color: #ff6600;
+    font-weight: 600;
+}
+
+.keep-link:hover .custom-button{
+    color: white;
+    
+}
+.keep-link:hover .icon .fas{
+    background-color: #ff6600;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
 
 
 /*-------------------Product*/
 
 .container-product-detail{
       height: auto;
-      padding: 2rem;
+      margin: 0 auto;
+      width: 80%;  
       border-radius: 1rem;
       font-size: 1rem;
       color:white;
     }
-.container-product-detail{
-    background: rgba(255, 255, 255, .3);
+.glass-bckg{
+    background: rgba(81, 111, 194, 0.1);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(5px);
     border: 1.5px solid rgba(209, 213, 219, 0.3);
