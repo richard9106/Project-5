@@ -7,3 +7,13 @@
     background-color: #ff6600;
     color: black;
 }
+
+.btn-custom{
+    background-color: #ff6600 !important; 
+    border-color: #ff6600 !important;
+}
+
+.btn-custom:hover{
+    background-color: #cc5200;
+    border-color: #cc5200;
+}

@@ -1,0 +1,75 @@
+<!-- profile.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <!-- Profile Information -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                        <img src="{{ user.profile.image.url }}" alt="Profile Image" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px;">
+                        <h5 class="card-title">{{ user.get_full_name }}</h5>
+                        <p class="card-text text-black">{{ user.email }}</p>
+                        <p class="card-text">Membership: {{ user.profile.my_memberships }}</p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                            Edit Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reserved Classes and Membership -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Reserved Classes</h5>
+                    <hr>
+                    <ul>
+                        {% for booking in user.profile.booking_set.all %}
+                        <li class="d-flex justify-content-between">
+                            {{ booking.gym_class.name }}
+                            <span class="text-end">
+                                {{ booking.gym_class.day_of_week }} {{ booking.gym_class.time }}
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#editBookingModal{{ booking.id }}">
+                                    <i class="bi bi-pencil-square" title="Edit"></i>
+                                </a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#deleteBookingModal{{ booking.id }}">
+                                    <i class="bi bi-trash" title="Delete"></i>
+                                </a>
+                            </span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <hr>
+                    <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#changeMembershipModal">
+                        Change Membership
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+{% include 'change_membership.html' %}
+{% for booking in user.profile.booking_set.all %}
+    {% include 'edit_booking.html' with booking_id=booking.id %}
+    {% include 'delete_booking.html' with booking_id=booking.id %}
+{% endfor %}
+{% include 'edit_profile.html' %}
+
+<script>
+    var myModal = new bootstrap.Modal(document.getElementById('editProfileModal'));
+    var myChangeMembershipModal = new bootstrap.Modal(document.getElementById('changeMembershipModal'));
+
+    function openModal(modalId) {
+        var modal = new bootstrap.Modal(document.getElementById(modalId));
+        modal.show();
+    }
+</script>
+{% endblock %}

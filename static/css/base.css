@@ -146,3 +146,19 @@ footer{
 #id_password_helptext > a{
     color: #ff6600!important;
 }
+
+/*________________toasts*/
+
+.message-container{
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999;
+}
+
+.custom-toasts{
+    overflow: visible;
+}
+.toast-capper{
+    height: 2px;
+}

@@ -67,7 +67,8 @@ INSTALLED_APPS = [
     'classes',
     'bag',
     'payments',
-    'users',
+    'profiles'
+    
 ]
 
 SITE_ID = 1

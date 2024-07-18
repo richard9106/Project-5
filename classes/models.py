@@ -1,7 +1,7 @@
 """manage gym classes """
-from django.db import models
-from users.models import CustomUser
 from datetime import time
+from django.db import models
+from profiles.models import Profile
 
 class GymClass(models.Model):
     """ list of classes"""
@@ -17,14 +17,14 @@ class GymClass(models.Model):
         ('Sunday', 'Sunday'),
     ], default="Monday")
     time = models.TimeField(default=time(9, 0))
-    image = models.ImageField(upload_to='static/class_images/', default="images/default_class.jpg")
+    image_class = models.ImageField(upload_to='static/class_images/', default="images/default_class.jpg")
 
     def __str__(self):
         return self.name
 
 class Booking(models.Model):
     """manage booking classes"""
-    user_booking = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user_booking = models.ForeignKey(Profile, on_delete=models.CASCADE)
     gym_class = models.ForeignKey(GymClass, on_delete=models.CASCADE)
     date_booked = models.DateTimeField(auto_now_add=True)
 

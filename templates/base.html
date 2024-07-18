@@ -82,9 +82,29 @@
         </main>
     </header>
     
-   
-    
+   <!--Toast-->
+   {% if messages %}
+   <div class="message-container">
+       {% for message in messages %}
+       {% with message.level as level %}
+       {% if level == 40 %}
+           {% include 'includes/toasts/toasts_error.html' %}
+       {% elif level == 30 %}
+           {% include 'includes/toasts/toasts_warning.html' %}
+       {% elif level == 25 %}
+           {% include 'includes/toasts/toasts_success.html' %}
 
+       {% else %}
+           {% include 'includes/toasts/toasts_info.html' %}
+       {% endif %}
+   {% endwith %}
+       {% endfor %}
+
+   </div>    
+   {% endif %}
+
+
+    <!--Footer-->
     <footer class="footer pt-5">
         <div class="container">
             <div class="row">

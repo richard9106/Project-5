@@ -8,10 +8,9 @@
     </div>
     <div class="row">
         {% for gymclass in classes %}
-
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-                <img class="card-img-top" src="{% if gymclass.image %}{{ gymclass.image.url }}{% else %}{% static '/images/default_class.jpg' %}{% endif %}" alt="{{ gymclass.name }}">
+                <img class="card-img-top" src="{% if gymclass.image_class %}{{ gymclass.image_class.url }}{% else %}{% static '/images/default_class.jpg' %}{% endif %}" alt="{{ gymclass.name }}">
                 <div class="card-body">
                     <div class="py-3">
                         <h3 class="card-title text-center text-black">{{ gymclass.name }}</h3>
@@ -23,9 +22,15 @@
                         <span>{{gymclass.day_of_week}}</span>
                         <span>{{gymclass.time}}</span>
                     </div>
+                    {% if user.is_authenticated %}
                     <button class="btn btn-large btn-outline orange-color reserve-btn" data-toggle="modal" data-target="#reserveModal{{ gymclass.id }}">
                         Reserve Class
                     </button>
+                    {% else %}
+                    <a href="{% url 'account_signup' %}" class="btn btn-large btn-custom text-white">
+                        Login to Reserve
+                    </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -36,9 +41,7 @@
                 <div class="modal-content">
                     <div class="modal-header text-black d-flex justify-content-between">
                         <h5 class="modal-title" id="reserveModalLabel{{ gymclass.id }}">Reserve Class</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                    
                     </div>
                     <div class="modal-body text-black">
                         <p><strong>User Name:</strong> {{user}}</p> <!-- Aquí puedes reemplazar "John Doe" con el nombre del usuario dinámicamente -->
@@ -47,8 +50,12 @@
                         <p><strong>Time:</strong> {{gymclass.time}}</p> <!-- Ejemplo: hora -->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Confirm Reservation</button>
+                        <button type="button" class="btn btn-secondary bg-danger" data-dismiss="modal">Close</button>
+                        <form method="post" action="{% url 'reserve_class' gymclass.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-custom">Confirm Reservation</button>
+                        </form>
+                      
                     </div>
                 </div>
             </div>
@@ -57,5 +64,15 @@
         
         {% endfor %}
     </div>
+
+    
 </div>
+
+<script>
+    $(document).ready(function(){
+        if($('.toast').length > 0){
+            $('.toast').toast('show');
+        }
+    });
+    </script>
 {% endblock %}
