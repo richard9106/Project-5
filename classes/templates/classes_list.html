@@ -34,18 +34,17 @@
         <div class="modal fade" id="reserveModal{{ gymclass.id }}" tabindex="-1" role="dialog" aria-labelledby="reserveModalLabel{{ gymclass.id }}" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header text-black d-flex justify-content-between">
                         <h5 class="modal-title" id="reserveModalLabel{{ gymclass.id }}">Reserve Class</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <p><strong>User Name:</strong> John Doe</p> <!-- Aquí puedes reemplazar "John Doe" con el nombre del usuario dinámicamente -->
+                    <div class="modal-body text-black">
+                        <p><strong>User Name:</strong> {{user}}</p> <!-- Aquí puedes reemplazar "John Doe" con el nombre del usuario dinámicamente -->
                         <p><strong>Class Name:</strong> {{ gymclass.name }}</p>
-                        <p><strong>Description:</strong> {{ gymclass.description }}</p>
-                        <p><strong>Day:</strong> Monday</p> <!-- Ejemplo: día de la semana -->
-                        <p><strong>Time:</strong> 10:00 AM</p> <!-- Ejemplo: hora -->
+                        <p><strong>Day:</strong> {{gymclass.day_of_week}}</p> <!-- Ejemplo: día de la semana -->
+                        <p><strong>Time:</strong> {{gymclass.time}}</p> <!-- Ejemplo: hora -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -117,3 +117,32 @@ li{
 footer{
    background-color: #0F2435;
 }
+
+/*_________________________ signup and login*/
+
+/* Estilo para centrar el formulario */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo para el efecto glass */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Estilo para centrar el texto */
+#id_password_helptext > a{
+    color: #ff6600!important;
+}
