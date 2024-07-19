@@ -1,5 +1,6 @@
 /*------------Globals*/
 body{
+    min-width: 100%;
     background-color: #0F2435!important;
     color: black;
 }

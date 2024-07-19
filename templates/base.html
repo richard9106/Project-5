@@ -55,7 +55,7 @@
 <body>
     <header class="container-fluid ">
        <div class="row">
-            <nav class="navbar navbar-dark navbar-expand-lg w-100 justify-content-between px-5">
+            <nav class="navbar navbar-dark navbar-expand-lg w-100 justify-content-between px-md-5">
             
                 {% include 'includes/main-nav.html' %}
 
@@ -77,7 +77,12 @@
                 {% endblock %}
                
                 {% block membership_content %}
+
                 {% endblock %}
+
+                {% block home_content %}
+                {% endblock %}
+
             </div>
         </main>
     </header>

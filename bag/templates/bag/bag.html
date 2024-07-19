@@ -4,9 +4,9 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <hr>
-    <h2 class="logo-font mb-4 text-end">Shopping Bag</h2>
-    <hr>
+ 
+    <h2 class="logo-font mb-4 text-end main-color mt-5">My Bag</h2>
+    <hr class="main-color opacity-100" style="height: 10px;">
 
 
         <div class="row glass-bckg p-3 ">
@@ -100,7 +100,7 @@
                                                 </span>
                                                 <span class="text-uppercase custom-button">Keep Shopping</span>
                                             </a>
-                                            <a href="{% url 'payment_manage' %}" class="btn btn-black rounded-0 btn-lg keep-link">
+                                            <a href="{% url 'initiate_payment' %}" class="btn btn-black rounded-0 btn-lg keep-link">
                                                 <span class="text-uppercase custom-button">Secure Checkout</span>
                                                 <span class="icon">
                                                     <i class="fas fa-lock p-2"></i>

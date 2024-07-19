@@ -29,7 +29,83 @@
 
 
         </div>
+
+        <hr/>
     </div>
+{% endblock %}
+
+
+{% block content %}
+<!-- Existing home content goes here -->
+{% endblock %}
+
+{% block home_content %}
+<!-- Carousel Section -->
+<section id="classes-carousel" class="my-5 carrosel-container">
+    <h2 class="text-center">Our Classes!</h2>
+    <div id="classesCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for gymclass in classes %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="{{ gymclass.image_class.url }}" class="d-block w-100" alt="{{ gymclass.name }}">
+                <div class="carousel-caption glass-bckg bg-orange-glass d-none d-md-block">
+                    <h5>{{ gymclass.name }}</h5>
+                    <p>{{ gymclass.date }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#classesCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#classesCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<!-- Motivational Section -->
+<section id="motivation" class="text-center my-5">
+    <h2>Join Us Today!</h2>
+    <p>Experience the best fitness training and community at Iron Haven Fitness.</p>
+    <a href="{% url 'membership_list' %}" class="btn btn-primary">Check Our Memberships</a>
+</section>
+
+<!-- Products Section -->
+<section id="products" class="my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div id="productsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for product in products %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="carousel-caption d-none d-md-block text-black">
+                            <h5>{{ product.name }}</h5>
+                        </div>
+                        <img src="{{ product.image.url }}" class="d-block w-100" alt="{{ product.name }}">
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev " type="button" data-bs-target="#productsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden text-black">Previous</span>
+                </button>
+                <button class="carousel-control-next text-black" type="button" data-bs-target="#productsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <div>
+                <h3>Exclusive Products for Members</h3>
+                <p>As a member of Iron Haven Fitness, you have access to our exclusive range of fitness products available only at our gym. Join us today to enjoy these benefits and more!</p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 
