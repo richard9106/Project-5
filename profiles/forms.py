@@ -1,6 +1,6 @@
-from classes.models import Booking
-from memberships.models import Membership
 from django import forms
+from classes.models import Booking, GymClass
+from memberships.models import Membership
 from .models import Profile
 
 
@@ -11,7 +11,8 @@ class UserProfileForm(forms.ModelForm):
         """define the model and exclude user name"""
         model = Profile
         exclude = ('user', 'create_on', 'active')
-
+        fields = ['image', 'first_name', 'last_name', 'email', 'my_memberships']
+        
         def __init__(self, *args, **kwargs):
             """
             Add placeholders and classes, remove auto-generated
@@ -19,17 +20,20 @@ class UserProfileForm(forms.ModelForm):
             """
             super().__init__(*args, **kwargs)
             placeholder = {
+                'image':'Image Profile',
                 'first_name': 'First Name',
                 'last_name': 'Lirst Name',
                 'email': 'Email',
-                'my_memberships': 'My membership'       
+                'my_memberships': 'Select membership'  
+                       
                 }
 
             labels = {
+                'image':'Image Profile',
                 'first_name': 'First Name',
                 'last_name': 'Lirst Name',
                 'email': 'Email',
-                'my_memberships': 'My membership'  
+                'my_memberships': 'Select membership'  
                 
             }
 
@@ -44,17 +48,21 @@ class UserProfileForm(forms.ModelForm):
                     self.fields[field].widget.attrs['placeholder'] = placeholder
                 if field in labels:
                     self.fields[field].label = labels[field]
+                    
+            self.fields['membership'].widget.attrs.update({'class': 'form-select'})
 
 
 class BookingForm(forms.ModelForm):
     """For for edit classes """
+    gym_class = forms.ModelChoiceField(queryset=GymClass.objects.all(), label='Select Class')
+
     class Meta:
         model = Booking
-        fields = ['gym_class']  # Los campos que deseas permitir que se editen
+        fields = ['gym_class']  
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Personalización opcional de los widgets o validaciones adicionales
+        self.fields['gym_class'].widget.attrs.update({'class': 'form-control'})
         
         
 class MembershipForm(forms.Form):

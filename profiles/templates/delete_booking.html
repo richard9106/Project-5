@@ -1,7 +1,6 @@
 <!-- delete_booking.html -->
 
 {% load static %}
-{% block content %}
 
 <div class="modal fade" id="deleteBookingModal{{ booking_id }}" tabindex="-1" aria-labelledby="deleteBookingModalLabel{{ booking_id }}" aria-hidden="true">
     <div class="modal-dialog">
@@ -14,11 +13,11 @@
                 <p>Are you sure you want to delete this booking?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <a href="{% url 'delete_booking' booking_id %}" class="btn btn-danger">Delete</a>
+                <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Cancel</button>
+                <a href="{% url 'delete_booking' booking_id %}" class="btn btn-danger btn-custom">Delete</a>
             </div>
         </div>
     </div>
 </div>
 
-{% endblock %}
+

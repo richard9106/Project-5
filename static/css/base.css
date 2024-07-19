@@ -21,6 +21,9 @@ li{
 .fs-6{
     font-size: 15px!important;
 }
+.form-label{
+    color: #ff6600!important;
+}
 
 
 /*-----------------Utilities*/
@@ -28,6 +31,28 @@ li{
 .main-color{
     color:#F59B01;
 }
+.icon-color{
+    color:#ff6600 !important;
+}
+
+.icon-color:hover{
+    color:#0f2435 !important;
+}
+
+.btn-color-one{
+    background:#0f2435 !important;
+    color: white!important;
+}
+
+.btn-color-one:hover{
+    background:#ff6600 !important;
+    color: #0f2435!important;
+}
+
+.bg-main-color{
+    background:#ff6600 !important;
+}
+
 
 .rv-white-bg{
     background-color: transparent;
@@ -67,6 +92,11 @@ li{
 }
 .keep-link:hover .icon .fas{
     background-color: #ff6600;
+}
+
+.adjust-image{
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
@@ -141,6 +171,17 @@ footer{
     max-width: 400px;
     width: 100%;
 }
+.glass-effect-no-width{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    width: 100%;
+}
+
 
 /* Estilo para centrar el texto */
 #id_password_helptext > a{

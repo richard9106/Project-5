@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mt-5 ">
+        <div class="text-center py-3">
+            <h2 class="text-center mb-4 mmb-title">Edit class</h2>
+        </div>
+        <div class="row glass-effect-no-width">
+            <div class="col-md-6">
+                <!-- Display the class image -->
+                <img src="{{ gym_class.image_class.url }}" alt="{{ gym_class.name }}" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <!-- Form for editing the class -->
+                <form method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="text-end">
+                        <button type="submit" name="save" class="btn btn-large btn-custom text-white">Save Changes</button>
+                        <button type="submit" name="cancel" class="btn btn-secondary">Cancel</button>
+                        <button type="submit" name="delete" class="btn btn-danger">Delete Class</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dateInput = document.getElementById('id_date');  // Campo de fecha en tu formulario
+        const dayOfWeekInput = document.getElementById('id_day_of_week');  // Campo de día de la semana en tu formulario
+
+        function updateDayOfWeek() {
+            const dateValue = dateInput.value;
+            if (dateValue) {
+                const date = new Date(dateValue);
+                const options = { weekday: 'long' };
+                const dayOfWeek = new Intl.DateTimeFormat('en-US', options).format(date);
+                dayOfWeekInput.value = dayOfWeek;
+            }
+        }
+
+        dateInput.addEventListener('change', updateDayOfWeek);
+
+        // Initial update in case the date is pre-filled
+        updateDayOfWeek();
+    });
+</script>
+
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('id_date'); 
+
+            dateInput.addEventListener('change', function(event) {
+                const selectedDate = new Date(dateInput.value);
+                const currentDate = new Date();
+
+        
+                if (selectedDate < currentDate) {
+                    alert('La fecha no puede ser menor que la fecha actual.');
+                    dateInput.value = ''; 
+                }
+            });
+        });
+</script>
+{% endblock %}
+
+
+ 

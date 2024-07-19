@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static%}
-
+{% load crispy_forms_tags %}
 {% block content-gymclass %}
 <div class="container">
     <div class="text-center py-3">
@@ -8,6 +8,7 @@
     </div>
     <div class="row">
         {% for gymclass in classes %}
+        {% if gymclass.date and gymclass.date >= gymclass.current_date %}
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
                 <img class="card-img-top" src="{% if gymclass.image_class %}{{ gymclass.image_class.url }}{% else %}{% static '/images/default_class.jpg' %}{% endif %}" alt="{{ gymclass.name }}">
@@ -22,15 +23,23 @@
                         <span>{{gymclass.day_of_week}}</span>
                         <span>{{gymclass.time}}</span>
                     </div>
-                    {% if user.is_authenticated %}
-                    <button class="btn btn-large btn-outline orange-color reserve-btn" data-toggle="modal" data-target="#reserveModal{{ gymclass.id }}">
-                        Reserve Class
-                    </button>
-                    {% else %}
-                    <a href="{% url 'account_signup' %}" class="btn btn-large btn-custom text-white">
-                        Login to Reserve
-                    </a>
-                    {% endif %}
+                    <div class="d-flex justify-content-between">
+                        {% if user.is_authenticated %}
+                        <button class="btn btn-large btn-outline orange-color reserve-btn" data-toggle="modal" data-target="#reserveModal{{ gymclass.id }}">
+                            Reserve Class
+                        </button>
+                            {% if user.is_superuser %}
+                            <a href="{% url 'edit_class' gymclass.id %}" class="btn btn-large btn-outline orange-color reserve-btn">
+                                Edit Class
+                            </a>
+                            {% endif %}
+                        {% else %}
+                        <a href="{% url 'account_signup' %}" class="btn btn-large btn-custom text-white">
+                            Login to Reserve
+                        </a>
+                        {% endif %}
+                    </div>
+                  
                 </div>
             </div>
         </div>
@@ -61,12 +70,15 @@
             </div>
         </div>
         <!-- Fin del modal -->
-        
+
+        {% endif %}
         {% endfor %}
     </div>
 
     
 </div>
+
+
 
 <script>
     $(document).ready(function(){

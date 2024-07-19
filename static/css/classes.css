@@ -14,6 +14,11 @@
 }
 
 .btn-custom:hover{
-    background-color: #cc5200;
-    border-color: #cc5200;
+    background-color: #cc5200 !important;
+    border-color: #cc5200 !important;
+}
+
+.image-size{
+    margin: 10px auto;
+    width: 150px;
 }
