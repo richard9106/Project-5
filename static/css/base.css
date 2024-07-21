@@ -187,6 +187,7 @@ footer{
 /* Estilo para centrar el texto */
 #id_password_helptext > a{
     color: #ff6600!important;
+    color: #F29E23;
 }
 
 /*________________toasts*/

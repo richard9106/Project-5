@@ -1,3 +1,4 @@
+{% load static %}
 # Project Name - Iron Haven Fitness
 
 
@@ -81,124 +82,76 @@ It is designed with the intention that potential users see the services that the
 ## PROJECT DESIGN
 
   ### Wireframes
+
    The initial wireframes were created in [Miro](https://miro.com/es/) to understand how the site would work, and this layout would drive User Stories, the logic required and overall design artwork decisions.
 
-   The final app deviated slightly in a couple of areas as improvements were made while the site was being built and user functions could be tested.
 
-   The Invoice functionality was added midway through the project because I felt not only would it complete the app, but it would add a layer of much-needed functionality.
 
-   The Comments design and functionality was also enhanced later in the project when I added the ability to leave a reply to a comment, ensuring it was a fully collaborative system.
-
-   General visual styling improvements were made during the project that were not considered during wireframing or when I received some early-stage user feedback, which resulted in a better UX.
-
-   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/wf_alljobs.png">
+   - <img src="/workspace/Project-5/static/doc_images/wireframe_1.png"
 
    <details>
     <summary><u>Click to View More Wireframe Images</u></summary>
-   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/wf_addjob.png">
-   <br>
-   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/wf_myjobs.png">
-   <br>
-   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/wf_watchedjobs.png">
-   <br>
-   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/wf_comments.png">
-   <br>
-   <br>
 
-   New wireframe for including the invoice module was conceived halfway through the project.
-   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/wf_newalljobs.png">
+<span style="display:flex; gap:50px">
+
+
+![Mobile ](./static/doc_images/wireframe_2.png)
+
+![Table ](./static/doc_images/wireframe_3.png)
+
+
+</span>
+
+    
+   
+
    </details>
 
 * [Back to Contents](#contents)
 
   ### User Stories
-  All epics, user stories with their acceptance criteria and tasks can be viewed on the Iron Haven Fitness [GitHub Project board](https://github.com/users/rstan-dev/projects/8/views/2?filterQuery=)
+  All the user stories with their acceptance criteria can be viewed on the next link [GitHub Project board](https://github.com/users/richard9106/projects/10)
 
-  There were 12 Epics created from Project Concept to Project Submission.
 
-  There were 35 User Stories Created including:
+  There were  User Stories Created including:
 
 1. [US1] Project General Requirements
     - As a developer, I can understand the goals of the site so that development decisions can be made accordingly.
-    - Maps to Project Goal 16, 17, 18 and 19
 2. [US2] Setup Repo
-    - As a developer, I will set up the repo and install the necessary packages so that I can start building the initial models to view on the React front-end
+    - As a developer, I will set up the repo and install the necessary packages so that I can start building the initial models to manage the information.
 3. [US3] Profiles Model
     - As a superuser, I can log in to the admin panel	so that I can manage users and other parts of the system as it develops
-    - Maps to Project Goal 15
 4. [US4] Jobs Model
-    - As a superuser, I can create a Job Card so that I can capture the details of the job I wish to display
+    - As a superuser, I can create a new products, gym classes and memeberships.
 5. [US5] Create NavBar
     - As a website user, I can view the basic navbar so that I can easily navigate the website on desktop and mobile
-    - Maps to Project Goal 14
-6. [US6] Link NavBar
-    - As a website user, I can navigate each page seamlessly so that I do not need to wait for page refresh
-    - Maps to Project Goal 3
-7. [US7] User Login frontend
+6. [US6] User Login
     - As a website user, I can log in so that I can access all the functions of the site, and I can easily see if I am logged in or not
-    - Maps to Project Goal 1 and 13
-8. [US8] User Logout frontend
+7. [US7] User Logout 
     - As a website user, I can log out so that I can protect my profile data, and I can easily see if I need to log in again
-9. [US9] User Registration Frontend
-    - As a website user, I can register for an account so that I can access the functions of the site
-10. [US10] Refresh Access Tokens
-    - As a website user, I can maintain my logged-in status until I decide to log out So that my user experience is not interrupted
-11. [US11] View Profile Page frontend
-    - As a logged in user I can view my profile so that I can see the details I have entered about myself
-12. [US12] Edit Profile Page frontend
+8. [US8] User Registration
+    - As a website user, I can register for an account so that I can access the benefits os a memebership of the site
+9. [US9] View Home Page
+    - As a user I can view the home page so that I can see all the details about Iron Haven Fitnes
+10. [US10] View Profile Page
+    - As a logged in user I can view my profile so that I can see the details, classes and memebership information
+11. [US11] Edit Profile
     - As a logged in user I can edit my profile so that I can change my personal info
-    - Maps to Project Goal 2
-13. [US13] Update Password frontend
+12. [US12] Update Password
     - As a logged-in user, I can update my password so that I can change my password if I need to
-14. [US14] Update Username frontend
+13. [US13] Update Username
     - As a logged-in user, I can change my username so that I can change my username if I want to
-15. [US15] View all jobs
-    - As a logged-in user, I can click on the All Jobs button in the NavBar so that I can see all the jobs in the system
-16. [US16] Search all jobs
-    - As a logged-in user, I can enter a query in the search bar so that I can find a job easily
-17. [US17] Filter jobs
-    - As a logged-in user, I can filter the job cards so that I can display them in the order I want
-18. [US18] Add Job
-    - As a logged-in user, I can click on the Add Job button in the NavBar so that I can add the job details to a form and save them to the database
-    - Maps to Project Goal 4 and 5 and 6
-19. [US19] Edit Job Card
-    - As a logged-in user, and creator of a job, I can click on the edit icon on the JobCard so that I can edit the job details
-20. [US20] Delete a Job
-    - As a logged-in user, and creator of a job, I can click on the edit icon on the JobCard so that I can delete the job details
-21. [US21] Add comment
-    - As a logged-in user, I can add a comment so that I can leave any comments about a particular job
-22. [US22] View Job Comments
-    - As a logged-in user I can click on the comments bubble so that I can view all the comments that have been made about the job
-23. [US23] Edit Comment
-    - As a logged-in user, and creator of a comment, I can click on the edit icon of a comment I have written so that I can update it if I want to
-24. [US24] Delete Comment
-    - As a logged-in user, and creator of a comment, I can click on the edit item of a comment I have written so that I can delete it if I want to
-    - Maps to Project Goal 11
-25. [US25] Add Invoice details
-    - As an Owner or Assigned person of a JobCard, I can add invoice details to a job so that a financial record can be maintained
-26. [US26] View Invoice Details on the JobCard
-    - As any user of a JobCard, I can view invoice details on a job card so that I can see the status of the invoices for a job
-27. [US27] Edit Invoice Details on the JobCard
-    - As an Owner or Assigned person of a JobCard, I can edit invoice details on a job card so that I can edit any of the details of the invoices for a job
-28. [US28] Delete Invoice details on the JobCard
-    - As an Owner or Assigned person of a JobCard, I can delete an invoice related to a job card so that I can delete an invoice if a job is cancelled
-29. [US29] View Invoice Details on AllInvoicesPage
-    - As any user of a JobCard, I can view invoice details on the AllInvoicesPage so that I can see the status of the invoices for a job
-    - Maps to Project Goal 11
-30. [US30] Edit Invoice Details on AllInvoicesPage
-    - As an Owner or Assigned person of an Invoice, I can edit invoice details on the AllInvoicesPage so that I can edit any of the details of the invoices for a job
-    - Maps to Project Goal 10
-31. [US31] My Jobs & Assigned Jobs View
-    - As a logged-in user, I can click on the MyJobs button or the Assigned Jobs button in the NavBar so that I can see all of the jobs that I have created or that have been assigned to me in the system
-    - Maps to Project Goal 8 and 9
-32. [US32] Watch Jobs
-    - As a logged-in user, I can click on the eye icon on a job card so that I can add it to my watch list where I can keep an eye on a job
-    - Maps to Project Goal 7
-33. [US33] UX & Testing
+14. [US14] View all the classes
+    - As a logged-in user, I can register for a class and be able to see it on my profile
+15. [US15] View all the products
+    - As a logged-in user, I can  be able see and purchase for products and easily see my shopping bag
+16. [US16] Change my memebership
+    - As a logged-in user, I can change my membership if I want to
+17. [US17] UX & Testing
     - As a developer, I can test each user story function so that I can verify each function works as intended
-34. [US34] Deploy to Heroku
+18. [US18] Deploy to Heroku
     - As a developer, I can deploy to Heroku so that I can host the site in production
-35. [US35] Complete Readme Documentation
+19. [US19] Complete Readme Documentation
     - As a developer, I can submit a comprehensive Readme document so that other developers can understand the project's development process
 
 
@@ -208,32 +161,33 @@ It is designed with the intention that potential users see the services that the
   The database schema and website logic was conceived and created using [Lucid](https://lucid.app/) as follows:
 
   Database Structure:
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/Iron Haven Fitness_schematic_dec_2023.png">
+
+
+![data base structure ](./static/doc_images/iron_fitnes.png)
 
 * [Back to Contents](#contents)
 
   ### Color Scheme
-  The main colours of blue, white and grey were chosen for maximum contrast. I used [Coolors](https://coolors.co) to generate a colour palette.
+  The main colours of orange, dark blue and white were chosen for maximum contrast. I used [Coolors](https://coolors.co) to generate a colour palette.
 
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/color_pallette.png">
+
+![data base structure ](./static/doc_images/palet_color.png)
+
 
   I used [Canva](https://www.canva.com/) to generate a logo and a style guide.
 
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/site_images/Iron Haven Fitness_logo.jpg">
-  <br>
 
-  <details>
-    <summary><u>Click to View More Color Scheme Images</u></summary>
+<span style="display:flex; gap:50px; text-align:center;">
 
-  With a color palette in mind, I could create a project style guide:
-  <br>
 
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/Iron Haven Fitness_project_colors.jpg">
+![data base structure ](./static/images/logo1.png)
 
-    <br>
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/site_images/gg_icon.png">
+![data base structure ](./static/images/logo2.png)
 
-  </details>
+
+
+</span>
+
 
   * [Back to Contents](#contents)
 
