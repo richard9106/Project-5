@@ -31,11 +31,10 @@
 * [FORKING & CLONING INSTRUCTIONS](#forking-and-cloning-instructions)
 * [SECURITY SETTINGS](#security-settings)
 * [CREDITS](#credits)
-  * [Code](#code)
   * [Resources](#resources)
   * [Content](#content)
   * [Media](#media)
-  * [Acknowledgements](#acknowledgements)
+  
 
 
 ## USER EXPERIENCE
@@ -192,19 +191,21 @@ It is designed with the intention that potential users see the services that the
   * [Back to Contents](#contents)
 
   ### Imagery
-  - I used FontAwesome https://fontawesome.com/ for various icons in the navbar, JobCard, and other places for visual effects.
+  - I used FontAwesome https://fontawesome.com/ for various icons in the navbar, shopping bag, and other places for visual effects.
 
    <br>
 
-  - I used [Unsplash](https://unsplash.com/) to populate the site with realistic royalty-free images while testing.
+  - I used [Pexels](https://www.pexels.com/es-es/) for free images .
 
   * [Back to Contents](#contents)
 
   ### Typography
-   * I used a default Google font of Raleway and sans serif throughout the website for visual clarity and consistency.
+   * I used a default Google font of Roboto and sans serif throughout the website for visual clarity and consistency.
+   
 
 
-  ### MVP
+  ### MVP (minimun vialble product)
+
   Using the GitHub project board I prioritised user stories to give me an incremental MVP.
 
   At each stage of achieving an MVP, I would aim to complete a piece of functioning work.  Styling issues would be noted as a small-item, logged to the Kanban board and I would revisit to make incremental visual improvements once the functionality logic was completed.
@@ -240,34 +241,7 @@ It is designed with the intention that potential users see the services that the
 
   <details>
     <summary><u>Click to View Images</u></summary>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/register.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/register_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/login.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/login_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/alljobs.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/alljobs_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/myjobs.png"><br>
-     - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/myjobs_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/assignedjobs.png"><br>
-     - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/assignedjobs_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/watching.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/watching_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/comments_and_replies.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/comments_and_replies_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/addjob.png"><br>
-     - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/addjob_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/editjob.png"><br>
-     - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/editjob_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/allinvoices.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/allinvoices_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/addinvoice.png"><br>
-     - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/addinvoice_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/editinvoice.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/editinvoice_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/profilepage.png"><br>
-     <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/profilepage_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/editprofile.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/editprofile_mob.png"><br>
+  
 
   </details>
 
@@ -336,20 +310,6 @@ Various validation methods have been incorporated:
  <details>
   <summary><u>Click to View Validation Images</u></summary>
 
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/confirmation_of_action.png"><br>
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/confirmation_of_action_mob.png"><br>
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/frontend_warning_messages.png"><br>
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/frontend_warning_messages_mob.png"><br>
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/confirmation_modal.png"><br>
-   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/confirmation_modal_mob.png"><br>
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/no_jobs_icon.png"><br>
-   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/no_jobs_icon_mob.png"><br>
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/custom_404_page.png"><br>
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/custom_404_page_mob.png"><br>
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/date_validation.png"><br>
-  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/date_validation_mob.png"><br>
-
-
 </details>
 
  * [Back to Contents](#contents)
@@ -362,22 +322,16 @@ The site has been built with the following tech, tools and libraries
 * HTML5
 * CSS
 * JavaScript
-* React - javascript library
-* JSX - syntax extension for JavaScript
 * Python
 * Django - web framework
 * Django REST Framework - API framework
-* Django CORS - handles Cross Origin Resource Sharing
 * Django AllAuth - user authentication
-* Django Filter - filtering querysets
 * Psycopg2 - postgreSQL adapter for python
 * ElephantSQL - database hosting
-* Axios - promise API
-* JWT - JSON web token
 * Cloudinary - media hosting
 * Pillow - python image processing library
 * Gunicorn - WSGI HTTP server for UNIX
-* Bootstrap 4 and react-bootsrap - frontend responsive styling framework
+* Bootstrap 5 and react-bootsrap - frontend responsive styling framework
 * Heroku - live site hosting
 
 
@@ -386,55 +340,24 @@ The site has been built with the following tech, tools and libraries
 * GitHub Repo - code storage
 * Git - version control
 * GitPod & VS Code - IDE
-* [Balsamiq](https://balsamiq.com/) - creating wireframes
+* [Miro](https://balsamiq.com/) - creating wireframes
 * [Coolors](https://coolors.co) - color pallette generator
 * [Image resizer](https://www.reduceimages.com/) - resizing images for optimal storage
 * [Canva](https://www.canva.com/) - creating artwork
 * Google Fonts - consistent typography
 * [Lucid Chart](https://lucid.app/) - creating a database schema
-* [Favicon](https://favicon.io/favicon-converter/) - favicon generator
-* [Responsive Image Generator](https://ui.dev/amiresponsive)
-* [BrowserStack](https://live.browserstack.com/) browser compatability tests
-* [Unsplash](https://unsplash.com/) - stock images
 * [FontAwesome](https://fontawesome.com/) - icons
 * [W3C HTML Validator](https://validator.w3.org/) - html code validation
 * [W3C CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator/) - css code validation
 * LightHouse - measures performance, accessibility, best practices and SEO
 * Chrome Dev Tools - for development debugging
-* [PycodeStyle](https://pypi.org/project/pycodestyle/) - code analysis tool conforming to pep8
 * [CI Python Linter](https://pep8ci.herokuapp.com/) - code analysis tool conforming to pep8
-* Black - code formatter for python
 * Prettier - code formatter for html, css and javascript
 * ESLint - code analysis tool for javascript
-* APITestCase - DjangoRESTFramework test library
 * Jest - frontend testing library
-* MSW - Mock Service Worker for front-end testing
-* Coverage - measures code coverage of Python programs
 * Whitenoise - serving static files
-* React Router - routing and navigation, url management
-* React Infinite Scroll - continuous content loading
 
-### React Components
 
-React’s strengths come from reusable components.
-The following components were built and reused in different parts of the application, contributing to improved user experience:
-* < AllInvoicesPage />  - the main page that was used for viewing All Jobs, My Jobs, Assigned Jobs and Watched Jobs.
-   - This reusable component ensures that all views are based on the same code and therefore familiar to the user.
-* < Asset /> - used to display a spinner icon while loading data.
-   - Signals to the user that there is more data or actions to follow.
-* < BackToTop /> -  used to quickly navigate the user back to the top of the page.
-   - Assists the user with site navigation, especially on pages with a lot of data to scroll through.
-* < ConfirmationModal /> - used to add a confirmation layer for users before updating or deleting content.
-   - Assists the user by adding a step in between the action to confirm they want to make the change.
-* < FixedHeader /> - used to create a breadcrumb bar for viewing status
-   - Improves the user experience by letting them know which page they are on, especially useful for pages that look very similar such as the AllJobs, MyJobs and WatchedJobs pages.
-* < Footer /> - used on the Login and register screen.
-* < NavBar /> - used above every page.
-   - Improves the user experience by being fixed to the top of the page, the active page is highlighted very prominently in yellow, and if the user hovers over the icons on a desktop, they will see the menu label, or it will be identified by the aria-label for screen readers.
-* < Page Not Found /> - used as a landing page for any redirects.
-   - Ensures the user does not come across any broken links while navigating the site or entering non-existent urls.
-* < TimedAlert > - used to control how long alert and success messages are displayed on the screen.
-   - Improves the user experience by keeping them informed of actions and system updates.
 
 
 ### Refactoring Opportunities
@@ -471,18 +394,7 @@ FOR DETAILED TEST REPORTS AND RESULTS PLEASE [VIEW THEM HERE:](https://github.co
 
   ### Bugs resolved:
   The following bugs were recorded and rectified [See test sheet](https://docs.google.com/spreadsheets/d/1esaHTm738sbXP-JMxzEvQ63mgN3IazsXGUL8tRsX0ZI/edit#gid=165646488)
-  1. Initially, there was a console warning “Access to XMLHttpRequest…from origin…has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-     * This was resolved by replacing and setting up the CI template correctly which had a lot of necessary settings
-  2. When refreshing the JobCard page the user was logged out.
-     * This was resolved by adding a missing "/" in axiosRes.get('/dj-rest-auth/user'). Helpfully discovered by tutor support.
-  3. Status Counts were not decrementing correctly.
-     * This was resolved by overriding the list and creating a function to calculate status counts on a distinct list of jobs by id in Jobs Views.py.
-  4. Watched Jobs icon was not toggling-on correctly on JobCard, AllJobs page and WatchedJobs page.
-     * Due to the complexity of the architecture, several attempts were made to resolve this. Eventually, a Route prop was passed from App.js to AllJobs page, depending on if it was filtering for Watched Jobs or not. A handleWatchStatusChange function was passed to JobCard. A similar function was added to JobPage which passed a prop to JobCard. The behaviour of the watch icon could then be managed depending on which page was serving the JobCard.
-  5. Deleting a reply was not working.
-     * This was resolved by creating a custom permission and updating the handleDelete function in EditCommentForm to filter out deleted comments to ensure a state update.
-  6. Comment Counter was not decrementing correctly when deleting comments and replies. This had been working previously but there were console warnings regarding updating state on unmounted components - caused by the confirmation modal. I addressed this warning by implementing an additional isMountedRef flag, however the counter was inadvertently affected, only when deleting a comment or reply.
-     * This was resolved by moving the decrement function from inside the isMountedRef flag.
+
 
 
   * [Back to Contents](#contents)
@@ -507,19 +419,6 @@ FOR DETAILED TEST REPORTS AND RESULTS PLEASE [VIEW THEM HERE:](https://github.co
 
   * Consider adding InfiniteScroll to the comment-replies section. This was left as it was deemed unlikely that there would be a vast number of replies to a single comment.  InfiniteScroll has been added to the parent comment list.
 
-  * The app has scope to extend its usability.  Additional fields can be added to the JobCard to capture more vehicle details.
-
-  * An Overdue status was originally added to the Job Status dropdown and is available as a choice in the model.  However, due to time constraints, this was omitted from the dashboard design.  It might be useful to filter and see Overdue Jobs
-
-  * Reports would be useful to the business to summarize Jobs and Invoices by User, Customer, Vehicle Type, Month, Job Type, Amount etc
-
-  * Additional functionality could be added to the Invoice module to be able to create and email the customer a PDF invoice.
-
-  * Additional fields could be added to the Profile Model allowing the user to update their email address and other contact details.
-
-  * A customer profile model and a resource availability model could be created allowing them to book a service for their own vehicle.
-
-  * There is scope to adapt this for other service businesses that need to track job details with an invoice function.
 
 
   * [Back to Contents](#contents)
@@ -553,30 +452,6 @@ FOR DETAILED TEST REPORTS AND RESULTS PLEASE [VIEW THEM HERE:](https://github.co
        * Define Media Storage URL
        * Set DEFAULT_FILE_STORAGE
        * Set DATABASES
-
-  ### React was installed using the following steps
-
-   1. Create a folder in the root directory named “frontend”
-   2. Type “cd frontend” to change directory
-   3. Run this command: npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm.
-   4. Remove redundant files from the frontend folder: rm -rf .git .gitignore README.md.
-   5. Freeze requirements
-   6. In settings.py remove all CORS code leaving only CORS_ALLOWED_ORIGINS
-   7. Add key to package.json - "proxy": "http://localhost:8000/"
-   8. Create “api” directory and axiosDefaults.js file in frontend/src/
-       * Add the following comment:
-       * // IMPORTANT!!
-       * // Because this React app is running in the same workspace as the API, there is no need to set a separate baseURL until you reach deployment. Setting a baseURL before you reach deployment will cause errors
-   9. Open the terminal and type python3 manage.py runserver - (the Django API will run on port 8000)
-   10. Open another terminal, cd frontend, and type npm start (the React application will run on port 8080 or 3000)
-   11. The React front-end logo should be visible.
-
-  ### Working in both the front and backend
-   1. Stop both servers
-   2. Set DEV in env.py - either commented out for frontend development or uncommented for backend dev.
-       * os.environ['DEV'] = '1'
-   3. Start backend server: python3 manage.py runserver
-   4. Start frontend server: npm start
 
   ### Deployment to Heroku involved the following steps and changes:
    1. Setup WhiteNoise for static files
@@ -686,28 +561,24 @@ In React, certain components from the Moments walkthrough project were used or c
 
   ### Resources
   I used the following resources to help develop features and functionality:
-  1. [DjangoREST Framework](https://www.django-rest-framework.org/)
-  2. [Installing all-auth](https://dj-rest-auth.readthedocs.io/en/latest/installation.html)
-  3. [QuerySet annotate](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#django.db.models.query.QuerySet.annotate)
-  4. [Django Filtering](https://www.django-rest-framework.org/api-guide/filtering/)
-  5. [Form Control elements](https://react-bootstrap.netlify.app/docs/forms/form-control/)
-  6. [Passing State through Link](https://medium.com/frontendweb/how-to-pass-state-or-data-in-react-router-v6-c366db9ee2f4)
-  7. [Use the describe test feature in React tests](https://jestjs.io/docs/api#describename-fn)
+  1. 
+  2. 
+  3. 
+  4. 
+  5. 
+  6. 
+  7. 
   8. ChatGPT was used to help troubleshoot and explain code functions
   9. Google and StackOverflow were also used for more context and understanding
   10. I reached out to Code Institute team members and tutor support from time to time
 
   I referred to several alumni student’s projects for further ideas and guidance:
   * [MikeR94 - LeagueHub](https://github.com/MikeR94/ci-project-portfolio-5)
-  * [Mathew Hurrel - GearAddict](https://github.com/Matthew-Hurrell/gear-addict)
-  * [Jamie King - Tickit](https://github.com/jkingportfolio/ci_pp5_tick_it_react)
+  
 
   * [Back to Contents](#contents)
 
-  ### Content
-  * All profile names, content, jobs, invoices and comments are fictional and written specifically for this project.
 
-  * [Back to Contents](#contents)
 
   ### Media
   * The Iron Haven Fitness logo was custom-designed for this project.
@@ -719,11 +590,3 @@ In React, certain components from the Moments walkthrough project were used or c
 
   * [Back to Contents](#contents)
 
-  ### Acknowledgements
-  * Thanks to my mentor Mitko for your guidance through our project meetings
-  * I would like to thank several of the Code Institute staff for their help and support:
-    - Sean Murphy - for our weekly cohort slot where you gave me some invaluable help and advice on tricky issues.
-    - Oisin, Gemma, Martin and Joanne in Tutor Support for helping me solve a few issues throughout the times I needed help.
-  * And a special thanks to Jeffrey Frankfort for all your patience and support when I was spinning my wheels and doubting myself - You never stopped believing in me!
-
-  * [Back to Contents](#contents)

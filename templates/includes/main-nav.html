@@ -135,6 +135,7 @@
           {% endif %}
         </div>
       </li>
+      {% if user.authenticate %}
       <li class="list-inline-item">
         <a
           class="{% if grand_total %}text-info fw-bold{% else %}text-black{% endif %} nav-link"
@@ -149,6 +150,7 @@
           </div>
         </a>
       </li>
+      {% endif %}
     </ul>
   </div>
   <!-- OFFCANVAS MAIN CONTAINER END  -->
