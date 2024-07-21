@@ -81,7 +81,7 @@ It is designed with the intention that potential users see the services that the
 ## PROJECT DESIGN
 
   ### Wireframes
-   The initial wireframes were created in [Balsamiq](https://balsamiq.cloud/) to understand how the site would work, and this layout would drive User Stories, the logic required and overall design artwork decisions.
+   The initial wireframes were created in [Miro](https://miro.com/es/) to understand how the site would work, and this layout would drive User Stories, the logic required and overall design artwork decisions.
 
    The final app deviated slightly in a couple of areas as improvements were made while the site was being built and user functions could be tested.
 
