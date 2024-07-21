@@ -1,15 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col">
-                <h1 class="roboto-regular">
+    <div class="container-fluid header-container">
+        <div class="row flex-nowrap">
+            <div class="col p-5">
+                <h1 class="roboto-regular orange-color">
                     fitnes <br/> training
                 </h1>
-            </div>
-            <div>
                 <ul>
                     <li>
                         <i class="fa-solid fa-check-double"></i>
@@ -27,10 +25,7 @@
                 </ul>
             </div>
 
-
         </div>
-
-        <hr/>
     </div>
 {% endblock %}
 
@@ -104,6 +99,18 @@
                 <p>As a member of Iron Haven Fitness, you have access to our exclusive range of fitness products available only at our gym. Join us today to enjoy these benefits and more!</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="mt-5 text-center w-50 mx-auto" id="contact">
+    <h2>Contact Us</h2>
+    <div class="container">
+        <form method="post" action="{% url 'contact' %}" class="mt-4 text-start">
+            {% csrf_token %}
+            {{ contact_form|crispy }}
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
     </div>
 </section>
 {% endblock %}

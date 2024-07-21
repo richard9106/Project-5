@@ -19,10 +19,15 @@ header{
 }
 
 .header-container{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/bg-.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: top right;
   display: grid;
   min-height: 80vh;
   align-items: center;
   margin-bottom: 50px;
+  width: 100%;
 }
 
 h1{
@@ -36,6 +41,13 @@ h1{
   padding-bottom: 50px;
 }
 
+.hero-image{
+  max-width: 80%;
+
+}
+.container-fluid{
+  padding: 0!important;
+}
 /*----------responsive header*/
 @media (max-width:991px){
   header{

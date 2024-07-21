@@ -1,14 +1,13 @@
 # Project Name - Iron Haven Fitness
 
 
-* [Link to Deployed Project](https://garageguru2023-9cc8e49ac2b8.herokuapp.com/)
+* [Link to Deployed Project](https://Iron Haven Fitness2023-9cc8e49ac2b8.herokuapp.com/)
 
 ## CONTENTS
 * [USER EXPERIENCE (UX)](#user-experience)
   * [Purpose & target audience](#purpose-and-target-audience)
   * [Goals](#goals)
 * [PROJECT DESIGN](#project-design)
-  * [Agile Approach](#agile-approach)
   * [Wireframes](#wireframes)
   * [User Stories](#user-stories)
   * [Logic](#logic)
@@ -21,8 +20,6 @@
 * [TECH STACK](#tech-stack)
   * [Languages and Frameworks](#languages-and-frameworks)
   * [Tools and Libraries](#tools-and-libraries)
-  * [React Components](#react-components)
-  * [Refactoring Opportunities](#refactoring-opportunities)
 * [TESTING](#testing)
   * [Tests performed](#tests-performed)
   * [User Story Tests](#user-story-tests)
@@ -44,16 +41,13 @@
 
    ### Purpose and target audience
 
-GarageGuru is a collaborative job management app aimed at vehicle service centres.
+Iron Haven Fitness is a gym website that sells memberships and also has some products for its users.
 
-It is designed with the employee in mind, where jobs can be created, and assigned to different users, and job status can be tracked. Jobs can be viewed, watched, edited, filtered and searched.  In addition, an invoice can be created and its status can also be separately managed.
-
-Each job card also has a comments section where users can collaborate on the job and specific comments in the form of a conversation thread.
-
-This fully responsive accessible website can be used on a  desktop or the employee's mobile device on the workshop floor.
+It is designed with the intention that potential users see the services that the gym offers.It contains an area to see the available classes and a section of products to which you have access if you are a member.
 
 
-<img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/site_images/hosted_site.png">
+
+<img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/site_images/hosted_site.png">
 
 * [Back to Contents](#contents)
 
@@ -61,42 +55,30 @@ This fully responsive accessible website can be used on a  desktop or the employ
   #### Goals for the first time user
   1. To be able to create an account easily.
   2. To be able to customise and update their profile.
-  3. To easily understand what the app is supposed to do and how to navigate it on a desktop or mobile device.
-  4. To easily be able to add a job, choose from a selection of job types, assign a job by default to themselves, or to be able to select another user.
-  5. To be able to select a due date for the job, while defaulting to the current day.
-  6. To be unable to choose a date in the past.
-  7. To be able to watch various jobs and view them on a dashboard.
-  8. To be able to view the jobs they have created on a dashboard.
-  9. To be able to view jobs assigned to them on a specific dashboard.
-  10. To be able to easily create and edit an invoice associated with a job.
-  11. To be able to leave comments about any job.
-  12. To view all the invoices in the system and manage their status.
+  3. To easily update and change or cancel their memberships.
+  4. To easily be able to reserve or cancel  gym classes if they need it .
+  5. To easily be able to purchase for products and see the shopping gab.
+  6. To be able to see how much they are going to speend before pay.
+  7. To be able to  contact or subscribe yo the gym news.
+
 
   #### Goals for the returning user <br>
-  13. All the pages of the app should be secure, so once logged out, the only way to access any pages is via the login page.<br>
-  14. The app should feel familiar to the returning user.
+  8. All the pages of the app should be secure, so once logged out, the only way to access pages for products and classes is via the login page.<br>
+  9. The app should feel familiar to the returning user.
 
   #### Goals for the Administrator <br>
-  15. The administrator can easily update or override any information on the backend as a superuser.
+  10. The administrator can easily update or override any information on the backend as a superuser.
 
   #### Goals for the Site Owner <br>
-  16. The app should have the capacity to scale. <br>
-  17. More choices of services can easily be added and customised for different businesses. <br>
-  18. Images are validated to ensure they are not oversized dragging on site performance and storage resources. <br>
-  19. Jobs, invoices and comments are pulled as required, to avoid dragging on site performance and storage resources.
+  11. The app should have the capacity to scale. <br>
+  12. More choices of classes and products can easily be added and customised.<br>
+  13. Images are validated to ensure they are not oversized dragging on site performance and storage resources. <br>
+
 
 
 * [Back to Contents](#contents)
 
 ## PROJECT DESIGN
-
-  ### Agile Approach
-  From the start the project was managed using [GitHub Projects (View Here - ensure labels are activated)](https://github.com/users/rstan-dev/projects/8/views/2?filterQuery=), using an agile approach.
-  - The project goals were broken into epics, which were broken into user stories with acceptance criteria and individual tasks.
-  - Each User Story was allocated a certain number of story points based on a rough estimation of time to complete the work.
-  - This allowed me to create a roadmap with milestones and target dates. [View Roadmap Here(ensure milestone and start date markers are activated)](https://github.com/users/rstan-dev/projects/8/views/1)
-  - Each User Story was assigned a label according to the MoSCoW system so I could prioritise the work.
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/moscow_labels.png">
 
   ### Wireframes
    The initial wireframes were created in [Balsamiq](https://balsamiq.cloud/) to understand how the site would work, and this layout would drive User Stories, the logic required and overall design artwork decisions.
@@ -109,28 +91,28 @@ This fully responsive accessible website can be used on a  desktop or the employ
 
    General visual styling improvements were made during the project that were not considered during wireframing or when I received some early-stage user feedback, which resulted in a better UX.
 
-   - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/wf_alljobs.png">
+   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/wf_alljobs.png">
 
    <details>
     <summary><u>Click to View More Wireframe Images</u></summary>
-   - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/wf_addjob.png">
+   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/wf_addjob.png">
    <br>
-   - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/wf_myjobs.png">
+   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/wf_myjobs.png">
    <br>
-   - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/wf_watchedjobs.png">
+   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/wf_watchedjobs.png">
    <br>
-   - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/wf_comments.png">
+   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/wf_comments.png">
    <br>
    <br>
 
    New wireframe for including the invoice module was conceived halfway through the project.
-   - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/wf_newalljobs.png">
+   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/wf_newalljobs.png">
    </details>
 
 * [Back to Contents](#contents)
 
   ### User Stories
-  All epics, user stories with their acceptance criteria and tasks can be viewed on the GarageGuru [GitHub Project board](https://github.com/users/rstan-dev/projects/8/views/2?filterQuery=)
+  All epics, user stories with their acceptance criteria and tasks can be viewed on the Iron Haven Fitness [GitHub Project board](https://github.com/users/rstan-dev/projects/8/views/2?filterQuery=)
 
   There were 12 Epics created from Project Concept to Project Submission.
 
@@ -226,18 +208,18 @@ This fully responsive accessible website can be used on a  desktop or the employ
   The database schema and website logic was conceived and created using [Lucid](https://lucid.app/) as follows:
 
   Database Structure:
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/garageguru_schematic_dec_2023.png">
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/Iron Haven Fitness_schematic_dec_2023.png">
 
 * [Back to Contents](#contents)
 
   ### Color Scheme
   The main colours of blue, white and grey were chosen for maximum contrast. I used [Coolors](https://coolors.co) to generate a colour palette.
 
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/color_pallette.png">
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/color_pallette.png">
 
   I used [Canva](https://www.canva.com/) to generate a logo and a style guide.
 
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/site_images/garageguru_logo.jpg">
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/site_images/Iron Haven Fitness_logo.jpg">
   <br>
 
   <details>
@@ -246,10 +228,10 @@ This fully responsive accessible website can be used on a  desktop or the employ
   With a color palette in mind, I could create a project style guide:
   <br>
 
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/wireframes/garageguru_project_colors.jpg">
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/wireframes/Iron Haven Fitness_project_colors.jpg">
 
     <br>
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/site_images/gg_icon.png">
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/site_images/gg_icon.png">
 
   </details>
 
@@ -304,34 +286,34 @@ This fully responsive accessible website can be used on a  desktop or the employ
 
   <details>
     <summary><u>Click to View Images</u></summary>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/register.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/register_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/login.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/login_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/alljobs.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/alljobs_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/myjobs.png"><br>
-     - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/myjobs_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/assignedjobs.png"><br>
-     - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/assignedjobs_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/watching.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/watching_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/comments_and_replies.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/comments_and_replies_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/addjob.png"><br>
-     - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/addjob_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/editjob.png"><br>
-     - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/editjob_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/allinvoices.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/allinvoices_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/addinvoice.png"><br>
-     - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/addinvoice_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/editinvoice.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/editinvoice_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/profilepage.png"><br>
-     <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/profilepage_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/editprofile.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/editprofile_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/register.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/register_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/login.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/login_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/alljobs.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/alljobs_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/myjobs.png"><br>
+     - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/myjobs_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/assignedjobs.png"><br>
+     - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/assignedjobs_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/watching.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/watching_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/comments_and_replies.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/comments_and_replies_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/addjob.png"><br>
+     - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/addjob_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/editjob.png"><br>
+     - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/editjob_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/allinvoices.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/allinvoices_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/addinvoice.png"><br>
+     - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/addinvoice_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/editinvoice.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/editinvoice_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/profilepage.png"><br>
+     <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/profilepage_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/editprofile.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/editprofile_mob.png"><br>
 
   </details>
 
@@ -363,22 +345,22 @@ This fully responsive accessible website can be used on a  desktop or the employ
 
   <details>
     <summary><u>Click to View UX Features Images</u></summary>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/navbar.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/navbar_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/dashboard.png"><br>
-     - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/dashboard_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/conditional_editing.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/conditional_editing_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/conditional_adding_invoice.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/conditional_adding_invoice_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/view_invoice_accordion.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/view_invoice_accordion_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/commenting_and_watching.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/commenting_and_watching_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/comments_and_replies.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/comments_and_replies_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/back_to_top.png"><br>
-    - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/back_to_top_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/navbar.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/navbar_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/dashboard.png"><br>
+     - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/dashboard_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/conditional_editing.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/conditional_editing_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/conditional_adding_invoice.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/conditional_adding_invoice_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/view_invoice_accordion.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/view_invoice_accordion_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/commenting_and_watching.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/commenting_and_watching_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/comments_and_replies.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/comments_and_replies_mob.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/back_to_top.png"><br>
+    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/back_to_top_mob.png"><br>
 
   </details>
 
@@ -394,25 +376,24 @@ Various validation methods have been incorporated:
  6. General catch-all redirects for logged-out users to the Login page for non-existing pages.
  7. Date validation to prevent booking or invoicing a past date
  8. Image validation to prevent oversized images from being uploaded
- 9. Infinite scroll on jobs and invoices to reduce server load
- 10. Form validation to capture email and phone formats correctly
+ 9. Form validation to capture email and phone formats correctly
 
 
  <details>
   <summary><u>Click to View Validation Images</u></summary>
 
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/confirmation_of_action.png"><br>
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/confirmation_of_action_mob.png"><br>
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/frontend_warning_messages.png"><br>
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/frontend_warning_messages_mob.png"><br>
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/confirmation_modal.png"><br>
-   - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/confirmation_modal_mob.png"><br>
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/no_jobs_icon.png"><br>
-   - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/no_jobs_icon_mob.png"><br>
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/custom_404_page.png"><br>
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/custom_404_page_mob.png"><br>
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/date_validation.png"><br>
-  - <img src="https://github.com/rstan-dev/GarageGuru-PP5/blob/main/documentation/images/features/date_validation_mob.png"><br>
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/confirmation_of_action.png"><br>
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/confirmation_of_action_mob.png"><br>
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/frontend_warning_messages.png"><br>
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/frontend_warning_messages_mob.png"><br>
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/confirmation_modal.png"><br>
+   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/confirmation_modal_mob.png"><br>
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/no_jobs_icon.png"><br>
+   - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/no_jobs_icon_mob.png"><br>
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/custom_404_page.png"><br>
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/custom_404_page_mob.png"><br>
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/date_validation.png"><br>
+  - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/date_validation_mob.png"><br>
 
 
 </details>
@@ -515,7 +496,7 @@ Due to time constraints on completing this project, I was unable to refactor all
 
 
 ## TESTING
-FOR DETAILED TEST REPORTS AND RESULTS PLEASE [VIEW THEM HERE:](https://github.com/rstan-dev/GarageGuru-PP5/blob/main/TESTING.md).
+FOR DETAILED TEST REPORTS AND RESULTS PLEASE [VIEW THEM HERE:](https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/TESTING.md).
 
   ### Tests performed
   The site was thoroughly tested during development with each feature tested before committing to GitHub.  The testing regime included the following:
@@ -696,12 +677,12 @@ You can create a copy of a GitHub Repository without affecting the original by f
 ### Here's a step-by-step guide to forking:
 Forking is often used for proposing changes or using the project as a starting point for your own idea. Forking will apear on your GitHub profile.
 1. Log into GitHub or sign up for an account.
-2. Go to the [GarageGuru Repository](https://github.com/rstan-dev/GarageGuru-PP5)
+2. Go to the [Iron Haven Fitness Repository](https://github.com/rstan-dev/Iron Haven Fitness-PP5)
 3. Click "Fork" on the right side of the repository's page to create a copy in your own repository.
 
 ### Here's a step-by-step guide to cloning:
 Cloning is often used for experimenting locally.  It will not show up on your GitHub profile.
-1. Go to the [GarageGuru Repository](https://github.com/rstan-dev/GarageGuru-PP5)
+1. Go to the [Iron Haven Fitness Repository](https://github.com/rstan-dev/Iron Haven Fitness-PP5)
 2. Click the green code button, then the arrow, and select the "clone by https" option to copy the URL.
 3. Open your preferred code editor and navigate to the directory where you want to clone the repository.
 4. Type 'git clone', paste the copied URL, and press enter. The repository will then be cloned to your machine.
@@ -775,7 +756,7 @@ In React, certain components from the Moments walkthrough project were used or c
   * [Back to Contents](#contents)
 
   ### Media
-  * The GarageGuru logo was custom-designed for this project.
+  * The Iron Haven Fitness logo was custom-designed for this project.
   * 24/7 icon created in Canva Pro.
   * Vehicle pics - Royalty free from Canva Pro and Unsplash
   * Profile pics - Royalty free from Unsplash
