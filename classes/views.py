@@ -63,3 +63,23 @@ def edit_class(request, class_id):
         form = GymClassForm(instance=gym_class)
 
     return render(request, 'edit_class.html', {'form': form, 'gym_class': gym_class})
+
+
+@login_required
+def create_class(request):
+    """A view to create a new gym class"""
+    if request.method == 'POST':
+        form = GymClassForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Class created successfully.')
+            return redirect('classes_list')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = GymClassForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, "create_class.html", context)

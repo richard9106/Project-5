@@ -6,6 +6,11 @@
     <div class="text-center py-3">
         <h2 class="text-center mb-4 mmb-title">Classes</h2>
     </div>
+    {% if request.user.is_superuser %}
+    <div class=" text-start mb-5">
+        <a href="{% url 'create_class' %}" class="btn btn-color-two reserve-btn">Add new class</a> 
+    </div>
+    {% endif %}
     <div class="row">
         {% for gymclass in classes %}
         {% if gymclass.date and gymclass.date >= gymclass.current_date %}
