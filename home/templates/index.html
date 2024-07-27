@@ -5,7 +5,7 @@
     <div class="container-fluid header-container">
         <div class="row flex-nowrap">
             <div class="col p-5">
-                <h1 class="roboto-regular orange-color">
+                <h1 class="alfa-slab-one-regular orange-color">
                     fitnes <br/> training
                 </h1>
                 <ul>
@@ -23,6 +23,9 @@
                         Cardio Exercises
                     </li>
                 </ul>
+                <div>
+                    <button type="button" class="btn btn-primary-custom " style="width: 400px;" data-toggle="modal" data-target="#signupModal" data-membership-id="{{ membership.id }}">Sign Up</button>
+                </div>
             </div>
 
         </div>
@@ -60,9 +63,9 @@
         </button>
     </div>
 </section>
-
+<hr class="orange-color "/>
 <!-- Motivational Section -->
-<section id="motivation" class="text-center my-5">
+<section id="motivation" class="text-center my-5 p-5">
     <h2>Join Us Today!</h2>
     <p>Experience the best fitness training and community at Iron Haven Fitness.</p>
     <a href="{% url 'membership_list' %}" class="btn btn-primary">Check Our Memberships</a>
@@ -77,9 +80,9 @@
                     {% for product in products %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
                         <div class="carousel-caption d-none d-md-block text-black">
-                            <h5>{{ product.name }}</h5>
+                            <h5 class="fs-6 text">{{ product.name }}</h5>
                         </div>
-                        <img src="{{ product.image.url }}" class="d-block w-100" alt="{{ product.name }}">
+                        <img src="{{ product.image.url }}" class="d-block w-50 mx-auto rounded-3" alt="{{ product.name }}">
                     </div>
                     {% endfor %}
                 </div>
@@ -95,7 +98,7 @@
         </div>
         <div class="col-md-6 d-flex align-items-center">
             <div>
-                <h3>Exclusive Products for Members</h3>
+                <h3 class="orange-color">Exclusive Products for Members</h3>
                 <p>As a member of Iron Haven Fitness, you have access to our exclusive range of fitness products available only at our gym. Join us today to enjoy these benefits and more!</p>
             </div>
         </div>
@@ -103,7 +106,7 @@
 </section>
 
 <!-- Contact Form Section -->
-<section class="mt-5 text-center w-50 mx-auto" id="contact">
+<section class="mt-5 text-center md-w-50 md-w-100 mx-auto" id="contact">
     <h2>Contact Us</h2>
     <div class="container">
         <form method="post" action="{% url 'contact' %}" class="mt-4 text-start">

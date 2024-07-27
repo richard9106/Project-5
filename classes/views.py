@@ -5,7 +5,7 @@ from django.contrib import messages
 from profiles.models import Profile
 from .models import GymClass, Booking
 from .forms import GymClassForm
-from django.http import JsonResponse
+
 
 
 def classes_list(request):

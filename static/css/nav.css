@@ -1,4 +1,7 @@
 /*------------Globals*/
+.nav-container{
+  background-color: rgba(12, 21, 35, 0.5);
+}
 
 .nav-link{
     color:white!important;
@@ -29,3 +32,6 @@ nav,
         background-color: #0C1523;
       }
     }
+.dropdown-menu[data-bs-popper]{
+  left: -90px!important;
+}
