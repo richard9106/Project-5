@@ -424,11 +424,7 @@ FOR DETAILED TEST REPORTS AND RESULTS PLEASE [VIEW THEM HERE:](https://github.co
   * [Back to Contents](#contents)
 
 ## DEPLOYMENT
-  This project was built as a unified project, the benefits of this approach were:
-   * CORS would not be an issue as requests and responses will come from a shared base URL, both in development and production environments.
-   * Terminal logs for the API would be visible while interacting with the React side of the project during development, making debugging significantly easier.
-   * Development of both the API and the React project could take place simultaneously.
-   * With the front and back-end applications on the same domain, Cookies (containing the JSONWebToken) required for authentication would not be blocked from being set on browsers that currently have cross-site tracking protection enabled by default.
+  for a deployment, keep in mind that depending on the functionalities, some extra configuration may be missing. Very important is the configuration of variables in Heroku and the add-ons since without these activated you will not be able to see the project correctly
 
   Initially, Django was installed following this Code Institute [DRF Cheatsheet](https://docs.google.com/document/d/1LCLxWhmW_4VTE4GXsnHgmPUwSPKNT4KyMxSH8agbVqU/edit#heading=h.mpopj7v69qqn)
 
@@ -439,61 +435,45 @@ FOR DETAILED TEST REPORTS AND RESULTS PLEASE [VIEW THEM HERE:](https://github.co
    5. Install Cloudinary Storage
    6. Install Pillow (image processing)
    7. Update INSTALLED_APPs
+       * all apps in the django project must be make migrations
+       * python manage.py makemigrations
+       * python manage.py migrate
+       * to pass external data to the models if you need it.
+          - create the fixture folder
+          - add your file.json to the folder
+          - python manage.py loaddata 'name.json' 
    8. Create env.py file
        * Add CLOUDINARY_KEY (from Cloudinary API key)
        * Add SECRET_KEY - (a unique password)
        * ADD DATABASE_URL - (postgres ElephantSQL API key)
-       * ADD CLIENT_ORIGIN - (set to the value of your development environment URL, wrapped in quotes, prepended with https://)
-       * ADD ALLOWED_HOST - (set to the value of the development environment URL, wrapped in quotes)
-       * Add os.environ['DEBUG'] = '1'
-       * Add os.environ['DEV'] = '1'
+       * STRIPE_SECRET_KEY - (stripe secrete key all)
+       * DEBUG = True (if you have to push to heroku set False)
    9. Update settings.py
        * CLOUDINARY_STORAGE
        * Define Media Storage URL
        * Set DEFAULT_FILE_STORAGE
        * Set DATABASES
+       * set STRIPE settings
+    
 
   ### Deployment to Heroku involved the following steps and changes:
-   1. Setup WhiteNoise for static files
-      * pip3 install whitenoise==6.4.0
-      * pip3 freeze > requirements.txt
-   2. Create a new empty folder called staticfiles in the root directly
-      * mkdir staticfiles
-   3. In settings.py,
-      * ensure ‘cloudinary_storage’ app name is below ‘django.contrib.staticfiles’.
-      * Add WhiteNoise below SecurityMiddleware and above SessionMiddleware in MIDDLEWARE list 'whitenoise.middleware.WhiteNoiseMiddleware',
-      * In TEMPLATES list set the DIRS key: os.path.join(BASE_DIR, 'staticfiles', 'build')
-      * In the static files section, add the STATIC_ROOT and WHITENOISE_ROOT variables and values:
-        * STATIC_ROOT = BASE_DIR / 'staticfiles'
-        * WHITENOISE_ROOT = BASE_DIR / 'staticfiles' / 'build'
-   4. In urls.py
-        * remove root_route view from imports, replace with: from django.views.generic import TemplateView
-        * In urlpatterns remove root_route and replace with: path('', TemplateView.as_view(template_name='index.html')),
-        * Add 404 handler below urlpatterns: handler404 = TemplateView.as_view(template_name='index.html')
-        * Update all urls except home and admin with: api/
-   5. Update axiosDefaults with baseURL: axios.defaults.baseURL = “/api”;
-   6. Collect the admin and DRF staticfiles to the empty staticfiles directory created earlier, with the following command in the terminal:
-       * python3 manage.py collectstatic
-       * cd frontend
-       * npm run build && mv build ../staticfiles/.
-   7. NOTE:  Anytime that static files are updated, including the react code:
-       * npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.
-   8. Create a runtime.txt file and add the following: Python-3.9.16
-   9. Create a Procfile in the root directory and add: web: gunicorn drf_api.wsgi
-   10. Terminate all servers.
+   1. Set up DEBUG in settins.py to False
+   2. install gunicorn ==22.0.0
+   3. Create a Procfile (web: gunicorn core.wsgi:application) 
+   4. Create a runtime.txt file and add the following: Python-3.12.3
+   5. Terminate all servers.
        * Ensure DEBUG and DEV in env.py are commented out
        * python3 manage.py runserver
-   11. Check project is displaying in the preview on port 8000
-   12. Log into your Heroku account, create a new app, and access the dashboard for your application
-   13. Go to Settings and open the Config Vars
+   6. Check project is displaying in the preview on port 8000 or gitpod
+   7. Log into your Heroku account, create a new app, and access the dashboard for your application
+   8. Go to Settings and open the Config Vars add all the Api keys in your env.py
        * Add CLOUDINARY_KEY (the Cloudinary API key)
        * Add SECRET_KEY - (the unique password)
        * Add DATABASE_URL - (postgres ElephantSQL API key)
-       * Add CLIENT_ORIGIN - (set to the URL of the combined project, keeping the https:// at the beginning but removing the trailing slash at the end)
-       * Add ALLOWED_HOST - (set to the URL of your combined project, remove the https:// at the beginning and remove the trailing slash at the end)
-   14. Ensure your application has an ALLOWED_HOST key, set to the URL of your combined project, remove the https:// at the beginning and remove the trailing slash at the end
-   15. Ensure your application has a CLIENT_ORIGIN key and set it to the URL of your combined project. This time keep the https:// at the beginning but remove the trailing slash at the end
-   16. Go to the Deploy tab, connect the project to GitHub, and choose main branch to deploy
+       * Add STRIPE_SECRET_KEY - (stripe payments Api key)
+   9. Ensure your application has an ALLOWED_HOST your '.herokuapp.com' - '.gitpod.io'
+   10. Ensure in Resources in heroku dasboard change your dinos active.
+   11. Go to the Deploy tab, connect the project to GitHub, and choose main branch to deploy
        * Click Deploy Branch (manually)
        * (Optional) Select Enable Automatic Deploys
 
@@ -506,12 +486,12 @@ You can create a copy of a GitHub Repository without affecting the original by f
 ### Here's a step-by-step guide to forking:
 Forking is often used for proposing changes or using the project as a starting point for your own idea. Forking will apear on your GitHub profile.
 1. Log into GitHub or sign up for an account.
-2. Go to the [Iron Haven Fitness Repository](https://github.com/rstan-dev/Iron Haven Fitness-PP5)
+2. Go to the [Iron Haven Fitness Repository](https://github.com/richard9106/Project-5)
 3. Click "Fork" on the right side of the repository's page to create a copy in your own repository.
 
 ### Here's a step-by-step guide to cloning:
 Cloning is often used for experimenting locally.  It will not show up on your GitHub profile.
-1. Go to the [Iron Haven Fitness Repository](https://github.com/rstan-dev/Iron Haven Fitness-PP5)
+1. Go to the [Iron Haven Fitness Repository](https://github.com/richard9106/Project-5)
 2. Click the green code button, then the arrow, and select the "clone by https" option to copy the URL.
 3. Open your preferred code editor and navigate to the directory where you want to clone the repository.
 4. Type 'git clone', paste the copied URL, and press enter. The repository will then be cloned to your machine.
@@ -524,8 +504,7 @@ The following precautions were taken regarding the security of the site:
    - CLOUDINARY_URL
    - SECRET_KEY
    - DATABASE_URL
-   - CLIENT_ORIGIN
-   - ALLOWED_HOST
+   - STRIPE_SECRET_KEY
 2. These values were added to the Config Vars section of Heroku's Settings page.
 3. Heroku is configured with 2FA
 
@@ -533,48 +512,29 @@ The following precautions were taken regarding the security of the site:
 * [Back to Contents](#contents)
 
 ## CREDITS:
-The entire concept was created specifically for this assessment and is not a copy of any walkthrough project.
+The entire concept was created specifically for this assessment and is not a copy of any other project.
 
 Initially, parts of the project were based on the Moments walkthrough project:
   * CI Template for setting up the repo - [View Here](https://github.com/Code-Institute-Org/cra-template-moments)
-  * The Profile Model - similar to the Moments Profile model
-  * The Comments model - similar to the Moments Comments model but customised further for replies
-  * The Watch model - similar to the Moments Like model - with enhanced UX
-  * image_filter and validate_image - used from the Moments walkthrough
-  * APITestCase - Jobs tests initially written based on Moments PostList tests
+  * The Profile Model - similar to the Mind Well project 4 Profile model
+  * The Bag, Payments and Product model - similar to the Boutique Ado but customised further for replies
+  * Example readme.md from - [View Here](https://github.com/rstan-dev/GarageGuru-PP5?tab=readme-ov-file#logic)
 
-In React, certain components from the Moments walkthrough project were used or closely adapted:
-  * CurrentUserProvider - for current user context
-  * useToggleMenu -  similar to useClickOutsideToggle hook from Moments, to close the mobile nav menu
-  * InfintityScroll setup for Jobs, Invoices and Comments
-  * fetchMoredata - utility function to get more API data for use with Infinity Scroll
-  * setTokenTimestamp - utility function to decode the JWT refresh token and store its expiration timestamp in local storage.
-  * shouldRefreshToken - utility function to check if the refresh token's timestamp is stored in local storage.
-  * removeTokenTimestamp - utility function to remove the stored refresh token's expiration timestamp from local storage.
-  * React NavBar tests - adapted from Moments
+
 
   ### Code
-  * All Python logic was written and developed specifically for this project, using the Moments walkthrough as a reference.
-  * All frontend HTML, CSS, JavaScript and JSX were incrementally written specifically for this project.
+  * All Python logic was written and developed specifically for this project, using the Boutique ado  Build an Ecommerce as a reference.
+  * All frontend HTML, CSS, JavaScript were incrementally written specifically for this project.
 
   * [Back to Contents](#contents)
 
   ### Resources
   I used the following resources to help develop features and functionality:
-  1. 
-  2. 
-  3. 
-  4. 
-  5. 
-  6. 
-  7. 
-  8. ChatGPT was used to help troubleshoot and explain code functions
-  9. Google and StackOverflow were also used for more context and understanding
-  10. I reached out to Code Institute team members and tutor support from time to time
+ 
+  * ChatGPT was used to help troubleshoot and explain code functions
+  * Google and StackOverflow were also used for more context and understanding
+  * I reached out to Code Institute team members and tutor support from time to time
 
-  I referred to several alumni student’s projects for further ideas and guidance:
-  * [MikeR94 - LeagueHub](https://github.com/MikeR94/ci-project-portfolio-5)
-  
 
   * [Back to Contents](#contents)
 
@@ -582,10 +542,8 @@ In React, certain components from the Moments walkthrough project were used or c
 
   ### Media
   * The Iron Haven Fitness logo was custom-designed for this project.
-  * 24/7 icon created in Canva Pro.
-  * Vehicle pics - Royalty free from Canva Pro and Unsplash
-  * Profile pics - Royalty free from Unsplash
-  * Van pics - Royalty free from Canva Pro and Unsplash
+  * Logo icon created in Canva Pro.
+  * images from pexel
   * Icons - font awesome.
 
   * [Back to Contents](#contents)
