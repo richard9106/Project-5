@@ -79,6 +79,16 @@ font-style: normal;
     color: #0f2435!important;
 }
 
+.btn-color-two{
+    background:#ff6600 !important;
+    color: white!important;
+}
+
+.btn-color-two:hover{
+    background:#ffffff !important;
+    color: #0f2435!important;
+}
+
 .bg-main-color{
     background:#ff6600 !important;
 }
@@ -151,7 +161,20 @@ font-style: normal;
 	z-index: -1;
 }
 
+#id_password1_helptext{
 
+    color: white!important;
+}
+
+.keep-btn{
+    background-color: white;
+    color: #0F2435!important;
+}
+.keep-btn:hover{
+    background-color: #ff6600;
+    scale: 1.1;
+    color: white!important;
+}
 
 /*-------------------Product*/
 

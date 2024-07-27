@@ -1,15 +1,21 @@
+"""Manage payments"""
+import stripe
+from django.conf import settings
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.conf import settings
-from .models import Order, OrderLineItem
 from profiles.models import Profile
 from products.models import Product
 from memberships.models import Membership
-import stripe
+from .models import Order, OrderLineItem
+
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 @login_required
 def initiate_payment(request):
+    """Payments for products"""
     if request.method == 'POST':
         user_profile = Profile.objects.get(user=request.user)
         full_name = request.POST.get('full_name')
@@ -87,7 +93,7 @@ def initiate_payment(request):
 
 @login_required
 def payment_success(request):
-    # Aquí puedes agregar la lógica para marcar la membresía como pagada
+    """payment succes"""
     user = request.user
     user.profile.membership_paid = True
     user.profile.save()
@@ -95,4 +101,8 @@ def payment_success(request):
 
 @login_required
 def payment_cancel(request):
+    """payment cancel"""
     return render(request, 'payment_cancel.html')
+
+
+

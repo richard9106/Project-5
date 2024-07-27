@@ -3,9 +3,9 @@ import uuid
 from django.db import models
 from profiles.models import Profile
 from products.models import Product
+from memberships.models import Membership
 
 
-# Create your models here.
 class Order(models.Model):
     """ To follow the Orders"""
     order_number = models.CharField(max_length=32, null=False, editable=False)
@@ -56,3 +56,5 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'
+    
+

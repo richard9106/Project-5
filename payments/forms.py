@@ -1,5 +1,8 @@
 from django import forms
 from .models import Order
+from django.contrib.auth.models import User
+from profiles.models import Profile
+from memberships.models import Membership
 
 
 class OrderForm(forms.ModelForm):
@@ -36,3 +39,4 @@ class OrderForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
+            

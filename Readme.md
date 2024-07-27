@@ -354,8 +354,7 @@ The site has been built with the following tech, tools and libraries
 * [CI Python Linter](https://pep8ci.herokuapp.com/) - code analysis tool conforming to pep8
 * Prettier - code formatter for html, css and javascript
 * ESLint - code analysis tool for javascript
-* Jest - frontend testing library
-* Whitenoise - serving static files
+
 
 
 

@@ -16,7 +16,7 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=254, default="Mi Name")
     last_name = models.CharField(max_length=254, default="Mi Last Name")
     image = models.ImageField(
-        default='static/images/profile_images/user1.jpg',
+        default='static/images/profile_images/default_profile.png',
         upload_to='static/images/profile_images/',
         )
     email = models.EmailField(max_length=254)

@@ -11,7 +11,12 @@
             <div class="card">
                 <div class="card-body">
                     <div class="text-center">
+                        {% if user.profile.image%}
                         <img src="{{ user.profile.image.url }}" alt="Profile Image" class="img-fluid rounded-circle mb-3 adjust-image" style="width: 150px; height: 150px;">
+                        {% else %}
+                        <img src="{% static 'images/hero.png' %}" alt="Profile Image" class="img-fluid rounded-circle mb-3 adjust-image" style="width: 150px; height: 150px;">
+
+                        {% endif%}
                         <h5 class="card-title">{{ user.get_full_name }}</h5>
                         <p class="card-text text-black">{{ user.email }}</p>
                         <p class="card-text">Membership: {{ user.profile.my_memberships }}</p>
@@ -29,6 +34,7 @@
                 <div class="card-body">
                     <h5 class="card-title mb-3">Reserved Classes</h5>
                     <hr>
+                    {% if booking %}
                     <ul>
                         {% for booking in user.profile.booking_set.all %}
                         <li class="d-flex justify-content-between">
@@ -45,6 +51,9 @@
                         </li>
                         {% endfor %}
                     </ul>
+                    {% else %}
+                    <span>You haven't booked any activities yet.</span>
+                    {% endif %}
                     <hr>
                     <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#changeMembershipModal">
                         Change Membership
