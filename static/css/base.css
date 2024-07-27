@@ -175,6 +175,15 @@ font-style: normal;
     scale: 1.1;
     color: white!important;
 }
+.modal-footer{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between!important;
+}
+.btn{
+    padding: 5px;
+}
 
 /*-------------------Product*/
 

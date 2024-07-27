@@ -79,9 +79,6 @@
                 <div class="carousel-inner">
                     {% for product in products %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <div class="carousel-caption d-none d-md-block text-black">
-                            <h5 class="fs-6 text">{{ product.name }}</h5>
-                        </div>
                         <img src="{{ product.image.url }}" class="d-block w-50 mx-auto rounded-3" alt="{{ product.name }}">
                     </div>
                     {% endfor %}

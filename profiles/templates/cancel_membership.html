@@ -1,0 +1,27 @@
+<!-- cancel_membership.html -->
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+<div class="modal fade" id="cancelMembershipModal" tabindex="-1" aria-labelledby="cancelMembershipModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-black">
+                <h5 class="modal-title" id="cancelMembershipModalLabel">Cancel Membership</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-black text-center">
+                <p>Are you sure you want to delete your account ?</p>
+                <p>This process cannot be undone, all your information will be deleted.</p>
+                <form method="post" action="{% url 'cancel_membership' %}">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <button type="submit" class="btn btn-warning">Cancel my membership</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

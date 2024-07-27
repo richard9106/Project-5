@@ -104,21 +104,6 @@ def delete_booking(request, booking_id):
 
 
 @login_required
-def edit_booking(request, booking_id):
-    """change selected class"""
-    booking = get_object_or_404(Booking, id=booking_id)
-    if request.method == 'POST':
-        edit_booking_form = BookingForm(request.POST, instance=booking)
-        if form.is_valid():
-            form.save()
-            return redirect('profile')
-    else:
-        edit_booking_form = BookingForm(instance=booking)
-
-    return render(request, 'edit_booking.html', {'form': edit_booking_form, 'booking': booking})
-
-
-@login_required
 def change_membership(request):
     """Change our subscription"""
     if request.method == 'POST':
@@ -133,3 +118,18 @@ def change_membership(request):
         form = MembershipForm()
 
     return render(request, 'change_membership.html', {'form': form})
+
+
+@login_required
+def cancel_membership(request):
+    """Cancel membership, delete user profile, and redirect to home"""
+    if request.method == 'POST':
+        # Get the user's profile and delete it
+        profile = get_object_or_404(Profile, user=request.user)
+        user = profile.user
+        profile.delete()
+        user.delete()
+        messages.success(request, "Your membership has been cancelled and your profile has been deleted.")
+        return redirect('home')
+
+    return render(request, 'cancel_membership.html')

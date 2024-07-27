@@ -20,9 +20,14 @@
                         <h5 class="card-title">{{ user.get_full_name }}</h5>
                         <p class="card-text text-black">{{ user.email }}</p>
                         <p class="card-text">Membership: {{ user.profile.my_memberships }}</p>
-                        <a href="#" class="btn btn-color-one" data-bs-toggle="modal" data-bs-target="#editProfileModal">
-                            Edit Profile
-                        </a>
+                        <div class="d-flex  flex-column text-center">
+                            <a href="#" class="btn btn-color-one" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                                Edit Profile
+                            </a>
+                            <a href="#" class="text-danger text-decoration-underline fs-6" data-bs-toggle="modal" data-bs-target="#cancelMembershipModal {{user.profile.my_memebership.id}}">
+                                Delete my profile and membership
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -34,18 +39,15 @@
                 <div class="card-body">
                     <h5 class="card-title mb-3">Reserved Classes</h5>
                     <hr>
-                    {% if booking %}
+                    {% if user.profile.booking_set.all %}
                     <ul>
                         {% for booking in user.profile.booking_set.all %}
                         <li class="d-flex justify-content-between">
                             {{ booking.gym_class.name }}
                             <span class="text-end">
                                 {{ booking.gym_class.day_of_week }} {{ booking.gym_class.time }}
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#editBookingModal{{ booking.id }}">
-                                    <i class="bi bi-pencil-square mx-2 icon-color" title="Edit"></i>
-                                </a>
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#deleteBookingModal{{ booking.id }}">
-                                    <i class="bi bi-trash mx-2 icon-color" title="Delete"></i>
+                                    <i class="bi bi-trash mx-2 icon-color" title="Cancel"></i>
                                 </a>
                             </span>
                         </li>
@@ -111,11 +113,13 @@
     </div>
 </div>
 
+
+
 {% endfor %}
 
 {% include 'change_membership.html' %}
+{% include 'cancel_membership.html' %}
 {% for booking in user.profile.booking_set.all %}
-    {% include 'edit_booking.html' with booking_id=booking.id %}
     {% include 'delete_booking.html' with booking_id=booking.id %}
 {% endfor %}
 

@@ -2,7 +2,7 @@
 {% load static%}
 {% load crispy_forms_tags %}
 {% block content-gymclass %}
-<div class="container">
+<div class="lg-container md-container-fluid">
     <div class="text-center py-3">
         <h2 class="text-center mb-4 mmb-title">Classes</h2>
     </div>
@@ -27,18 +27,24 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         {% if user.is_authenticated %}
-                        <button class="btn btn-large btn-outline orange-color reserve-btn" data-toggle="modal" data-target="#reserveModal{{ gymclass.id }}">
-                            Reserve Class
-                        </button>
-                            {% if user.is_superuser %}
-                            <a href="{% url 'edit_class' gymclass.id %}" class="btn btn-large btn-outline orange-color reserve-btn">
-                                Edit/Delete
-                            </a>
+                            {% if user.profile.my_memberships %}
+                                <button class="btn btn-large btn-outline orange-color reserve-btn" data-bs-toggle="modal" data-bs-target="#reserveModal{{ gymclass.id }}">
+                                    Reserve Class
+                                </button>
+                                {% if user.is_superuser %}
+                                    <a href="{% url 'edit_class' gymclass.id %}" class="btn btn-large btn-outline orange-color reserve-btn">
+                                        Edit/Delete
+                                    </a>
+                                {% endif %}
+                            {% else %}
+                                <a href="{% url 'membership_list' %}" class="btn btn-large btn-custom text-white">
+                                    Get my Membership
+                                </a>
                             {% endif %}
                         {% else %}
-                        <a href="{% url 'account_signup' %}" class="btn btn-large btn-custom text-white">
-                            Login to Reserve
-                        </a>
+                            <a href="{% url 'account_signup' %}" class="btn btn-large btn-custom text-white">
+                                Login to Reserve
+                            </a>
                         {% endif %}
                     </div>
                   
@@ -55,15 +61,16 @@
                     
                     </div>
                     <div class="modal-body text-black">
-                        <p><strong>User Name:</strong> {{user}}</p> <!-- Aquí puedes reemplazar "John Doe" con el nombre del usuario dinámicamente -->
+                        <p><strong>User Name:</strong> {{user}}</p> 
                         <p><strong>Class Name:</strong> {{ gymclass.name }}</p>
-                        <p><strong>Day:</strong> {{gymclass.day_of_week}}</p> <!-- Ejemplo: día de la semana -->
-                        <p><strong>Time:</strong> {{gymclass.time}}</p> <!-- Ejemplo: hora -->
+                        <p><strong>Day:</strong> {{gymclass.day_of_week}}</p> 
+                        <p><strong>Time:</strong> {{gymclass.time}}</p> 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary bg-danger" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                         <form method="post" action="{% url 'reserve_class' gymclass.id %}">
                             {% csrf_token %}
+                            
                             <button type="submit" class="btn btn-custom">Confirm Reservation</button>
                         </form>
                       
@@ -81,12 +88,4 @@
 </div>
 
 
-
-<script>
-    $(document).ready(function(){
-        if($('.toast').length > 0){
-            $('.toast').toast('show');
-        }
-    });
-    </script>
 {% endblock %}

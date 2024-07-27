@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container mt-5 ">
+        <div class="text-center py-3">
+            <h2 class="text-center mb-4 mmb-title">New Product</h2>
+        </div>
+        <div class="row glass-effect-no-width">
+            <div class="col-md-6 d-flex flex-column justify-content-between ">
+                <!-- Display the class image -->
+                <img src="{% static 'images/default-product-image.png' %}" alt="default-product-image" class="img-fluid">
+
+                <div class="my-3">
+                    <a href="#" class="btn btn-color-two reserve-btn"  data-bs-toggle="modal" data-bs-target="#addCategoryModal">Add new Category</a> 
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- Form for editing the class -->
+                <form method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="text-end">
+                        <button type="submit" name="save" class="btn btn-large btn-custom text-white">Save Changes</button>
+                        <button type="submit" name="cancel" class="btn btn-secondary">Cancel</button>
+                        <button type="submit" name="delete" class="btn btn-danger">Delete Class</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- Modal for adding a new category -->
+    <div class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="addCategoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-black">
+                    <h5 class="modal-title" id="addCategoryModalLabel">Add New Category</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addCategoryForm" method="post">
+                        {% csrf_token %}
+                        {{ category_form|crispy }}
+                        <button type="submit" class="btn btn-color-one reserve-btn">Add Category</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+
+ 
