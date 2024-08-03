@@ -18,7 +18,7 @@
           <p class="card-text orange-color">
             <strong>Price: ${{ membership.price }}</strong>
           </p>
-          <a type="button" href="{% url 'account_signup' %}?membership_id={{ membership.id }}" class="btn btn-primary-custom btn-primary">Sign Me Up</a>
+          <a type="button" href="{% url 'pay_membership' membership.id %} " class="btn btn-primary-custom btn-primary">Sign Me Up</a>
 
         </div>
       </div>

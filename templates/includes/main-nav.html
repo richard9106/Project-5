@@ -123,7 +123,7 @@
           <a href="{% url 'account_logout' %}" class="dropdown-item"
             >Logout</a>
           {% else %}
-          <a href="{% url 'account_signup' %}" class="dropdown-item"
+          <a href="{% url 'membership_list' %}" class="dropdown-item"
             >Register</a
           >
           <a href="{% url 'account_login' %}" class="dropdown-item"
@@ -132,7 +132,7 @@
           {% endif %}
         </div>
       </li>
-      {% if user.authenticate %}
+      {% if user.is_authenticated %}
       <li class="list-inline-item">
         <a
           class="{% if grand_total %}text-info fw-bold{% else %}text-black{% endif %} nav-link"

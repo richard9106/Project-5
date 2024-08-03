@@ -1,9 +1,7 @@
 from django.urls import path
-from . import views
+from . import views, web_hooks
 
 
 urlpatterns = [
-    path('initiate_payment/', views.initiate_payment, name='initiate_payment'),
-    path('payments/success/', views.payment_success, name='payment_success'),
-    path('payments/cancel/', views.payment_cancel, name='payment_cancel'),
+    path('pay_membership/<int:membership_id>', views.checkout, name='pay_membership'),
 ]

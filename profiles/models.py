@@ -20,6 +20,8 @@ class Profile(models.Model):
         upload_to='static/images/profile_images/',
         )
     email = models.EmailField(max_length=254)
+    phone_number = models.CharField(max_length=20, null=True, blank=True)
+    birthday = models.DateField(null=True, blank=True)
     my_memberships = models.ForeignKey(Membership, on_delete=models.CASCADE, blank=True, null=True)
     create_on = models.DateTimeField(
         auto_now_add=True,

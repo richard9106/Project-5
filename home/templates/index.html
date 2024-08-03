@@ -4,7 +4,7 @@
 {% block page_header %}
     <div class="container-fluid header-container">
         <div class="row flex-nowrap">
-            <div class="col p-5">
+            <div class="col p-5 lg-text-center">
                 <h1 class="alfa-slab-one-regular orange-color">
                     fitnes <br/> training
                 </h1>
@@ -23,8 +23,9 @@
                         Cardio Exercises
                     </li>
                 </ul>
-                <div>
-                    <button type="button" class="btn btn-primary-custom " style="width: 400px;" data-toggle="modal" data-target="#signupModal" data-membership-id="{{ membership.id }}">Sign Up</button>
+                <div class="ps-3">
+                    <a href="{% url 'membership_list' %}" class="btn btn-lg bg-main-color">
+                        Get my membership</a>
                 </div>
             </div>
 

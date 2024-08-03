@@ -11,8 +11,8 @@ class UserProfileForm(forms.ModelForm):
         """define the model and exclude user name"""
         model = Profile
         exclude = ('user', 'create_on', 'active')
-        fields = ['image', 'first_name', 'last_name', 'email', 'my_memberships']
-        
+        fields = ['image', 'first_name', 'last_name', 'birthday', 'email']
+
         def __init__(self, *args, **kwargs):
             """
             Add placeholders and classes, remove auto-generated
@@ -24,8 +24,9 @@ class UserProfileForm(forms.ModelForm):
                 'first_name': 'First Name',
                 'last_name': 'Lirst Name',
                 'email': 'Email',
-                'my_memberships': 'Select membership'  
-                       
+                'phone_number': 'Phone Number',
+                'birthday':'Birthday',  
+
                 }
 
             labels = {
@@ -33,11 +34,11 @@ class UserProfileForm(forms.ModelForm):
                 'first_name': 'First Name',
                 'last_name': 'Lirst Name',
                 'email': 'Email',
-                'my_memberships': 'Select membership'  
-                
+                'birthday':'Birthday',
+
             }
 
-            
+
 
             for field in self.fields:
                 if field in placeholder:
@@ -48,7 +49,7 @@ class UserProfileForm(forms.ModelForm):
                     self.fields[field].widget.attrs['placeholder'] = placeholder
                 if field in labels:
                     self.fields[field].label = labels[field]
-                    
+
             self.fields['membership'].widget.attrs.update({'class': 'form-select'})
 
 
@@ -63,8 +64,8 @@ class BookingForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['gym_class'].widget.attrs.update({'class': 'form-control'})
-        
-        
+
+
 class MembershipForm(forms.Form):
     membership = forms.ModelChoiceField(queryset=Membership.objects.all(), empty_label=None, label='Select Membership')
 
