@@ -101,3 +101,9 @@ body {
 .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
 }
+
+/*______________________-forms*/
+
+.form-group > label{
+    color: #cc5200;
+}

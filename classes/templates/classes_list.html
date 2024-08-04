@@ -32,22 +32,17 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         {% if user.is_authenticated %}
-                            {% if user.profile.my_memberships %}
-                                <button class="btn btn-large btn-outline orange-color reserve-btn" data-bs-toggle="modal" data-bs-target="#reserveModal{{ gymclass.id }}">
-                                    Reserve Class
-                                </button>
-                                {% if user.is_superuser %}
-                                    <a href="{% url 'edit_class' gymclass.id %}" class="btn btn-large btn-outline orange-color reserve-btn">
-                                        Edit/Delete
-                                    </a>
-                                {% endif %}
-                            {% else %}
-                                <a href="{% url 'membership_list' %}" class="btn btn-large btn-custom text-white">
-                                    Get my Membership
+                            <button class="btn btn-large btn-outline orange-color reserve-btn" data-bs-toggle="modal" data-bs-target="#reserveModal{{ gymclass.id }}">
+                                Reserve Class
+                            </button>
+                            {% if user.is_superuser %}
+                                <a href="{% url 'edit_class' gymclass.id %}" class="btn btn-large btn-outline orange-color reserve-btn">
+                                    Edit/Delete
                                 </a>
                             {% endif %}
+                       
                         {% else %}
-                            <a href="{% url 'account_signup' %}" class="btn btn-large btn-custom text-white">
+                            <a href="{% url 'membership_list' %}" class="btn btn-large btn-custom text-white">
                                 Login to Reserve
                             </a>
                         {% endif %}

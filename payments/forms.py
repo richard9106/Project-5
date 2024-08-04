@@ -1,8 +1,6 @@
-from django import forms
+from allauth.account.forms import SignupForm
 from .models import Order
-from django.contrib.auth.models import User
-from profiles.models import Profile
-from memberships.models import Membership
+from django import forms
 
 
 class OrderForm(forms.ModelForm):
@@ -40,3 +38,15 @@ class OrderForm(forms.ModelForm):
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
             
+            
+class CustomSignupForm(SignupForm):
+    first_name = forms.CharField(max_length=30, label='Name')
+    last_name = forms.CharField(max_length=30, label='Last Name')
+    phone_number = forms.CharField(max_length=20, label='Phone', required=False)
+
+    def save(self, request):
+        user = super(CustomSignupForm, self).save(request)
+        user.first_name = self.cleaned_data['first_name']
+        user.last_name = self.cleaned_data['last_name']
+        user.save()
+        return user

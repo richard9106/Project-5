@@ -66,9 +66,8 @@
     </div>
 </div>
 
-{% for booking in user.profile.booking_set.all %}
-<!-- Modals -->
 
+<!-- Modal edit profile -->
 <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -92,6 +91,9 @@
         </div>
     </div>
 </div>
+
+{% for booking in user.profile.booking_set.all %}
+<!-- Modals -->
 
 
 <div class="modal fade" id="editBookingModal{{ booking_id }}" tabindex="-1" aria-labelledby="editBookingModalLabel{{ booking_id }}" aria-hidden="true">

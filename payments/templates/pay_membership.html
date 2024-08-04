@@ -21,29 +21,42 @@
             </div>
         </div>
         <div class="col">
-            <div class="card">
-                <form id="payment-form" class="text-black"  method="post">
-                    {% csrf_token %}
-                    <input type="hidden" name="membership_id" value="{{ membership.id }}">
-                    <div class="form-group">
-                        <label for="card-number" class="orange-color">Card number</label>
-                        <div id="card-number"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="card-expiry" class="orange-color">Expired date</label>
-                        <div id="card-expiry"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="card-cvc" class="orange-color">CVC code</label>
-                        <div id="card-cvc"></div>
-                    </div>
-                    <button type="submit" class="btn btn-lg bg-main-color mt-3 w-25" id="submit-button">Pagar</button>
-                    <div id="card-errors" role="alert"></div>
-                     <!--Pass the client secret to the view so we can get payment intent id-->
-                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                    
-                </form>
-            </div>
+            <form id="payment-form" class="text-black"  method="POST" action="{% url 'pay_membership' membership.id %}">
+                {% csrf_token %}
+                <div class="card" id="collapse-profile-form">
+                    {{ profile_form|crispy }}
+                    <button 
+                        class="btn btn-lg bg-main-color mt-3 p-2" 
+                        id="save-profile-button"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-pay-form" aria-expanded="false" aria-controls="collapse-pay-form"
+                        >Go to checkout</button>
+                </div>
+                <div class="card collapse mt-5" id="collapse-pay-form">
+                <input type="hidden" name="membership_id" value="{{ membership.id }}">
+                <div class="form-group">
+                    <label for="card-number" class="orange-color">Card number</label>
+                    <div id="card-number"></div>
+                </div>
+                <div class="form-group">
+                    <label for="card-expiry" class="orange-color">Expired date</label>
+                    <div id="card-expiry"></div>
+                </div>
+                <div class="form-group">
+                    <label for="card-cvc" class="orange-color">CVC code</label>
+                    <div id="card-cvc"></div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-lg bg-main-color mt-3" id="submit-button">Get membership</button>
+                    <button 
+                    class="btn btn-lg bg-main-color mt-3 " id="open-profile-form"
+                    data-bs-toggle="collapse" data-bs-target="#collapse-pay-form" 
+                    aria-expanded="false" aria-controls="collapse-pay-form">change profile</button>
+                </div>
+                <div id="card-errors" role="alert"></div>
+                    <!--Pass the client secret to the view so we can get payment intent id-->
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -105,6 +118,21 @@
                 }
              })
         });
+
+        // hide profile payment info
+        var profile_form = document.getElementById('collapse-profile-form')
+        var hidde_profile_action = document.getElementById('save-profile-button')
+        var show_profile_action = document.getElementById('open-profile-form')
+    
+            $("#open-profile-form").on( "click", function() {	 
+	        $('#collapse-profile-form').toggle('slow');
+	         });
+
+             $("#save-profile-button").on( "click", function() {	 
+	            $('#collapse-profile-form').toggle('slow');
+	         });
+
+
     });
 </script>
 
