@@ -26,34 +26,26 @@ def checkout(request, membership_id):
 
     if request.method == 'POST':
         if profile_form.is_valid():
-            username = profile_form.cleaned_data['username']
-            email = profile_form.cleaned_data['email']
-            password = profile_form.cleaned_data['password1']
-            first_name = profile_form.cleaned_data.get('first_name', '')
-            last_name = profile_form.cleaned_data.get('last_name', '')
-            phone_number = profile_form.cleaned_data.get('phone_number', '')
-            birthday = profile_form.cleaned_data.get('birthday', None)
-
-            # Create user
-            user = User.objects.create_user(username=username, email=email, password=password)
+            # Save the user using the form's save method
+            user = profile_form.save(request)
             
             # Retrieve and update profile
             profile, created = Profile.objects.get_or_create(user=user)
-            profile.first_name = first_name
-            profile.last_name = last_name
-            profile.email = email
-            profile.phone_number = phone_number
-            profile.birthday = birthday
+            profile.first_name = profile_form.cleaned_data['first_name']
+            profile.last_name = profile_form.cleaned_data['last_name']
+            profile.email = profile_form.cleaned_data['email']
+            profile.phone_number = profile_form.cleaned_data.get('phone_number', '')
             profile.my_memberships = membership
             profile.active = True
             profile.save()
+
             
             # Specify the backend for allauth
             user.backend = 'allauth.account.auth_backends.AuthenticationBackend'
 
 
             # Log the user in
-            login(request, user)
+            login(request, user, backend='allauth.account.auth_backends.AuthenticationBackend')
             
             # Create subscription
             Subscription.objects.create(user=user, membership=membership)

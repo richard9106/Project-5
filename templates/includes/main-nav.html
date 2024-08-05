@@ -63,7 +63,9 @@
             Activities
           </a>
         </li>
-
+        {% if request.user.is_authenticated %} 
+        
+        {% else %}
         <li class="nav-item dropdown">
           <a
             class=" nav-link me-5"
@@ -73,6 +75,7 @@
             Memberships
           </a>
         </li>
+        {% endif%}
 
         <li class="nav-item ">
           <a

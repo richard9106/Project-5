@@ -246,7 +246,7 @@ footer{
 }
 
 
-/* Estilo para centrar el texto */
+/* Toast */
 #id_password_helptext > a{
     color: #ff6600!important;
     color: #F29E23;
@@ -267,3 +267,6 @@ footer{
 .toast-capper{
     height: 2px;
 }
+
+/*Bag*/
+
