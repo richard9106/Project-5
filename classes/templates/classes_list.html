@@ -3,9 +3,8 @@
 {% load crispy_forms_tags %}
 {% block content-gymclass %}
 <div class="lg-container md-container-fluid">
-    <div class="text-center py-3">
-        <h2 class="text-center mb-4 mmb-title">Classes</h2>
-    </div>
+    <h2 class="logo-font my-4 text-end text-whitemt-5">My Classes</h2>
+    <hr class="main-color opacity-100" style="height: 10px;">
     {% if request.user.is_superuser %}
     <div class=" text-start mb-5">
         <a href="{% url 'create_class' %}" class="btn btn-color-two reserve-btn">Add new class</a> 

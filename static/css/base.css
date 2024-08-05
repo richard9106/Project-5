@@ -5,6 +5,7 @@
 /*------------Globals*/
 body{
     min-width: 100%;
+    min-height: 100vh;
     background-color: #0F2435!important;
     color: black;
     scroll-behavior: smooth;
@@ -20,6 +21,9 @@ li{
 
 hr{
     opacity: 1!important;
+}
+main{
+    min-height: 60vh;
 }
 
 .logo{
@@ -140,6 +144,13 @@ font-style: normal;
     object-fit: cover;
 }
 
+@media (max-width:480px){
+
+    .keep-link{
+        font-size: 14px;
+    }
+}
+
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
     width: 0; 
@@ -197,9 +208,9 @@ font-style: normal;
       color:white;
     }
 .glass-bckg{
-    background: rgba(81, 111, 194, 0.1);
+    background: rgba(0, 0, 0, 0.3);
     -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
     border: 1.5px solid rgba(209, 213, 219, 0.3);
 }
 
@@ -270,3 +281,36 @@ footer{
 
 /*Bag*/
 
+@media (max-width:480px){
+    .card-body{
+        padding: 0;
+    }
+    .bag-container{
+        width: 95%!important;
+    }
+
+}
+
+@media (max-width:768px) {
+    .bag-container{
+        flex-direction: column-reverse !important;
+    }
+    
+}
+
+
+@media (max-width:768px) {
+    .bag-container{
+        margin: 0 auto;
+        width: 80%!important;
+    }
+    
+}
+
+@media (max-width:1200px) {
+    .bag-container{
+        margin: 0 auto;
+        width: 100%!important;
+    }
+    
+}

@@ -5,20 +5,20 @@
 {% block content %}
     <div class="overlay"></div>
  
-    <h2 class="logo-font mb-4 text-end text-whitemt-5">My Bag</h2>
+    <h2 class="logo-font my-4 text-end text-whitemt-5">My Bag</h2>
     <hr class="main-color opacity-100" style="height: 10px;">
-    {% if bag_items %}
 
-    <div class="row justify-content-center">
+    {% if bag_items %}
+    <div class="flex-sm-column-reverse  flex-md-column-reverse flex-lg-row row justify-content-center bag-container ">
 
        
-        <div class="col-md-4 mb-4">
+        <div class="col-lg-4 mb-4">
             {% for item in bag_items %}
-            <div class="mt-3 glass-bckg p-3 rounded ">
+            <div class="glass-bckg p-3 rounded mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">{{ item.product.sku|upper }}</h5>
-                    <div class="d-flex">
-                        <p>
+                    <h5 class="card-title my-2">{{ item.product.sku|upper }}</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p >
                             {{ item.product.name }}
                         </p>
                         {% if item.product.image %}
@@ -78,62 +78,80 @@
         </div>
         
         <!-- Order Sumary -->
-        <div class="col-md-6 mb-4">
+        <div class="col-lg-6 mb-4 p-sm-0">
 
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Order summary</h5>
-                        <ul class="list-group mb-3">
-                            <li class="d-flex gap-3 justify-content-between bg-white p-2 text-center">
-                                <span>Product</span>
-                                <span>Qty</span>
-                                <span>Sub Totak</span>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Order summary</h5>
+                    <ul class="list-group mb-3">
+                        <li class="d-flex gap-3 justify-content-between bg-white p-2 text-center">
+                            <span>Product</span>
+                            <div class="text-black d-flex justify-content-between" style="width: 200px;">
+                                <span class="text-center">Quantity</span>
+                                <span>Sub Total</span>
+                            </div>
 
-                            </li>
-                            {% for item in bag_items %} 
-                            <li class="d-flex gap-3 justify-content-between bg-white p-2 text-center">
-                                <span class="orange-color">{{ item.product.sku|upper }}</span>
-                                <span style="width:30px ;" class="text-start">{{item.quantity}}</span>
+                        </li>
+                        {% for item in bag_items %} 
+                        <li class="d-flex gap-3 justify-content-between bg-white p-2 text-center">
+                            <span class="orange-color fs-6 text-break">{{ item.product.sku|upper }}</span>
+                            <div class="text-black d-flex justify-content-between" style="width: 200px;">
+                                <span class="text-center" style="width: 74px;">{{item.quantity}}</span>
                                 <span>{{ item.product.price | calc_subtotal:item.quantity }}</span>
-
-                            </li>
-
-
-                            {% endfor %}
-                        </ul>
-
-                        <div class="card-footer">
-                            <div class="text-end pe-2">
-                                <p class="mt-4 text-black">Grand Total: <strong class="orange-color">${{ grand_total|floatformat:2 }}</strong></p>
                             </div>
-                            <div class="d-flex justify-content-between">
-                                <a href="{% url 'all_products' %}" class="btn btn-outline-black rounded-0 keep-link">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left p-2"></i>
-                                    </span>
-                                    <span class="text-uppercase custom-button fw-6">Keep Shopping</span>
-                                </a>
-                                <a href="#" class="btn btn-black rounded-0 keep-link">
-                                    <span class="text-uppercase custom-button fw-6">Secure Checkout</span>
-                                    <span class="icon">
-                                        <i class="fas fa-lock p-2"></i>
-                                    </span>
-                                </a>
-                            </div>
-                            
 
+                        </li>
+
+
+                        {% endfor %}
+                    </ul>
+
+                    <div class="card-footer">
+                        <div>
+                            <p class="text-black">You can pick up all the products at your gym just by giving your name.</p>
                         </div>
+                        <div class="text-end pe-2">
+                            <p class="mt-4 text-black">Grand Total: <strong class="orange-color">${{ grand_total|floatformat:2 }}</strong></p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <a href="{% url 'all_products' %}" class="btn btn-outline-black rounded-0 keep-link">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left p-2"></i>
+                                </span>
+                                <span class="text-uppercase custom-button fw-6">Keep Shopping</span>
+                            </a>
+                            <a href="#" class="btn btn-black rounded-0 keep-link">
+                                <span class="text-uppercase custom-button fw-6">Secure Checkout</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock p-2"></i>
+                                </span>
+                            </a>
+                        </div>
+                        
+
                     </div>
                 </div>
+            </div>
         </div>
         
     </div>
     {% endif %}
+    <div>
 
-      
-            </div>
+        <h3>You haven't added any products to the bag yet.</h3>
+        <hr>
+        <div>
+            <a href="{% url 'all_products' %}" class="btn btn-outline-black rounded-0 keep-link">
+                <span class="icon">
+                    <i class="fas fa-chevron-left p-2"></i>
+                </span>
+                <span class="text-uppercase custom-button fw-6">Keep Shopping</span>
+            </a>
         </div>
+
+
     </div>
+      
 {% endblock %}
 
 {% block postloadjs %}
