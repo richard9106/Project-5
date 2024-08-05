@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row mt-5">
         <h2>Secure Checkout</h2>
-        <div class="col">
+        <div class="col-lg mb-3">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ membership.name }}</h5>
@@ -14,13 +14,13 @@
                         <li class="list-group-item">{{ advantage.description }}</li>
                         {% endfor %}
                     </ul>
-                    <p class="card-text orange-color">
+                    <p class="card-text orange-color fs-5">
                         <strong>Price: ${{ membership.price }}</strong>
                     </p>
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-lg">
             <form id="payment-form" class="text-black"  method="POST" action="{% url 'pay_membership' membership.id %}">
                 {% csrf_token %}
                 <div class="card" id="collapse-profile-form">
@@ -46,9 +46,9 @@
                     <div id="card-cvc"></div>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <button class="btn btn-lg bg-main-color mt-3" id="submit-button">Get membership</button>
+                    <button class="btn bg-main-color mt-3" id="submit-button">Get membership</button>
                     <button 
-                    class="btn btn-lg bg-main-color mt-3 " id="open-profile-form"
+                    class="btn bg-main-color mt-3 " id="open-profile-form"
                     data-bs-toggle="collapse" data-bs-target="#collapse-pay-form" 
                     aria-expanded="false" aria-controls="collapse-pay-form">change profile</button>
                 </div>

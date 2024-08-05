@@ -16,7 +16,7 @@ header{
   min-height: 80vh;
   align-items: center;
   margin-bottom: 50px;
-  width: 100%;
+  min-width: 100%;
 }
 
 h1{

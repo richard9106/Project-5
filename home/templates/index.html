@@ -2,13 +2,13 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block page_header %}
-    <div class="container-fluid header-container">
-        <div class="row flex-nowrap">
-            <div class="col p-5 lg-text-center">
+    <div class="header-container">
+        <div>
+            <div class="col p-5 p-sm-0 text-center">
                 <h1 class="alfa-slab-one-regular orange-color">
                     fitnes <br/> training
                 </h1>
-                <ul>
+                <ul class="fs-5">
                     <li>
                         <i class="fa-solid fa-check-double"></i>
                         Resistance Traning
@@ -23,8 +23,8 @@
                         Cardio Exercises
                     </li>
                 </ul>
-                <div class="ps-3">
-                    <a href="{% url 'membership_list' %}" class="btn btn-lg bg-main-color">
+                <div>
+                    <a href="{% url 'membership_list' %}" class="btn btn-md-lg bg-main-color w-50">
                         Get my membership</a>
                 </div>
             </div>
