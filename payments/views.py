@@ -15,7 +15,7 @@ def checkout(request, membership_id):
     """Render payment page and handle POST request"""
     membership = Membership.objects.get(id=membership_id)
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    stripe_public_key = settings.STRIPE_PUBLISHABLE_KEY
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
     profile_form = CustomSignupForm(request.POST or None)
     
     stripe.api_key = stripe_secret_key
