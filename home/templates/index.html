@@ -24,7 +24,7 @@
                     </li>
                 </ul>
                 <div>
-                    <a href="{% url 'membership_list' %}" class="btn btn-md-lg bg-main-color w-50">
+                    <a href="{% url 'membership_list' %}" class="btn btn-md-lg bg-main-color mt-3 p-3 fs-5">
                         Get my membership</a>
                 </div>
             </div>
@@ -66,7 +66,7 @@
 </section>
 <hr class="orange-color "/>
 <!-- Motivational Section -->
-<section id="motivation" class="text-center my-5 p-5">
+<section id="motivation" class="text-center my-3 p-5">
     <h2>Join Us Today!</h2>
     <p>Experience the best fitness training and community at Iron Haven Fitness.</p>
     <a href="{% url 'membership_list' %}" class="btn btn-primary">Check Our Memberships</a>
@@ -74,7 +74,7 @@
 
 <!-- Products Section -->
 <section id="products" class="my-5">
-    <div class="row">
+    <div class="row flex-column-reverse flex-md-row">
         <div class="col-md-6">
             <div id="productsCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -96,7 +96,7 @@
         </div>
         <div class="col-md-6 d-flex align-items-center">
             <div>
-                <h3 class="orange-color">Exclusive Products for Members</h3>
+                <h3 class="orange-color text-center mb-3">Exclusive Products for Members</h3>
                 <p>As a member of Iron Haven Fitness, you have access to our exclusive range of fitness products available only at our gym. Join us today to enjoy these benefits and more!</p>
             </div>
         </div>
@@ -104,13 +104,13 @@
 </section>
 
 <!-- Contact Form Section -->
-<section class="mt-5 text-center md-w-50 md-w-100 mx-auto" id="contact">
-    <h2>Contact Us</h2>
+<section class="mt-5 mx-auto" id="contact">
+    <h2 class="text-center">Contact Us</h2>
     <div class="container">
-        <form method="post" action="{% url 'contact' %}" class="mt-4 text-start">
+        <form method="post" action="{% url 'contact' %}" class="mt-4">
             {% csrf_token %}
             {{ contact_form|crispy }}
-            <button type="submit" class="btn btn-primary">Send Message</button>
+            <button type="submit" class="btn btn-primary float-end">Send Message</button>
         </form>
     </div>
 </section>

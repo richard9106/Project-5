@@ -10,7 +10,9 @@ class OrderForm(forms.ModelForm):
     class Meta:
         """pass de form and defined fields"""
         model = Order
-        fields = ('full_name',
+        fields = (
+                  'first_name',
+                  'last_name',
                   'email',
                   'phone_number',
                   )
@@ -22,12 +24,13 @@ class OrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'full_name': 'Full Name',
+            'first_name': 'First Name',
+            'last_name': 'Last Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
         }
 
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['first_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'country':
                 if self.fields[field].required:

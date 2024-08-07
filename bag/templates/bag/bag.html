@@ -120,8 +120,8 @@
                                 </span>
                                 <span class="text-uppercase custom-button fw-6">Keep Shopping</span>
                             </a>
-                            <a href="#" class="btn btn-black rounded-0 keep-link">
-                                <span class="text-uppercase custom-button fw-6">Secure Checkout</span>
+                            <a href="{% url 'pay_product' %}" class="btn btn-black rounded-0 keep-link">
+                                <span class="text-uppercase custom-button fw-6">Buy now</span>
                                 <span class="icon">
                                     <i class="fas fa-lock p-2"></i>
                                 </span>
@@ -135,9 +135,9 @@
         </div>
         
     </div>
-    {% endif %}
+  
+    {% else %}
     <div>
-
         <h3>You haven't added any products to the bag yet.</h3>
         <hr>
         <div>
@@ -148,10 +148,11 @@
                 <span class="text-uppercase custom-button fw-6">Keep Shopping</span>
             </a>
         </div>
-
-
     </div>
-      
+    {% endif %}
+  
+
+
 {% endblock %}
 
 {% block postloadjs %}

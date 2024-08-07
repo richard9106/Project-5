@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load bag_tools %}
+
+<div class="container">
+    <div class="row mt-5">
+        <h2 class="logo-font my-4 text-end text-whitemt-5">Checkout</h2>
+        <hr class="main-color opacity-100" style="height: 10px;">
+        <div class="row">
+
+            <div class="col col-lg-6 order-lg-last mb-5 card">
+                <p class="text-muted">Products ({{ product_count }})</p>
+                <div class="row">
+                    <div class="col-7 offset-2">
+                        <p class="mb-1 mt-0 small text-muted">Item</p>
+                    </div>
+                    <div class="col-3 text-right">
+                        <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+                    </div>
+                </div>
+                {% for item in bag_items %}
+                    <div class="row">
+                        <div class="col-2 mb-1">
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                {% if item.product.image %}
+                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                                {% else %}
+                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="col-7">
+                            <p class="my-0 orange-color"><strong>{{ item.product.name }}</strong></p>
+                            <p class="my-0 small text-black">Qty:<strong>{{ item.quantity }} </strong></p>
+                        </div>
+                        <div class="col-3 text-right">
+                            <p class="my-0 small orange-color">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                <hr class="my-2">
+                <div class="row  text-rend">
+                    <div class="col-7 offset-2 text-black">
+                        <p class="my-0">Order Total:</p>
+                        <p class="my-0">Delivery:</p>
+                        <p class="my-0">Grand Total:</p>
+                    </div>
+                    <div class="col-3 orange-color">
+                        <p class="my-0">${{ total | floatformat:2 }}</p>
+                        <p class="my-0">${{ delivery | floatformat:2 }}</p>
+                        <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                    </div>
+                </div>          
+            </div>
+    
+        <div class="col-lg">
+            <form id="payment-form" class="text-black"  method="POST" action="">
+                {% csrf_token %}
+                <div class="card" id="collapse-profile-form">
+                    {{ order_form|crispy }}
+                 
+                </div>
+                <div class="card collapse mt-5" id="collapse-pay-form">
+                <div class="form-group">
+                    <label for="card-number" class="orange-color">Card number</label>
+                    <div id="card-number"></div>
+                </div>
+                <div class="form-group">
+                    <label for="card-expiry" class="orange-color">Expired date</label>
+                    <div id="card-expiry"></div>
+                </div>
+                <div class="form-group">
+                    <label for="card-cvc" class="orange-color">CVC code</label>
+                    <div id="card-cvc"></div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button class="btn bg-main-color mt-3" id="submit-button">Get membership</button>
+                    <button 
+                    class="btn bg-main-color mt-3 " id="open-profile-form"
+                    data-bs-toggle="collapse" data-bs-target="#collapse-pay-form" 
+                    aria-expanded="false" aria-controls="collapse-pay-form">change profile</button>
+                </div>
+                <div id="card-errors" role="alert"></div>
+                    <!--Pass the client secret to the view so we can get payment intent id-->
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+        var stripe = Stripe('{{ STRIPE_PUBLISHABLE_KEY }}'); 
+        var clientSecret = document.querySelector('input[name="client_secret"]').value;
+        var elements = stripe.elements();
+
+        // Crear elementos de tarjeta separados
+        var cardNumber = elements.create('cardNumber', {
+            placeholder: 'Número de Tarjeta'
+        });
+        var cardExpiry = elements.create('cardExpiry', {
+            placeholder: 'MM/AA'
+        });
+        var cardCvc = elements.create('cardCvc', {
+            placeholder: 'CVC'
+        });
+
+        // Montar los elementos en los contenedores correspondientes
+        cardNumber.mount('#card-number');
+        cardExpiry.mount('#card-expiry');
+        cardCvc.mount('#card-cvc');
+
+        // Manejar el envío del formulario
+        var form = document.getElementById('payment-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            $('#card-number').attr('disable', true);
+            $('#submit-button').attr('disable', true);
+
+            stripe.confirmCardPayment(clientSecret,{
+                payment_method: {
+                    card: cardNumber,
+                    
+                }
+                 
+             }).then(function(result){
+                var errorDiv = document.getElementById('card-error');
+                if (result.error) {
+                    var html = `
+                        <span class="icon" role="alert">
+                            <i class="fas fa-times"></i>
+                        </span>
+                        <span>${result.error.message}</span>
+                    `;
+                    $(errorDiv).html(html);
+                    $('#card-number').attr('disable', false);
+
+                    $('#submit-button').attr('disable', false);
+
+                } else {
+                    if (result.paymentIntent.status === 'succeeded'){
+                        form.submit()
+                    }
+                }
+             })
+        });
+
+        // hide profile payment info
+        var profile_form = document.getElementById('collapse-profile-form')
+        var hidde_profile_action = document.getElementById('save-profile-button')
+        var show_profile_action = document.getElementById('open-profile-form')
+    
+            $("#open-profile-form").on( "click", function() {	 
+	        $('#collapse-profile-form').toggle('slow');
+	         });
+
+             $("#save-profile-button").on( "click", function() {	 
+	            $('#collapse-profile-form').toggle('slow');
+	         });
+
+
+    });
+</script>
+
+{% endblock %}
+
+
