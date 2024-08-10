@@ -1,5 +1,4 @@
 """Product Views"""
-
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -65,17 +64,6 @@ def all_products(request):
 
 
 @login_required
-def product_detail(request, product_id):
-    """A view show individual info product"""
-
-    product = get_object_or_404(Product, pk=product_id)
-    context = {
-        'product': product,
-    }
-    return render(request, "product_detail.html", context)
-
-
-@login_required
 def create_product(request):
     """A view to create a new product"""
     if request.method == 'POST':
@@ -118,7 +106,7 @@ def manage_product(request, product_id):
             else:
                 messages.error(request, 'Check your form  something is not right.')
                 return redirect('edit_class')
-                
+             
         elif 'delete' in request.POST:
             product_manage.delete()
             messages.success(request, 'Class deleted successfully.')

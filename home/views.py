@@ -5,20 +5,43 @@ from products.models import Product
 from classes.models import GymClass
 from .forms import ContactForm
 
+from .forms import NewsletterForm
+from .models import NewsletterSubscription
 
-# Create your views here.
+
+
 def index(request):
-    """ View for home page"""
+    """ View for home page """
     products = Product.objects.all()
-    classes  = GymClass.objects.all()
+    classes = GymClass.objects.all()
     form = ContactForm()
-    return render(request, "index.html",{
-        'products':products,
-        'classes':classes,
+    news_form = NewsletterForm()
+
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        if email:
+            # Check if email already exists
+            if NewsletterSubscription.objects.filter(email=email).exists():
+                messages.error(request, 'You are already subscribed.')
+            else:
+                # Save the new subscription
+                NewsletterSubscription.objects.create(email=email)
+                messages.success(request, 'Thank you for subscribing to our newsletter!')
+            return redirect('home')
+        else:
+            messages.error(request, 'No email in the newsletter')
+            return redirect('home')
+
+    return render(request, "index.html", {
+        'products': products,
+        'classes': classes,
         'contact_form': form,
+        'news_form': news_form,
     })
-    
+
+
 def contact_view(request):
+    """Manage contact form"""
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -39,4 +62,4 @@ def contact_view(request):
     else:
         form = ContactForm()
 
-    return render(request, 'contact.html', {'contact_form': form})
+    return render(request, 'home', {'contact_form': form})

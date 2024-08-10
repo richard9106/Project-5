@@ -10,7 +10,7 @@
         <div class="row">
 
             <div class="col col-lg-6 order-lg-last mb-5 card">
-                <p class="text-muted">Products ({{ product_count }})</p>
+                <p class="text-muted">Total Products : {{ product_count }}</p>
                 <div class="row">
                     <div class="col-7 offset-2">
                         <p class="mb-1 mt-0 small text-muted">Item</p>
@@ -22,7 +22,7 @@
                 {% for item in bag_items %}
                     <div class="row">
                         <div class="col-2 mb-1">
-                            <a href="{% url 'product_detail' item.product.id %}">
+                            <a href="#">
                                 {% if item.product.image %}
                                     <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                                 {% else %}
@@ -35,7 +35,7 @@
                             <p class="my-0 small text-black">Qty:<strong>{{ item.quantity }} </strong></p>
                         </div>
                         <div class="col-3 text-right">
-                            <p class="my-0 small orange-color">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                            <p class="my-0 small text-black">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -46,7 +46,7 @@
                         <p class="my-0">Grand Total:</p>
                     </div>
                     <div class="col-3 orange-color text-end">
-                        <p class="my-0">${{ total | floatformat:2 }}</p>
+                        <p class="my-0 text-black">${{ total | floatformat:2 }}</p>
                         <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
                     </div>
                 </div>          

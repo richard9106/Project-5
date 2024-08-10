@@ -2,7 +2,7 @@
 # Project Name - Iron Haven Fitness
 
 
-* [Link to Deployed Project](https://Iron Haven Fitness2023-9cc8e49ac2b8.herokuapp.com/)
+* [Link to Deployed Project](https://ironhavengym-225d29547ff8.herokuapp.com/)
 
 ## CONTENTS
 * [USER EXPERIENCE (UX)](#user-experience)

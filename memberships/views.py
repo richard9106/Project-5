@@ -1,8 +1,11 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import login
-from .models import Membership
-from django.contrib.auth.models import User
+"""Render Membership page"""
 
+from django.shortcuts import render
+from .models import Membership
+from .decorators import unauthenticated_user
+
+
+@unauthenticated_user
 def membership_list(request):
     """Render view for membership list"""
     memberships = Membership.objects.all()
