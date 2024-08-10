@@ -19,11 +19,11 @@
             <div class="card border h-100">
                 {% if product.image %}
                 <a href="#" data-bs-toggle="modal" data-bs-target="#productModal{{ product.id }}">
-                    <img class="card-img-top img-fluid rounded-4" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <img class="card-img-top img-fluid rounded-4" loading="lazy" src="{{ product.image.url }}" alt="{{ product.name }}">
                 </a>
                 {% else %}
                 <a href="#" data-bs-toggle="modal" data-bs-target="#productModal{{ product.id }}">
-                    <img class="card-img-top img-fluid rounded-4" src="{{ MEDIA_URL }}logo2.png" alt="{{ product.name }}">
+                    <img class="card-img-top img-fluid rounded-4" loading="lazy" src="{{ MEDIA_URL }}logo2.png" alt="{{ product.name }}">
                 </a>
                 {% endif %}
                 <div class="card-body pb-0">
@@ -88,7 +88,7 @@
                                     <div class="image-container my-5 text-center">
                                         {% if product.image %}
                                         <a href="{{ product.image.url }}" target="_blank">
-                                            <img class="card-img-top img-fluid  w-50 " src="{{ product.image.url }}" alt="{{ product.name }}">
+                                            <img class="card-img-top img-fluid  w-50 " loading="lazy" src="{{ product.image.url }}" alt="{{ product.name }}">
                                         </a>
                                         {% else %}
                                         <a href="#">

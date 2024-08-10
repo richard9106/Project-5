@@ -15,7 +15,7 @@
         {% if gymclass.date and gymclass.date >= gymclass.current_date %}
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-                <img class="card-img-top" src="{% if gymclass.image_class %}{{ gymclass.image_class.url }}{% else %}{% static '/images/default_class.jpg' %}{% endif %}" alt="{{ gymclass.name }}">
+                <img class="card-img-top" loading="lazy" src="{% if gymclass.image_class %}{{ gymclass.image_class.url }}{% else %}{% static '/images/default_class.jpg' %}{% endif %}" alt="{{ gymclass.name }}">
                 <div class="card-body">
                     <div class="py-3">
                         <h3 class="card-title text-center text-black">{{ gymclass.name }}</h3>
