@@ -1,10 +1,7 @@
 
 
-
 header{
-  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/bg-gym.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color:rgba(15, 36, 53, 0.5) ;
 }
 
 .header-container{
@@ -19,6 +16,13 @@ header{
   min-width: 100%;
 }
 
+@media (max-width:768px){
+  .header-container{
+    background-position: top right -300px;
+  }
+
+}
+
 h1{
   color: #f49b01;
   line-height: 1;
@@ -28,6 +32,7 @@ h1{
 
 .main-container{
   padding-bottom: 50px;
+  
 }
 
 .hero-image{

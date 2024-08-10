@@ -127,7 +127,7 @@ def checkout_products(request):
                 
             if 'bag' in request.session:
                 del request.session['bag']
-            messages.success(request, 'Your order has been processed correctly')
+            messages.success(request, 'Your order has been processed correctly.You can pick up your order at your gym!!! ')
             return redirect(reverse('my_profile_with_order',
                                     args=[order.order_number]))
         else:

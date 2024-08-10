@@ -84,9 +84,13 @@
                 {% endblock %}
 
             </div>
+
+            <!--Logins-->
+            {% block inner_content %}
+            {% endblock %}
         </main>
     </header>
-    
+   
    <!--Toast-->
    {% if messages %}
    <div class="message-container">
@@ -110,6 +114,7 @@
 
 
     <!--Footer-->
+    <hr class="main-color opacity-100" style="height: 10px;">
     <footer class="footer pt-5">
         <div class="container">
             <div class="row">

@@ -19,7 +19,7 @@
                         {% endif%}
                         <h5 class="card-title">{{ user.get_full_name }}</h5>
                         <p class="card-text text-black">{{ user.email }}</p>
-                        <p class="card-text">Membership: {{ user.profile.my_memberships }}</p>
+                        <p class="card-text text-black">Membership:<strong class="orange-color"> {{ user.profile.my_memberships }}</strong></p>
                         <div class="d-flex  flex-column text-center">
                             <a href="#" class="btn btn-color-one" data-bs-toggle="modal" data-bs-target="#editProfileModal">
                                 Edit Profile

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 from pathlib import Path
 import os
+import sys
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -155,6 +156,13 @@ LOGOUT_REDIRECT_URL = '/'
 DATABASES = {
     'default':dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+# config for tests
+
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': ':memory:',
+    }
 
 
 
