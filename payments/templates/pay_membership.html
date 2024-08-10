@@ -63,9 +63,9 @@
 
 
 <script>
-     document.addEventListener('DOMContentLoaded', function() {
-        var stripe = Stripe('{{ STRIPE_PUBLISHABLE_KEY }}'); 
-        var clientSecret = document.querySelector('input[name="client_secret"]').value;
+      $(document).ready(function() {
+        var stripe = Stripe('{{ STRIPE_PUBLISHABLE_KEY }}');
+        var clientSecret = $('input[name="client_secret"]').val();
         var elements = stripe.elements();
 
         // Crear elementos de tarjeta separados
@@ -83,6 +83,50 @@
         cardNumber.mount('#card-number');
         cardExpiry.mount('#card-expiry');
         cardCvc.mount('#card-cvc');
+
+        // Validar formulario de perfil usando evento 'invalid'
+        $('#collapse-profile-form :input[required]').each(function() {
+            $(this).on('invalid', function() {
+                $('#collapse-profile-form').collapse('show');
+                $('#collapse-pay-form').hide();
+                $(this).addClass('is-invalid'); 
+            });
+
+            $(this).on('input', function() {
+                if ($(this).val().trim() !== '') {
+                    $(this).removeClass('is-invalid'); 
+                }
+            });
+        });
+
+        // Función para comprobar si el formulario de perfil está completo
+        function isProfileFormComplete() {
+            var isComplete = true;
+            document.querySelector('#payment-form').reportValidity(); // Mostrar errores
+
+            $('#payment-form:input[required]').each(function() {
+                if ($(this).is(':hidden')) {
+                    return true; // Continuar con el siguiente campo si el campo actual es hidden
+                }
+                if (this.checkValidity() === false) { // Usar checkValidity nativo
+                    isComplete = false;
+                    return false; // Salir del loop si se encuentra un campo inválido
+                }
+            });
+            return isComplete;
+        }
+
+        // Manejar el botón "Go to checkout"
+        $('#save-profile-button').on('click', function() {
+            if (!isProfileFormComplete()) {
+                $('#collapse-profile-form').collapse('show');
+                $('#collapse-pay-form').hide();
+                alert('Por favor complete el formulario de perfil antes de proceder al pago.');
+            } else {
+                $('#collapse-profile-form').hide();
+                $('#collapse-pay-form').show();
+            }
+        });
 
         // Manejar el envío del formulario
         var form = document.getElementById('payment-form');
@@ -119,20 +163,11 @@
              })
         });
 
-        // hide profile payment info
-        var profile_form = document.getElementById('collapse-profile-form')
-        var hidde_profile_action = document.getElementById('save-profile-button')
-        var show_profile_action = document.getElementById('open-profile-form')
-    
-            $("#open-profile-form").on( "click", function() {	 
-	        $('#collapse-profile-form').toggle('slow');
-	         });
-
-             $("#save-profile-button").on( "click", function() {	 
-	            $('#collapse-profile-form').toggle('slow');
-	         });
-
-
+         
+        $('#open-profile-form').on('click', function() {
+             $('#collapse-pay-form').collapse('hide');
+             $('#collapse-profile-form').collapse('show');
+         });
     });
 </script>
 
