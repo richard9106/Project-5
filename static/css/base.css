@@ -147,6 +147,11 @@ font-style: normal;
     object-fit: cover;
 }
 
+.scrollable-box {
+    height: 300px; /* Adjust this value as needed */
+    overflow-y: scroll;
+}
+
 @media (max-width:480px){
 
     .keep-link{
@@ -227,7 +232,7 @@ footer{
 
 /*_________________________ signup and login*/
 
-/* Estilo para centrar el formulario */
+
 .form-container {
     display: flex;
     justify-content: center;
@@ -236,7 +241,6 @@ footer{
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Estilo para el efecto glass */
 .glass-effect {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 15px;

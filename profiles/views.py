@@ -1,21 +1,28 @@
 """ view when the user is Auth."""
-from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpResponse
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.views.decorators.http import require_POST
 from django.contrib.auth import logout
 from classes.models import Booking
+from payments.models import Order, OrderLineItem
 from .models import Profile
 from .forms import UserProfileForm, BookingForm, MembershipForm
 
 
 @login_required
-def profile(request):
+def profile(request, order=None):
     """Display Profile page for the Right User"""
     profile_model = get_object_or_404(Profile, user=request.user)
     form_profile = UserProfileForm(instance=request.user)
     edit_booking_form = BookingForm(request.POST, instance=profile_model)
-
+    
+    # get all the order
+    user_orders = profile_model.orders.all()
+    
+    if order:
+        order_item = get_object_or_404(user_orders, order_number=order)
+    else:
+        order_item = user_orders.first() if user_orders.exists() else None
 
     if request.method == 'POST':
         form_profile = UserProfileForm(request.POST,
@@ -33,11 +40,14 @@ def profile(request):
             messages.add_message(
                 request,
                 messages.WARNING,
-                'Something has gone wrong check your form')
+                'Something has gone wrong check your form')           
+    print(order_item)
     return render(request, 'profile.html',
                   {'form_profile': form_profile,
-                   'form_booking':edit_booking_form,
-                   'form_member':MembershipForm,
+                   'form_booking': edit_booking_form,
+                   'form_member': MembershipForm,
+                   'order_item': order_item,
+                   'user_orders': user_orders,
                     })
 
 

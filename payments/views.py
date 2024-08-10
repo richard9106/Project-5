@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
 from django.contrib.auth import login
 from django.contrib import messages
-from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 import stripe
 from profiles.models import Profile
 from products.models import Product
@@ -11,6 +11,8 @@ from bag.contexts import bag_contents
 from memberships.models import Membership, Subscription
 from .forms import CustomSignupForm, OrderForm
 from .models import OrderLineItem
+
+import json
 
 
 
@@ -70,6 +72,7 @@ def checkout(request, membership_id):
     })
 
 
+@login_required
 def checkout_products(request):
     """ control checkout product view"""
 
@@ -81,7 +84,8 @@ def checkout_products(request):
         bag = request.session.get('bag', {})
 
         form_data = {
-            'full_name': request.POST['full_name'],
+            'first_name': request.POST['first_name'],
+            'last_name': request.POST['last_name'],
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
         
@@ -91,6 +95,7 @@ def checkout_products(request):
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
+            order.user_profile = profile
             order.original_bag = json.dumps(bag)
             order.save()  
             for item_id, item_data in bag.items():
@@ -119,8 +124,11 @@ def checkout_products(request):
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
-
-            return redirect(reverse('checkout_success',
+                
+            if 'bag' in request.session:
+                del request.session['bag']
+            messages.success(request, 'Your order has been processed correctly')
+            return redirect(reverse('my_profile_with_order',
                                     args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \

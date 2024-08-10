@@ -39,16 +39,14 @@
                         </div>
                     </div>
                 {% endfor %}
-                <hr class="my-2">
-                <div class="row  text-rend">
-                    <div class="col-7 offset-2 text-black">
+                <hr class="mt-5">
+                <div class="row w-100">
+                    <div class="col-9 text-black text-start">
                         <p class="my-0">Order Total:</p>
-                        <p class="my-0">Delivery:</p>
                         <p class="my-0">Grand Total:</p>
                     </div>
-                    <div class="col-3 orange-color">
+                    <div class="col-3 orange-color text-end">
                         <p class="my-0">${{ total | floatformat:2 }}</p>
-                        <p class="my-0">${{ delivery | floatformat:2 }}</p>
                         <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
                     </div>
                 </div>          
@@ -59,9 +57,7 @@
                 {% csrf_token %}
                 <div class="card" id="collapse-profile-form">
                     {{ order_form|crispy }}
-                 
-                </div>
-                <div class="card collapse mt-5" id="collapse-pay-form">
+             
                 <div class="form-group">
                     <label for="card-number" class="orange-color">Card number</label>
                     <div id="card-number"></div>
@@ -74,12 +70,8 @@
                     <label for="card-cvc" class="orange-color">CVC code</label>
                     <div id="card-cvc"></div>
                 </div>
-                <div class="d-flex justify-content-between">
-                    <button class="btn bg-main-color mt-3" id="submit-button">Get membership</button>
-                    <button 
-                    class="btn bg-main-color mt-3 " id="open-profile-form"
-                    data-bs-toggle="collapse" data-bs-target="#collapse-pay-form" 
-                    aria-expanded="false" aria-controls="collapse-pay-form">change profile</button>
+                <div class="text-end">
+                    <button class="btn bg-main-color mt-3 w-50 " id="submit-button">Buy now</button>
                 </div>
                 <div id="card-errors" role="alert"></div>
                     <!--Pass the client secret to the view so we can get payment intent id-->
@@ -93,13 +85,13 @@
 
 <script>
      document.addEventListener('DOMContentLoaded', function() {
-        var stripe = Stripe('{{ STRIPE_PUBLISHABLE_KEY }}'); 
+        var stripe = Stripe('{{ stripe_public_key }}'); 
         var clientSecret = document.querySelector('input[name="client_secret"]').value;
         var elements = stripe.elements();
 
         // Crear elementos de tarjeta separados
         var cardNumber = elements.create('cardNumber', {
-            placeholder: 'Número de Tarjeta'
+            placeholder: 'Card Number'
         });
         var cardExpiry = elements.create('cardExpiry', {
             placeholder: 'MM/AA'
@@ -148,18 +140,6 @@
              })
         });
 
-        // hide profile payment info
-        var profile_form = document.getElementById('collapse-profile-form')
-        var hidde_profile_action = document.getElementById('save-profile-button')
-        var show_profile_action = document.getElementById('open-profile-form')
-    
-            $("#open-profile-form").on( "click", function() {	 
-	        $('#collapse-profile-form').toggle('slow');
-	         });
-
-             $("#save-profile-button").on( "click", function() {	 
-	            $('#collapse-profile-form').toggle('slow');
-	         });
 
 
     });

@@ -3,8 +3,7 @@ import uuid
 from django.db import models
 from profiles.models import Profile
 from products.models import Product
-from memberships.models import Membership
-
+from django.db.models import Sum
 
 class Order(models.Model):
     """ To follow the Orders of products"""
@@ -24,6 +23,15 @@ class Order(models.Model):
     def _generate_order_number(self):
         """generate a random number as a order number"""
         return uuid.uuid4().hex.upper()
+    
+    def update_total(self):
+        """
+        Update grand total each time a line item is added,
+        accounting for delivery costs.
+        """
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.grand_total = self.order_total
+        self.save()
 
 
     def save(self, *args, **kwargs):
