@@ -4,12 +4,14 @@
 
 {% block content %}
     <div class="overlay"></div>
- 
-    <h2 class="logo-font my-4 text-end text-whitemt-5">My Bag</h2>
-    <hr class="main-color opacity-100" style="height: 10px;">
+    
+    <div class="text-end w-75 mx-auto">
+        <h2 class="logo-font py-4 text-end text-whitemt-5">My Bag</h2>
+        <hr class="main-color opacity-100" style="height: 10px;">
+    </div>
 
     {% if bag_items %}
-    <div class="flex-sm-column-reverse  flex-md-column-reverse flex-lg-row row justify-content-center bag-container ">
+    <div class="flex-sm-column-reverse container flex-md-column-reverse flex-lg-row row justify-content-center bag-container">
 
        
         <div class="col-lg-4 mb-4">
@@ -137,7 +139,7 @@
     </div>
   
     {% else %}
-    <div>
+    <div class="container">
         <h3>You haven't added any products to the bag yet.</h3>
         <hr>
         <div>
