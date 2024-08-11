@@ -7,8 +7,8 @@ header{
 .header-container{
   background-image:url("../images/bg-1.jpg");
   background-repeat: no-repeat;
-  background-size:cover;
-  background-position: top right;
+  background-size:120%;
+  background-position: top right -15px;
   display: grid;
   place-items: center;
   height: 90vh;
@@ -21,6 +21,7 @@ header{
 }
 @media (max-width:991px){
   .header-container{
+    background-size:cover;
     background-position: center right -300px;
  
   }
@@ -30,6 +31,7 @@ header{
   .header-container{
     height: 70vh;
     background-position: center ;
+    background-size:cover;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/bg-5-min.jpg");
  
   }
@@ -66,7 +68,7 @@ h1{
 
 
 /*--------------------------Home page*/
-section{
+section.carrosel-container{
   margin: 0 auto;
   width: 50%;
   height: auto;

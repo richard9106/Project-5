@@ -1,4 +1,5 @@
 
+import json
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
 from django.contrib.auth import login
@@ -12,9 +13,6 @@ from memberships.models import Membership, Subscription
 from .forms import CustomSignupForm, OrderForm
 from .models import OrderLineItem
 
-import json
-
-
 
 def checkout(request, membership_id):
     """Render payment membership page and handle POST request"""
@@ -22,7 +20,7 @@ def checkout(request, membership_id):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     profile_form = CustomSignupForm(request.POST or None)
-    
+
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
         amount=int(membership.price) * 100,
@@ -33,38 +31,41 @@ def checkout(request, membership_id):
         if profile_form.is_valid():
             # Save the user using the form's save method
             user = profile_form.save(request)
-            
+
             # Retrieve and update profile
             profile, created = Profile.objects.get_or_create(user=user)
             profile.first_name = profile_form.cleaned_data['first_name']
             profile.last_name = profile_form.cleaned_data['last_name']
             profile.email = profile_form.cleaned_data['email']
-            profile.phone_number = profile_form.cleaned_data.get('phone_number', '')
+            profile.phone_number = profile_form.cleaned_data.get(
+                'phone_number', '')
             profile.my_memberships = membership
             profile.active = True
             profile.save()
 
-            
             # Specify the backend for allauth
             user.backend = 'allauth.account.auth_backends.AuthenticationBackend'
 
-
             # Log the user in
-            login(request, user, backend='allauth.account.auth_backends.AuthenticationBackend')
-            
+            login(request,
+                  user,
+                  backend='allauth.account.auth_backends.AuthenticationBackend')
+
             # Create subscription
             Subscription.objects.create(user=user, membership=membership)
-            
+
             # Redirect to profile page
             messages.success(request,
                              "!! CONGRATS welcome to Iron Heaven Fitness Family.")
-            return redirect('my_profile')  # Replace 'profile_page_url' with the actual URL name of the profile page
+            return redirect('my_profile')
         else:
-            messages.error(request, "There were errors in the form. Please correct them.")
-    
+            messages.error(request,
+                           "There were errors in the form. Please correct them.")
+
     if not stripe_public_key:
-        messages.warning(request, "Stripe public key is missing.")
-    
+        messages.warning(request,
+                         "Stripe public key is missing.")
+
     return render(request, 'pay_membership.html', {
         'profile_form': profile_form,
         'membership': membership,
@@ -89,7 +90,7 @@ def checkout_products(request):
             'last_name': request.POST['last_name'],
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
-        
+
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
@@ -98,7 +99,7 @@ def checkout_products(request):
             order.stripe_pid = pid
             order.user_profile = profile
             order.original_bag = json.dumps(bag)
-            order.save()  
+            order.save()
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -125,10 +126,13 @@ def checkout_products(request):
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
-                
+
             if 'bag' in request.session:
                 del request.session['bag']
-            messages.success(request, 'Your order has been processed correctly.You can pick up your order at your gym!!! ')
+            messages.success(request,
+                             'Your order has been processed correctly.\
+                                 You can pick up your order at your gym!!! ')
+
             return redirect(reverse('my_profile_with_order',
                                     args=[order.order_number]))
         else:
@@ -137,7 +141,8 @@ def checkout_products(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request,
+                           "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -152,12 +157,11 @@ def checkout_products(request):
         if request.user.is_authenticated:
             try:
                 profile = get_object_or_404(Profile, user=request.user)
-                order_form = OrderForm(initial={   
-                    'first_name':profile.first_name,
-                    'last_name':profile.last_name, 
-                    'email':profile.user.email, 
-                    'phone_number':profile.phone_number, 
-
+                order_form = OrderForm(initial={
+                    'first_name': profile.first_name,
+                    'last_name': profile.last_name,
+                    'email': profile.user.email,
+                    'phone_number': profile.phone_number,
                 })
             except Profile.DoesNotExist:
                 order_form = OrderForm()
@@ -171,7 +175,7 @@ def checkout_products(request):
 
     template = 'pay_product.html'
     context = {
-        'profile':profile,
+        'profile': profile,
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,

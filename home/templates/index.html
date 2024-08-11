@@ -37,7 +37,11 @@
 {% block content %}
 <!-- Existing home content goes here -->
 {% endblock %}
-
+<section id="motivation" class="text-center my-3 p-5">
+    <h2>Join Us Today!</h2>
+    <p>Experience the best fitness training and community at Iron Haven Fitness.</p>
+    <a href="{% url 'membership_list' %}" class="btn btn-custom">Check Our Memberships</a>
+</section>
 {% block home_content %}
 <!-- Carousel Section -->
 <section id="classes-carousel" class="my-5 carrosel-container">
@@ -66,14 +70,20 @@
 </section>
 <hr class="orange-color w-50 mx-auto"/>
 <!-- Motivational Section -->
-<section id="motivation" class="text-center my-3 p-5">
-    <h2>Join Us Today!</h2>
-    <p>Experience the best fitness training and community at Iron Haven Fitness.</p>
-    <a href="{% url 'membership_list' %}" class="btn btn-custom">Check Our Memberships</a>
-</section>
+
+<div class="row align-items-center mb-5 container mx-auto">
+    <div class="col-md-6 text-section ">
+        <h2>About Our Gym</h2>
+        <p>Welcome to Iron Haven Fitness, where we provide a comprehensive fitness experience designed to help you achieve your goals. Our state-of-the-art facility offers a variety of training options to suit all fitness levels and preferences.</p>
+    </div>
+    <div class="col-md-6">
+        <img src="{% static 'images/logo1.png'%}" alt="Gym Image" loading="lazy">
+    </div>
+    
+</div>
 
 <!-- Products Section -->
-<section id="products" class="my-5">
+<section id="products" class="my-5 w-75 mx-auto">
     <div class="row flex-column-reverse flex-md-row">
         <div class="col-md-6">
             <div id="productsCarousel" class="carousel slide" data-bs-ride="carousel">

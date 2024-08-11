@@ -9,7 +9,6 @@ from .forms import NewsletterForm
 from .models import NewsletterSubscription
 
 
-
 def index(request):
     """ View for home page """
     products = Product.objects.all()
@@ -22,11 +21,13 @@ def index(request):
         if email:
             # Check if email already exists
             if NewsletterSubscription.objects.filter(email=email).exists():
-                messages.error(request, 'You are already subscribed.')
+                messages.error(request,
+                               'You are already subscribed.')
             else:
                 # Save the new subscription
                 NewsletterSubscription.objects.create(email=email)
-                messages.success(request, 'Thank you for subscribing to our newsletter!')
+                messages.success(request,
+                                 'Thank you for subscribing to our newsletter!')
             return redirect('home')
         else:
             messages.error(request, 'No email in the newsletter')
@@ -54,11 +55,12 @@ def contact_view(request):
                 f"Contact Form Submission from {name}",
                 message,
                 email,
-                ['your_email@example.com'],  # Replace with your email or the email where you want to receive the contact form messages
+                ['your_email@example.com'],
                 fail_silently=False,
             )
-            messages.success(request, 'Your message has been sent successfully!')
-            return redirect('home')  # Replace 'home' with the name of your homepage URL
+            messages.success(request,
+                             'Your message has been sent successfully!')
+            return redirect('home')
     else:
         form = ContactForm()
 

@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, web_hooks
+from . import views
 
 
 urlpatterns = [

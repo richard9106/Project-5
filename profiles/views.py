@@ -15,10 +15,10 @@ def profile(request, order=None):
     profile_model = get_object_or_404(Profile, user=request.user)
     form_profile = UserProfileForm(instance=request.user)
     edit_booking_form = BookingForm(request.POST, instance=profile_model)
-    
+
     # get all the order
     user_orders = profile_model.orders.all()
-    
+
     if order:
         order_item = get_object_or_404(user_orders, order_number=order)
     else:
@@ -40,7 +40,7 @@ def profile(request, order=None):
             messages.add_message(
                 request,
                 messages.WARNING,
-                'Something has gone wrong check your form')           
+                'Something has gone wrong check your form')
     print(order_item)
     return render(request, 'profile.html',
                   {'form_profile': form_profile,
@@ -48,7 +48,7 @@ def profile(request, order=None):
                    'form_member': MembershipForm,
                    'order_item': order_item,
                    'user_orders': user_orders,
-                    })
+                  })
 
 
 @login_required
@@ -109,7 +109,7 @@ def delete_booking(request, booking_id):
     except Exception as e:
         messages.error(request, f'Error deleting booking: {str(e)}')
 
-    # Redirige a la página de perfil después de eliminar o en caso de error
+    # Redirect to profile page after deleting or in case of error
     return redirect('my_profile')
 
 
@@ -139,7 +139,9 @@ def cancel_membership(request):
         user = profile.user
         profile.delete()
         user.delete()
-        messages.success(request, "Your membership has been cancelled and your profile has been deleted.")
+        messages.success(request,
+                         "Your membership has been cancelled \
+                             and your profile has been deleted.")
         return redirect('home')
 
     return render(request, 'cancel_membership.html')

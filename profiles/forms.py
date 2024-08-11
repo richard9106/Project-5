@@ -11,7 +11,11 @@ class UserProfileForm(forms.ModelForm):
         """define the model and exclude user name"""
         model = Profile
         exclude = ('user', 'create_on', 'active')
-        fields = ['image', 'first_name', 'last_name', 'birthday', 'email']
+        fields = ['image',
+                  'first_name',
+                  'last_name',
+                  'birthday',
+                  'email']
 
         def __init__(self, *args, **kwargs):
             """
@@ -20,25 +24,21 @@ class UserProfileForm(forms.ModelForm):
             """
             super().__init__(*args, **kwargs)
             placeholder = {
-                'image':'Image Profile',
+                'image': 'Image Profile',
                 'first_name': 'First Name',
                 'last_name': 'Lirst Name',
                 'email': 'Email',
                 'phone_number': 'Phone Number',
-                'birthday':'Birthday',  
-
+                'birthday': 'Birthday',  
                 }
 
             labels = {
-                'image':'Image Profile',
+                'image': 'Image Profile',
                 'first_name': 'First Name',
                 'last_name': 'Lirst Name',
                 'email': 'Email',
-                'birthday':'Birthday',
-
+                'birthday': 'Birthday',
             }
-
-
 
             for field in self.fields:
                 if field in placeholder:
@@ -55,11 +55,12 @@ class UserProfileForm(forms.ModelForm):
 
 class BookingForm(forms.ModelForm):
     """For for edit classes """
-    gym_class = forms.ModelChoiceField(queryset=GymClass.objects.all(), label='Select Class')
+    gym_class = forms.ModelChoiceField(queryset=GymClass.objects.all(),
+                                       label='Select Class')
 
     class Meta:
         model = Booking
-        fields = ['gym_class']  
+        fields = ['gym_class']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -67,8 +68,10 @@ class BookingForm(forms.ModelForm):
 
 
 class MembershipForm(forms.Form):
-    membership = forms.ModelChoiceField(queryset=Membership.objects.all(), empty_label=None, label='Select Membership')
+    membership = forms.ModelChoiceField(queryset=Membership.objects.all(),
+                                        empty_label=None,
+                                        label='Select Membership')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['membership'].widget.attrs.update({'class': 'form-select'})  # Añadir clases CSS si es necesario
+        self.fields['membership'].widget.attrs.update({'class': 'form-select'})  

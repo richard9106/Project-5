@@ -12,7 +12,9 @@ class Membership(models.Model):
 
 class Advantage(models.Model):
     """Membership description"""
-    membership = models.ForeignKey(Membership, related_name='advantages', on_delete=models.CASCADE)
+    membership = models.ForeignKey(Membership,
+                                   related_name='advantages',
+                                   on_delete=models.CASCADE)
     description = models.CharField(max_length=255)
 
     def __str__(self):

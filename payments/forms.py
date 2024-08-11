@@ -40,12 +40,13 @@ class OrderForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
-            
-            
+
+
 class CustomSignupForm(SignupForm):
     first_name = forms.CharField(max_length=30, label='Name')
     last_name = forms.CharField(max_length=30, label='Last Name')
-    phone_number = forms.CharField(max_length=20, label='Phone', required=False)
+    phone_number = forms.CharField(max_length=20,
+                                   label='Phone', required=False)
 
     def save(self, request):
         user = super(CustomSignupForm, self).save(request)

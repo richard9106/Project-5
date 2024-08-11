@@ -15,7 +15,7 @@
   * [Color Scheme](#color-scheme)
   * [Imagery](#imagery)
   * [Typography](#typography)
-  * [MVP](#mvp)
+  * [MVP](#mvp-minimun-vialble-product)
 * [FEATURES](#features)
 * [VALIDATION](#validation)
 * [TECH STACK](#tech-stack)
@@ -110,7 +110,7 @@ Iron Haven Fitness is a comprehensive gym website that not only offers membershi
     - As a developer, I will set up the repo and install the necessary packages so that I can start building the initial models to manage the information.
 3. [US3] Profiles Model
     - As a superuser, I can log in to the admin panel	so that I can manage users and other parts of the system as it develops
-4. [US4] Jobs Model
+4. [US4] Products - Classes and Memberships Model
     - As a superuser, I can create a new products, gym classes and memeberships.
 5. [US5] Create NavBar
     - As a website user, I can view the basic navbar so that I can easily navigate the website on desktop and mobile
@@ -119,15 +119,15 @@ Iron Haven Fitness is a comprehensive gym website that not only offers membershi
 7. [US7] User Logout 
     - As a website user, I can log out so that I can protect my profile data, and I can easily see if I need to log in again
 8. [US8] User Registration
-    - As a website user, I can register for an account so that I can access the benefits os a memebership of the site
+    - As a website user, I can register for an account and pay my membership secure so that I can access the benefits os a memebership of the site
 9. [US9] View Home Page
     - As a user I can view the home page so that I can see all the details about Iron Haven Fitnes
 10. [US10] View Profile Page
-    - As a logged in user I can view my profile so that I can see the details, classes and memebership information
+    - As a logged-in user, I can view my profile to see my details, classes, membership information, and orders from previous purchases.
 11. [US11] Edit Profile
     - As a logged in user I can edit my profile so that I can change my personal info
-12. [US12] Update Password
-    - As a logged-in user, I can update my password so that I can change my password if I need to
+12. [US12] Cancel Classes
+    - As a logged-in user, I can cancel any class that I am unable to attend.
 13. [US13] Update Username
     - As a logged-in user, I can change my username so that I can change my username if I want to
 14. [US14] View all the classes
@@ -135,7 +135,7 @@ Iron Haven Fitness is a comprehensive gym website that not only offers membershi
 15. [US15] View all the products
     - As a logged-in user, I can  be able see and purchase for products and easily see my shopping bag
 16. [US16] Change my memebership
-    - As a logged-in user, I can change my membership if I want to
+    - As a logged-in user, I can be able to change my membership.
 17. [US17] UX & Testing
     - As a developer, I can test each user story function so that I can verify each function works as intended
 18. [US18] Deploy to Heroku
@@ -169,9 +169,9 @@ Iron Haven Fitness is a comprehensive gym website that not only offers membershi
 <span style="display:flex; gap:50px; text-align:center;">
 
 
-![data base structure ](./static/images/logo1.png)
+![simplify logo ](./static/images/logo1.png)
 
-![data base structure ](./static/images/logo2.png)
+![complete logo ](./static/images/logo2.png)
 
 
 
@@ -297,39 +297,28 @@ The site has been built with the following tech, tools and libraries
 
 ### Refactoring Opportunities
 
-Due to time constraints on completing this project, I was unable to refactor all of the code.  Two notable components could help streamline the app further:
 
-1. Dashboard used in AllJobs Page and AllInvoices Page
-2. Accordion used in JobCard and InvoiceCard
-3. Confrimation Modal used in Editing Jobs, Editing Invoices, Editing Profiles, and Deleting Jobs and Deleting Invoices.
-4. SuccessMessage Timeout function could benefit from being a resusable component.
+Due to time constraints on completing this project, I wasn’t able to refactor as much as I’d have liked.
+
+1. Automatic renew membership
+2. More atractive profile page
+3. Spinner to delay processing
+4. webhook to manage error payments
 
 * [Back to Contents](#contents)
 
 
 ## TESTING
-FOR DETAILED TEST REPORTS AND RESULTS PLEASE [VIEW THEM HERE:](https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/TESTING.md).
+
 
   ### Tests performed
   The site was thoroughly tested during development with each feature tested before committing to GitHub.  The testing regime included the following:
   1. Incremental development and live testing.
   2. Django Models Automated Testing using Jest.
   3. Early user observation test.
-  4. React Tests.
-  5. Manual user story tests.
-  6. Django APITest re-run and additional automated testing using jest.
-  7. HTML, CSS, ESLINT, PYLINT, Lighthouse tests.
-  8. Browser Compatibility tests.
-  9. Final Production user tests
-
-  ### User Story Tests
-  Each user story was tested manually according to a structured test sheet [VIEW IT HERE:](https://docs.google.com/spreadsheets/d/1esaHTm738sbXP-JMxzEvQ63mgN3IazsXGUL8tRsX0ZI/edit#gid=165646488), with results being recorded and any failures rectified.
-
-  * [Back to Contents](#contents)
-
-  ### Bugs resolved:
-  The following bugs were recorded and rectified [See test sheet](https://docs.google.com/spreadsheets/d/1esaHTm738sbXP-JMxzEvQ63mgN3IazsXGUL8tRsX0ZI/edit#gid=165646488)
-
+  4. HTML, CSS, ESLINT, PYLINT, Lighthouse tests.
+  5. Browser Compatibility tests.
+  6. Final Production user tests
 
 
   * [Back to Contents](#contents)
@@ -340,20 +329,12 @@ FOR DETAILED TEST REPORTS AND RESULTS PLEASE [VIEW THEM HERE:](https://github.co
 
 
   ### Improvements and future developments:
-  The app was initially built with enough basic fields and functionality to ensure I could deliver an MVP that would meet assessment criteria within the allocated time frame.
 
-  There is scope to improve the app that would enhance the user experience and add more valuable functions, that could easily be developed on top of the existing structure:
-
-  * Add consistent user feedback on the email and phone fields validation. Currently it is using the default browser message validation, and was left as is due to time constraints.
-
-  * Create a Manager Profile who has access to all profiles, jobs and invoices on the front end, to allow moderation and site overrides.  Currently, this work can be undertaken in the Django Admin area which has not been configured for any UX.
-
-  * Upgrade to Bootstrap 5 - will allow improved design and functionality for the Accordion and Modal components - negating the need for the deprecated findDOMNode method.
-
-  * Consider using a modal to contain comments and replies as per the original concept.
-
-  * Consider adding InfiniteScroll to the comment-replies section. This was left as it was deemed unlikely that there would be a vast number of replies to a single comment.  InfiniteScroll has been added to the parent comment list.
-
+  
+  I did my best with this website, but I’m still not fully satisfied with the result.
+  * Handle payment errors
+  * Improve design attractiveness
+  * Add a banner with offers
 
 
   * [Back to Contents](#contents)
@@ -381,7 +362,8 @@ FOR DETAILED TEST REPORTS AND RESULTS PLEASE [VIEW THEM HERE:](https://github.co
        * Add CLOUDINARY_KEY (from Cloudinary API key)
        * Add SECRET_KEY - (a unique password)
        * ADD DATABASE_URL - (postgres ElephantSQL API key)
-       * STRIPE_SECRET_KEY - (stripe secrete key all)
+       * STRIPE_SECRET_KEY 
+       * STRIPE_PUBLIC_KEY 
        * DEBUG = True (if you have to push to heroku set False)
    9. Update settings.py
        * CLOUDINARY_STORAGE
@@ -440,6 +422,7 @@ The following precautions were taken regarding the security of the site:
    - SECRET_KEY
    - DATABASE_URL
    - STRIPE_SECRET_KEY
+   - STRIPE_PUBLIC_KEY
 2. These values were added to the Config Vars section of Heroku's Settings page.
 3. Heroku is configured with 2FA
 
@@ -452,7 +435,7 @@ The entire concept was created specifically for this assessment and is not a cop
 Initially, parts of the project were based on the Moments walkthrough project:
   * CI Template for setting up the repo - [View Here](https://github.com/Code-Institute-Org/cra-template-moments)
   * The Profile Model - similar to the Mind Well project 4 Profile model
-  * The Bag, Payments and Product model - similar to the Boutique Ado but customised further for replies
+  * The Bag, Payments, and Product models are similar to those in Boutique Ado but have been further customized for specific needs.
   * Example readme.md from - [View Here](https://github.com/rstan-dev/GarageGuru-PP5?tab=readme-ov-file#logic)
 
 
