@@ -7,54 +7,30 @@
     <img src="{%static 'images/logo1.png'%}" class="logo" alt="logo iron heaven fitnes" loading="lazy">
   </a>
 </div>
-<div class="">
 
+<div>
   <!-- NAV BUTTON  -->
-  <button
-    class="navbar-toggler"
-    type="button"
-    aria-label="Menu button"
-    data-bs-toggle="offcanvas"
-    data-bs-target="#menuLateral"
-  >
+  <button class="navbar-toggler" type="button" aria-label="Menu button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
     <span class="navbar-toggler-icon"></span>
   </button>
   
   <!-- OFFCANVAS MAIN CONTAINER START -->
   <section class="offcanvas offcanvas-start flex-grow-1" id="menuLateral" tabindex="-1">
     <div class="offcanvas-header" data-bs-theme="dark">
-      <img
-        src="{%static 'images/logo1.png'%}"
-        class="logo "
-        alt="logo iron heaven fitnes"
-        loading="lazy"
-      />
-      <button
-        class="btn-close"
-        type="button"
-        aria-label="Close"
-        data-bs-dismiss="offcanvas"
-      ></button>
+      <img src="{%static 'images/logo1.png'%}" class="logo " alt="logo iron heaven fitnes" loading="lazy"/>
+      <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button>
     </div>
     <!-- OFF CANVAS MENU LINKS  START-->
     <div class="offcanvas-body d-flex flex-md-column justify-content-between px-0">
       <ul class="navbar-nav w-auto ms-3 mx-lg-auto">
         <li class="nav-item dropdown">
-          <a
-            class="logo-font nav-link me-5"
-            href="{% url 'home' %}"
-            id="products-link"
-          >
+          <a class="logo-font nav-link me-5" href="{% url 'home' %}" id="products-link">
             Home
           </a>
         </li>
         {% if user.is_authenticated %}
         <li class="nav-item dropdown">
-          <a
-            class="logo-font nav-link me-5"
-            href="{% url 'all_products' %}"
-            id="products-link"
-          >
+          <a class="logo-font nav-link me-5" href="{% url 'all_products' %}" id="products-link">
             Accessories
           </a>
         </li>
@@ -69,36 +45,27 @@
         
         {% else %}
         <li class="nav-item dropdown">
-          <a
-            class=" nav-link me-5"
-            href="{% url 'membership_list' %}"
-            id="membership-link"
-          >
+          <a class=" nav-link me-5" href="{% url 'membership_list' %}" id="membership-link">
             Memberships
           </a>
         </li>
         {% endif%}
 
         <li class="nav-item ">
-          <a
-            class="nav-link"
-            href="{% url 'home' %}#contact"
-            id="contact-link"
-          >
+          <a class="nav-link" href="{% url 'home' %}#contact" id="contact-link">
             Contact
           </a>
         </li>
       </ul>
 
-      </div>
+    </div>
       <!-- social media -->
 
-      <div class="d-lg-none align-self-center py-3">
-        <div class="d-flex justify-content-start gap-3">
-          <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook fs-4"></i></a>
-          <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram fs-4"></i></a>
-          <a href="https://x.com/?lang=es"><i class="fa-brands fa-x-twitter fs-4"></i></a>
-      </div>
+    <div class="d-lg-none align-self-center py-3">
+      <div class="d-flex justify-content-start gap-3">
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook fs-4"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram fs-4"></i></a>
+        <a href="https://x.com/?lang=es"><i class="fa-brands fa-x-twitter fs-4"></i></a>
       </div>
     </div>
   </section>
@@ -107,16 +74,11 @@
   <div>
     <ul class="list-inline list-unstyled text-lg-right my-0">
       <li class="list-inline-item dropdown">
-        <a
-          class=" nav-link"
-          href="#"
-          id="user-options"
-          data-bs-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
+        <a class=" nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="text-center">
-            <div><i class="fas fa-user fa-lg"></i></div>
+            <div>
+              <i class="fas fa-user fa-lg"></i>
+            </div>
             <p class="my-0">My Account</p>
           </div>
         </a>
@@ -140,12 +102,11 @@
       </li>
       {% if user.is_authenticated %}
       <li class="list-inline-item">
-        <a
-          class="{% if grand_total %}text-info fw-bold{% else %}text-black{% endif %} nav-link"
-          href="{% url 'view_bag' %}"
-        >
+        <a class="{% if grand_total %}text-info fw-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
           <div class="text-center">
-            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+            <div>
+              <i class="fas fa-shopping-bag fa-lg"></i>
+            </div>
             <p class="my-0">
               {% if grand_total %} ${{ grand_total|floatformat:2 }} 
               {% else %} $0.00 {% endif %}

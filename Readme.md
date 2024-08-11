@@ -41,13 +41,13 @@
 
    ### Purpose and target audience
 
-Iron Haven Fitness is a gym website that sells memberships and also has some products for its users.
 
-It is designed with the intention that potential users see the services that the gym offers.It contains an area to see the available classes and a section of products to which you have access if you are a member.
+Iron Haven Fitness is a comprehensive gym website that not only offers memberships but also features a range of products for its members. The site is designed with the goal of clearly presenting the gym’s services, including a detailed schedule of available classes and a dedicated section for products that members can access. Whether you’re looking to join the gym or are already a member, the website provides easy navigation to help you explore everything the gym has to offer and make the most of your membership.
+<center>
 
+<img src="/workspace/Project-5/static/doc_images/hero.png" style="width:80%;">
 
-
-<img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/site_images/hosted_site.png">
+</center>
 
 * [Back to Contents](#contents)
 
@@ -55,7 +55,7 @@ It is designed with the intention that potential users see the services that the
   #### Goals for the first time user
   1. To be able to create an account easily.
   2. To be able to customise and update their profile.
-  3. To easily update and change or cancel their memberships.
+  3. To update and change or cancel their memberships.
   4. To easily be able to reserve or cancel  gym classes if they need it .
   5. To easily be able to purchase for products and see the shopping gab.
   6. To be able to see how much they are going to speend before pay.
@@ -85,22 +85,12 @@ It is designed with the intention that potential users see the services that the
    The initial wireframes were created in [Miro](https://miro.com/es/) to understand how the site would work, and this layout would drive User Stories, the logic required and overall design artwork decisions.
 
 
-
-   - <img src="/workspace/Project-5/static/doc_images/wireframe_1.png"
-
-   <details>
-    <summary><u>Click to View More Wireframe Images</u></summary>
-
-<span style="display:flex; gap:50px">
-
-
-![Mobile ](./static/doc_images/wireframe_2.png)
-
-![Table ](./static/doc_images/wireframe_3.png)
-
+<span style="display:flex; justify-content:space-between; align-items:top;">
+  <img src="/workspace/Project-5/static/doc_images/wireframe_1.png"/>
+  <img src="/workspace/Project-5/static/doc_images/wireframe_2.png"/>
+  <img src="/workspace/Project-5/static/doc_images/wireframe_3.png"/>
 
 </span>
-
     
    
 
@@ -201,44 +191,41 @@ It is designed with the intention that potential users see the services that the
 
   ### Typography
    * I used a default Google font of Roboto and sans serif throughout the website for visual clarity and consistency.
+   * And  Alfa+Slab+One&display font for the title of the home page 
    
 
 
   ### MVP (minimun vialble product)
 
   Using the GitHub project board I prioritised user stories to give me an incremental MVP.
+  
+  Define the goals or user stories to focus on creating the website’s functionality. I decided not to include specific tasks since that might shift the focus of the functionality.
 
-  At each stage of achieving an MVP, I would aim to complete a piece of functioning work.  Styling issues would be noted as a small-item, logged to the Kanban board and I would revisit to make incremental visual improvements once the functionality logic was completed.
+  Every commit message thoroughly detailed the work that had been completed. trying to been clear.
 
-  Every commit message thoroughly detailed the work that had been completed.  Some of the more complex pieces of functionality required updates and development across several pages for the functions to work as expected and this was captured in the commit history.
-
-1. I created the basic models for profiles and jobs first so I could upload information to pull into the front end.
+1. I created the basic models to manage the ecommerce funtionalitie for a gym subscription(membership, profile, home, etc).
 2. I built the Navbar and routes
 3. I built the Login, Logout and registration functionality
 4. I built the Profile Area with CRUD functionality
-5. I built the Jobs section with CRUD functionality
-6. I built the comments section below each job card with CRUD functionality
-7. I built the Invoice Model and frontend components and linked them to the relevant JobCard
-8. I built the Watch Jobs functionality and views
-9. I built the filters and views for My Jobs and Assigned Jobs
-
+5. I built the Classes Area with CRUD functionality
+6. I built the product Area with CRUD functionality
+6. I implemented the functionality for paying memberships, allowing users to make their payment at the same time they register.
+7. I implemented the functionality for paying products, allowing users to make their purchase full CRUD and record of the purchase to see in their profiles.
 
    * [Back to Contents](#contents)
 
 ## FEATURES
 * The following fully responsive website pages have been implemented:
-1. Register
+1. Register / Membership condition
 2. Login
-3. AllJobs with Status Dashboard, filter and search functionality
-4. MyJobs with Status Dashboard, filter and search functionality
-5. Assigned Jobs with Status Dashboard, filter and search functionality
-6. Watched Jobs with Status Dashboard, filter and search functionality
-7. Job Card with comments and links to assigned user profile, invoice, and conditional editing and ability to watch a job
-8. Add Invoice functionality with custom validation and alerts
-9. AddJob form with custom validation and alerts
-10. All Invoices with Status Dashboard, filter and search functionality, links to conditional editing, assigned users and relevant JobCard
-11. Profile page with editing functionality and custom validation
-
+3. Home Page,
+4. Classes Page / Only registered users can book reservations
+5. Accsesories / Only registered users can purchase this products
+6. Profile Page / Users can view their information, cancel classes, edit their profile, or cancel their membership.
+7. Membership Page / Users can view the price and benefits of each membership option.
+8. News Letters
+9. Contact form
+ 
   <details>
     <summary><u>Click to View Images</u></summary>
   
@@ -248,69 +235,17 @@ It is designed with the intention that potential users see the services that the
 
   * [Back to Contents](#contents)
 
-* UX features and User Interactions to note:
-  - Unauthenticated users can only access the login or register page.  All other pages are protected at the Route level and only available to users who have registered and logged in to their account.
-  - Users can always see where they are by the nav icon that highlights yellow or by the breadrcumb Viewing bar at the top of each screen. [US5, US6,]
-  - Users can hover over each icon in the NavBar to see the Nav label, and users will know they are logged in by seeing their name next to the Profile link.
-  - All users can access their own Profile page where they can view or edit their profile, username or password. [US3, US11, US12, US13, US14]
-  - Users can view all the jobs, jobs only created by them or jobs assigned to them. [US4, US15, US31 and US32]
-  - A dashboard allows them to organise each view according to its status and the status counter lets the user filter by and know at all times how many jobs are Pending, Underway or Completed. [US16, US17]
-  - Users can filter by jobs that are recently created (the default), recently updated or by their due date. [US16, US17]
-  - Users can enter a keyword to search by job type, description, created by or assigned to. [US16, US17]
-  - On each job card, users can click through to view the profiles of the user who created the job or the user who is assigned to the job. [ US11 ]
-  - A jobs can be edited by the person who created it and allows updates to any of the fields including the image. [ US19 ]
-  - An invoice can be added by the two users involved in the job - those who created it and those who are assigned to the job. [ US25 ]
-  - Any user can view the invoice summary by opening the accordion feature by clicking "Click To View Invoice Summary", where they can find a button to view the invoice card or edit it if they have permission. [ US26 ]
-  - Users can also click an eye icon which will add the job to a Watch list if they want to keep track of a job. [ US32 ]
-  - Users will see if any comments have been left on a job and will know the amount of comments that have been left on that specific job. [US21, US22, US23, US24]
-  - Users can click on the comment bubble icon and view the job card, and invoice summary, leave a comment, leave a reply to a comment and edit or delete any of their comments. [US21, US22, US23, US24]
-  - Users can view all invoices in the system and use familiar dashboard features to view and filter the status, order by dates and search using keywords. [ US29 ]
-  - On each invoice card, users can click through to view the profiles of the user who created the invoice or the user who is assigned to the job. [ US11 ]
-  - Invoices can be edited only by those who created or were assigned to the job. [US27 and US30]
-  - Any user can click on the "View Job Summary" accordion and find a link to view the full job card
-  - Any user can click the "BackToTop" button incorporated on Jobs and Invoices pages to help navigate long page lists.
-  <br>
-
-  <details>
-    <summary><u>Click to View UX Features Images</u></summary>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/navbar.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/navbar_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/dashboard.png"><br>
-     - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/dashboard_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/conditional_editing.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/conditional_editing_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/conditional_adding_invoice.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/conditional_adding_invoice_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/view_invoice_accordion.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/view_invoice_accordion_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/commenting_and_watching.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/commenting_and_watching_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/comments_and_replies.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/comments_and_replies_mob.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/back_to_top.png"><br>
-    - <img src="https://github.com/rstan-dev/Iron Haven Fitness-PP5/blob/main/documentation/images/features/back_to_top_mob.png"><br>
-
-  </details>
-
-  * [Back to Contents](#contents)
-
 ## VALIDATION
 Various validation methods have been incorporated:
  1. Onscreen success messages after user actions
- 2. Onscreen warnings if form fields have been omitted
- 3. Onscreen modal confirmation step before updating or deleting items
- 4. No-Data to display icon
- 5. Custom 404 page for redirecting logged-in users to non-existing pages
- 6. General catch-all redirects for logged-out users to the Login page for non-existing pages.
- 7. Date validation to prevent booking or invoicing a past date
- 8. Image validation to prevent oversized images from being uploaded
- 9. Form validation to capture email and phone formats correctly
+ 2. Re-open forms  as a warnings if form fields have been omitted
+ 3. Onscreen modal confirmation step before updating or deleting profiles
+ 4. Date validation to prevent create classes a past date
+ 5. Classes with past dates are not visible in case the admin forgets to update them.
+ 6. Once a user has an active membership, they cannot purchase another one from their profile.
+ 7. Form validation to capture email and phone formats correctly
+ 8. The newsletter signup form does not save submissions for users who are already subscribed to the newsletter.
 
-
- <details>
-  <summary><u>Click to View Validation Images</u></summary>
-
-</details>
 
  * [Back to Contents](#contents)
 
@@ -323,8 +258,8 @@ The site has been built with the following tech, tools and libraries
 * CSS
 * JavaScript
 * Python
+* Jquery
 * Django - web framework
-* Django REST Framework - API framework
 * Django AllAuth - user authentication
 * Psycopg2 - postgreSQL adapter for python
 * ElephantSQL - database hosting
@@ -332,6 +267,7 @@ The site has been built with the following tech, tools and libraries
 * Pillow - python image processing library
 * Gunicorn - WSGI HTTP server for UNIX
 * Bootstrap 5 and react-bootsrap - frontend responsive styling framework
+* Fontawesom icons
 * Heroku - live site hosting
 
 
