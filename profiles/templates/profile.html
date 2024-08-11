@@ -20,6 +20,10 @@
                         <h5 class="card-title">{{ user.get_full_name }}</h5>
                         <p class="card-text text-black">{{ user.email }}</p>
                         <p class="card-text text-black">Membership:<strong class="orange-color"> {{ user.profile.my_memberships }}</strong></p>
+                        <p class="text-center text-black w-75 mx-auto">If you need to change your membership please contact the staff at the gym.
+                            or send and email to <strong> ironHFt@fitness.com</strong>
+                        </p>
+                        
                         <div class="d-flex  flex-column text-center">
                             <a href="#" class="btn btn-color-one" data-bs-toggle="modal" data-bs-target="#editProfileModal">
                                 Edit Profile
@@ -108,6 +112,7 @@
             <div class="text-center">
                 <img src="{{ user.profile.image.url }}" alt="{{ user.profile.name}} image" class="img-fluid rounded-circle mb-3 image-size adjust-image" >
             </div>
+            
             <div class="modal-body">
                 <form method="post" enctype="multipart/form-data" action="{% url 'edit_profile' %}">
                     {% csrf_token %}

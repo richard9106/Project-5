@@ -56,7 +56,8 @@ def checkout(request, membership_id):
             Subscription.objects.create(user=user, membership=membership)
             
             # Redirect to profile page
-            messages.success(request, "!! CONGRATS welcome to Iron Heaven Fitness Family")
+            messages.success(request,
+                             "!! CONGRATS welcome to Iron Heaven Fitness Family.")
             return redirect('my_profile')  # Replace 'profile_page_url' with the actual URL name of the profile page
         else:
             messages.error(request, "There were errors in the form. Please correct them.")

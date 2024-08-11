@@ -119,18 +119,21 @@
         // Manejar el botón "Go to checkout"
         $('#save-profile-button').on('click', function() {
             if (!isProfileFormComplete()) {
-                $('#collapse-profile-form').show();
                 $('#collapse-pay-form').hide();
+                $('#collapse-profile-form').show();
                 alert('Por favor complete el formulario de perfil antes de proceder al pago.');
             } else {
-                $('#collapse-profile-form').hide();
                 $('#collapse-pay-form').show();
+                $('#collapse-profile-form').hide();
             }
         });
 
+
+        
         // Manejar el envío del formulario
         var form = document.getElementById('payment-form');
         form.addEventListener('submit', function(event) {
+            
             event.preventDefault();
             $('#card-number').attr('disable', true);
             $('#submit-button').attr('disable', true);

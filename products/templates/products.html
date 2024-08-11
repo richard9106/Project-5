@@ -5,7 +5,7 @@
 
 
 
-<div class="row">
+<div class="row container mx-auto">
     <h2 class="logo-font my-4 text-end text-whitemt-5">My Accesories</h2>
     <hr class="main-color opacity-100" style="height: 10px;">
     {% if request.user.is_superuser %}
@@ -92,7 +92,7 @@
                                         </a>
                                         {% else %}
                                         <a href="#">
-                                            <img class="card-img-top img-fluid w-50" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                            <img class="card-img-top img-fluid w-50" loading="lazy" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                         </a>
                                         {% endif %}
                                     </div>

@@ -5,10 +5,10 @@
     <div class="header-container">
         <div>
             <div class="col p-5 p-sm-0 text-center">
-                <h1 class="alfa-slab-one-regular orange-color">
+                <h1 class="alfa-slab-one-regular orange-color fs-3">
                     fitnes <br/> training
                 </h1>
-                <ul class="fs-5">
+                <ul class="header-item">
                     <li>
                         <i class="fa-solid fa-check-double"></i>
                         Resistance Traning
@@ -24,7 +24,7 @@
                     </li>
                 </ul>
                 <div>
-                    <a href="{% url 'membership_list' %}" class="btn btn-md-lg bg-main-color mt-3 p-3 fs-5">
+                    <a href="{% url 'membership_list' %}" class="btn bg-main-color mt-3 p-1 fs-5">
                         Get my membership</a>
                 </div>
             </div>
@@ -46,7 +46,7 @@
         <div class="carousel-inner">
             {% for gymclass in classes %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                <img src="{{ gymclass.image_class.url }}" class="d-block w-100" alt="{{ gymclass.name }}">
+                <img src="{{ gymclass.image_class.url }}" loading="lazy" class="d-block w-100" alt="{{ gymclass.name }}">
                 <div class="carousel-caption glass-bckg bg-orange-glass d-none d-md-block">
                     <h5>{{ gymclass.name }}</h5>
                     <p>{{ gymclass.date }}</p>
@@ -64,7 +64,7 @@
         </button>
     </div>
 </section>
-<hr class="orange-color "/>
+<hr class="orange-color w-50 mx-auto"/>
 <!-- Motivational Section -->
 <section id="motivation" class="text-center my-3 p-5">
     <h2>Join Us Today!</h2>
@@ -80,7 +80,7 @@
                 <div class="carousel-inner">
                     {% for product in products %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <img src="{{ product.image.url }}" class="d-block w-50 mx-auto rounded-3" alt="{{ product.name }}">
+                        <img src="{{ product.image.url }}" class="d-block w-50 mx-auto rounded-3" alt="{{ product.name }}" loading="lazy">
                     </div>
                     {% endfor %}
                 </div>
