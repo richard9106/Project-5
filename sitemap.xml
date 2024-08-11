@@ -21,3 +21,10 @@
 <url>
   <loc>http://ironhavengym-225d29547ff8.herokuapp.com/payments/pay_membership/2</loc>
 </url>
+<url>
+  <loc>http://ironhavengym-225d29547ff8.herokuapp.com/accounts/signup/</loc>
+</url>
+<url>
+  <loc>http://ironhavengym-225d29547ff8.herokuapp.com/accounts/password/reset/</loc>
+</url>
+</urlset>
