@@ -228,8 +228,14 @@ Iron Haven Fitness is a comprehensive gym website that not only offers membershi
  
   <details>
     <summary><u>Click to View Images</u></summary>
-  
-
+      <img src="/workspace/Project-5/static/doc_images/test1.png" style="margin:0 auto;"/>
+      <img src="/workspace/Project-5/static/doc_images/test2.png" style="margin:0 auto;"/>
+      <img src="/workspace/Project-5/static/doc_images/test3.png" style="margin:0 auto;"/>
+      <img src="/workspace/Project-5/static/doc_images/test4.png" style="margin:0 auto;"/>
+      <img src="/workspace/Project-5/static/doc_images/test5.png" style="margin:0 auto;"/>
+      <img src="/workspace/Project-5/static/doc_images/test6.png" style="margin:0 auto;"/>
+      <img src="/workspace/Project-5/static/doc_images/test7.png" style="margin:0 auto;"/>
+      <img src="/workspace/Project-5/static/doc_images/test8.png" style="margin:0 auto;"/>
   </details>
 
 
