@@ -45,7 +45,7 @@
 Iron Haven Fitness is a comprehensive gym website that not only offers memberships but also features a range of products for its members. The site is designed with the goal of clearly presenting the gym’s services, including a detailed schedule of available classes and a dedicated section for products that members can access. Whether you’re looking to join the gym or are already a member, the website provides easy navigation to help you explore everything the gym has to offer and make the most of your membership.
 <center>
 
-<img src="/workspace/Project-5/static/doc_images/hero.png" style="width:80%;">
+<img src="./static/doc_images/hero.png" style="width:80%;">
 
 </center>
 
@@ -86,9 +86,9 @@ Iron Haven Fitness is a comprehensive gym website that not only offers membershi
 
 
 <span style="display:flex; justify-content:space-between; align-items:top;">
-  <img src="/workspace/Project-5/static/doc_images/wireframe_1.png"/>
-  <img src="/workspace/Project-5/static/doc_images/wireframe_2.png"/>
-  <img src="/workspace/Project-5/static/doc_images/wireframe_3.png"/>
+  <img src="./static/doc_images/wireframe_1.png"/>
+  <img src="./static/doc_images/wireframe_2.png"/>
+  <img src="./static/doc_images/wireframe_3.png"/>
 
 </span>
     
@@ -228,14 +228,14 @@ Iron Haven Fitness is a comprehensive gym website that not only offers membershi
  
   <details>
     <summary><u>Click to View Images</u></summary>
-      <img src="/workspace/Project-5/static/doc_images/test1.png" style="margin:0 auto;"/>
-      <img src="/workspace/Project-5/static/doc_images/test2.png" style="margin:0 auto;"/>
-      <img src="/workspace/Project-5/static/doc_images/test3.png" style="margin:0 auto;"/>
-      <img src="/workspace/Project-5/static/doc_images/test4.png" style="margin:0 auto;"/>
-      <img src="/workspace/Project-5/static/doc_images/test5.png" style="margin:0 auto;"/>
-      <img src="/workspace/Project-5/static/doc_images/test6.png" style="margin:0 auto;"/>
-      <img src="/workspace/Project-5/static/doc_images/test7.png" style="margin:0 auto;"/>
-      <img src="/workspace/Project-5/static/doc_images/test8.png" style="margin:0 auto;"/>
+      <img src="./static/doc_images/test1.png" style="margin:0 auto;"/>
+      <img src="./static/doc_images/test2.png" style="margin:0 auto;"/>
+      <img src="./static/doc_images/test3.png" style="margin:0 auto;"/>
+      <img src="./static/doc_images/test4.png" style="margin:0 auto;"/>
+      <img src="./static/doc_images/test5.png" style="margin:0 auto;"/>
+      <img src="./static/doc_images/test6.png" style="margin:0 auto;"/>
+      <img src="./static/doc_images/test7.png" style="margin:0 auto;"/>
+      <img src="./static/doc_images/test8.png" style="margin:0 auto;"/>
   </details>
 
 
