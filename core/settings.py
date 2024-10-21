@@ -211,12 +211,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #STRIPE
 #STRIPE
@@ -240,3 +243,10 @@ cloudinary.config(
     api_key=os.environ.get('CLOUD_API_KEY'),
     api_secret=os.environ.get('CLOUD_SECRET_KEY')
 )
+
+# Almacenamiento de archivos multimedia en Cloudinary
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# MEDIA_URL configurado
+MEDIA_URL = f'https://res.cloudinary.com/{os.environ.get("CLOUD_NAME")}/'
+

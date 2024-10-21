@@ -1,0 +1,31 @@
+.container-classes{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.reserve-btn:hover{
+    background-color: #ff6600;
+    color: black;
+}
+
+@media (max-width:1200px){
+
+    .reserve-btn{
+        font-size: 16px;
+    }
+}
+
+.btn-custom{
+    background-color: #ff6600 !important; 
+    border-color: #ff6600 !important;
+}
+
+.btn-custom:hover{
+    background-color: #cc5200 !important;
+    border-color: #cc5200 !important;
+}
+
+.image-size{
+    margin: 10px auto;
+    width: 150px;
+}
