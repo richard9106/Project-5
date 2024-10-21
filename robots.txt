@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /accounts/login/
+Disallow: /accounts/signup/
+Disallow: /accounts/password/reset/
+Disallow: /payments/
+Disallow: /#contact
+
+Sitemap: http://ironhavengym-225d29547ff8.herokuapp.com/sitemap.xml
