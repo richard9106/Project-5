@@ -14,7 +14,7 @@
                         {% if user.profile.image%}
                         <img src="{{ user.profile.image.url }}" loading="lazy" alt="Profile Image" class="img-fluid rounded-circle mb-3 adjust-image" style="width: 150px; height: 150px;">
                         {% else %}
-                        <img src="{% static 'images/hero.png' %}" loading="lazy" alt="Profile Image" class="img-fluid rounded-circle mb-3 adjust-image" style="width: 150px; height: 150px;">
+                        <img src="{% static 'images/hero.png' %}" loading="lazy" alt="Default Profile Image" class="img-fluid rounded-circle mb-3 adjust-image" style="width: 150px; height: 150px;">
 
                         {% endif%}
                         <h5 class="card-title">{{ user.get_full_name }}</h5>
@@ -25,10 +25,10 @@
                         </p>
                         
                         <div class="d-flex  flex-column text-center">
-                            <a href="#" class="btn btn-color-one" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                            <a href="#" class="btn btn-color-one" data-bs-toggle="modal" data-bs-target="#editProfileModal" title="Edit profile">
                                 Edit Profile
                             </a>
-                            <a href="#" class="text-danger text-decoration-underline fs-6" data-bs-toggle="modal" data-bs-target="#cancelMembershipModal {{user.profile.my_memebership.id}}">
+                            <a href="#" class="text-danger text-decoration-underline fs-6" data-bs-toggle="modal" data-bs-target="#cancelMembershipModal {{user.profile.my_memebership.id}}" title="Delete or unsuscribe">
                                 Delete my profile and membership
                             </a>
                         </div>
@@ -50,7 +50,7 @@
                             {{ booking.gym_class.name }}
                             <span class="text-end">
                                 {{ booking.gym_class.day_of_week }} {{ booking.gym_class.time }}
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#deleteBookingModal{{ booking.id }}">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#deleteBookingModal{{ booking.id }}" title="Booking classes">
                                     <i class="bi bi-trash mx-2 icon-color" title="Cancel"></i>
                                 </a>
                             </span>
@@ -72,7 +72,7 @@
                 {% for order in user_orders %}
                     <div class="card mb-3 ">
                         <div class="card-header" id="heading{{ forloop.counter }}">
-                            <a class="btn btn-color-one fs-6" data-bs-toggle="collapse" href="#collapse{{ forloop.counter }}" role="button" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
+                            <a class="btn btn-color-one fs-6" data-bs-toggle="collapse" href="#collapse{{ forloop.counter }}" role="button" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}" title="My orders">
                                 {{ order.order_number }} 
                             </a>
                             <span>- {{ order.date | date}}</span>

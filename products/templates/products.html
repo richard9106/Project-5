@@ -10,7 +10,7 @@
     <hr class="main-color opacity-100" style="height: 10px;">
     {% if request.user.is_superuser %}
     <div class=" text-start mb-5">
-        <a href="{% url 'create_product' %}" class="btn btn-color-two reserve-btn">Create product</a> 
+        <a href="{% url 'create_product' %}" class="btn btn-color-two reserve-btn" title="Create Products">Create product</a> 
     </div>
     {% endif %}
     <div class="row">
@@ -18,11 +18,11 @@
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-5">
             <div class="card border h-100">
                 {% if product.image %}
-                <a href="#" data-bs-toggle="modal" data-bs-target="#productModal{{ product.id }}">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#productModal{{ product.id }}" title="{{ product.name }} image">
                     <img class="card-img-top img-fluid rounded-4" loading="lazy" src="{{ product.image.url }}" alt="{{ product.name }}">
                 </a>
                 {% else %}
-                <a href="#" data-bs-toggle="modal" data-bs-target="#productModal{{ product.id }}">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#productModal{{ product.id }}"  title="{{ product.name }} image">
                     <img class="card-img-top img-fluid rounded-4" loading="lazy" src="{{ MEDIA_URL }}logo2.png" alt="{{ product.name }}">
                 </a>
                 {% endif %}
@@ -35,7 +35,7 @@
                             <p class="lead mb-0 text-end font-weight-bold price">${{ product.price }}</p>
                             {% if product.category %}
                             <p class="small mt-1 mb-0">
-                                <a class="text-muted" href="{% url 'all_products' %}?category={{ product.category.name }}">
+                                <a class="text-muted" href="{% url 'all_products' %}?category={{ product.category.name }}"  title="{{ product.category.name }} category">
                                     <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                 </a>
                             </p>
@@ -47,7 +47,7 @@
                             {% endif %}
                             {% if request.user.is_superuser %}
                             <small class="ml-3 text-center">
-                                <a href="{% url 'manage_product' product.id %}" class="btn btn-large btn-outline orange-color reserve-btn fs-6">Manage product</a>
+                                <a href="{% url 'manage_product' product.id %}" class="btn btn-large btn-outline orange-color reserve-btn fs-6" title="Edit products">Manage product</a>
                             </small>
                             {% endif %}
                         </div>
@@ -73,7 +73,7 @@
                                         <p class="lead mb-0 text-left font-weight-bold orange-color">${{ product.price }}</p>
                                         {% if product.category %}
                                         <p class="small mt-1 mb-0">
-                                            <a class="orange-color" href="{% url 'all_products' %}?category={{ product.category.name }}">
+                                            <a class="orange-color" href="{% url 'all_products' %}?category={{ product.category.name }}" title="Product details">
                                                 <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                             </a>
                                         </p>
@@ -87,11 +87,11 @@
                                     </div>
                                     <div class="image-container my-5 text-center">
                                         {% if product.image %}
-                                        <a href="{{ product.image.url }}" target="_blank">
+                                        <a href="{{ product.image.url }}" target="_blank" title="{{ product.name}} image">
                                             <img class="card-img-top img-fluid  w-50 " loading="lazy" src="{{ product.image.url }}" alt="{{ product.name }}">
                                         </a>
                                         {% else %}
-                                        <a href="#">
+                                        <a href="#" title="no image displayed">
                                             <img class="card-img-top img-fluid w-50" loading="lazy" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                         </a>
                                         {% endif %}
@@ -138,7 +138,7 @@
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center mt-2 gap-5">
-                                            <a href="{% url 'all_products' %}" class="btn text-start keep-link">
+                                            <a href="{% url 'all_products' %}" class="btn text-start keep-link" title="all products">
                                                 <span class="icon">
                                                     <i class="fas fa-chevron-left text-light"></i>
                                                 </span>
