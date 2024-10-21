@@ -1,6 +1,8 @@
 {% load static %}
 # Project Name - Iron Haven Fitness
 
+# Resubmission
+
 
 * [Link to Deployed Project](https://ironhavengym-225d29547ff8.herokuapp.com/)
 
@@ -8,6 +10,7 @@
 * [USER EXPERIENCE (UX)](#user-experience)
   * [Purpose & target audience](#purpose-and-target-audience)
   * [Goals](#goals)
+  * [Marketing startegy](#marketing-strategy)
 * [PROJECT DESIGN](#project-design)
   * [Wireframes](#wireframes)
   * [User Stories](#user-stories)
@@ -74,6 +77,75 @@ Iron Haven Fitness is a comprehensive gym website that not only offers membershi
   12. More choices of classes and products can easily be added and customised.<br>
   13. Images are validated to ensure they are not oversized dragging on site performance and storage resources. <br>
 
+
+
+* [Back to Contents](#contents)
+
+### Marketing Strategy
+
+Our marketing strategy for Iron Haven Gym focuses on building a strong community presence, leveraging digital platforms, and delivering exceptional customer value. Below are the key components of our approach:
+
+* Target Audience
+
+  We are targeting fitness enthusiasts of all levels, ranging from beginners to experienced athletes, in the local area. Our main audience includes:
+
+  - Individuals looking for structured fitness programs.
+  - People interested in gym memberships, fitness classes, and personal training.
+  - Young professionals and busy individuals who prefer flexible membership plans.
+  - Local residents and corporate employees looking to improve their health and fitness.
+
+* Value Proposition
+
+  Iron Haven Gym offers state-of-the-art equipment, experienced trainers, and a welcoming environment for all fitness levels. Our key differentiators include:
+
+  - Flexible membership options tailored to different needs.
+  - A wide variety of fitness classes (HIIT, yoga, strength training, etc.).
+  - Personal training sessions for customized workout plans.
+  - A supportive community and events to engage members beyond their workouts.
+
+
+* Digital Marketing Channels
+
+  Website & SEO:
+
+  - Optimized for local SEO with targeted keywords (e.g., "gym near me", "personal training [city]", "fitness classes").
+  - A user-friendly, mobile-responsive website with clear calls-to-action (membership sign-ups, class bookings).
+  - Regular blog posts about fitness tips, healthy living, and gym news to drive organic traffic.
+  
+  Social Media Marketing:
+
+  - Facebook: Engaging with our community through daily posts, live workouts, and special promotions.
+  - Instagram: Sharing success stories, workout videos, and behind-the-scenes content to build brand awareness and create visual appeal.
+  - YouTube: Publishing workout tutorials, fitness challenges, and gym tours to attract new members and provide added value to our current members.
+  
+  Email Marketing:
+
+  - Personalized emails to leads and current members, offering promotions, fitness tips, and news about upcoming events.
+  - Monthly newsletters to keep members informed and engaged. 
+
+  Customer Engagement & Retention
+
+  - Member-Exclusive Offers: Regular promotions and discounts for long-term members, such as referral bonuses and loyalty rewards.
+  - Community Building: Hosting local fitness events, boot camps, and charity runs to create a sense of belonging and drive word-of-mouth referrals.
+  - Feedback & Improvement: Actively collecting feedback from members to continuously improve the services and experience.
+
+  Partnerships & Local Collaborations
+
+  - Collaborating with local businesses, wellness influencers, and nutritionists to offer joint promotions and attract a wider audience.
+  - Partnering with corporate entities for employee fitness programs and corporate membership 
+
+  Promotions & Discounts
+  - Launch promotions such as a free first class or discounted membership rates for new sign-ups.
+  - Seasonal campaigns around New Year’s resolutions, summer fitness goals, and holiday special
+   
+  Performance Tracking & Analytics
+
+  We will track the effectiveness of our marketing efforts by:
+
+  - Monitoring website traffic and conversion rates through Google Analytics.
+  - Tracking engagement, reach, and lead generation across social media platforms.
+  - Analyzing email open rates, click-through rates, and membership sign-ups from email campaigns.
+  - Our focus is to continuously adapt and refine our strategy based on data, ensuring that we meet our business objectives and create long-term growth.
 
 
 * [Back to Contents](#contents)
