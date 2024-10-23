@@ -100,17 +100,17 @@ def manage_product(request, product_id):
                                      instance=product_manage)
             if form.is_valid():
                 form.save()
-                messages.success(request, 'Class updated successfully.')
-                return redirect('classes_list')  # Redirect after saving
+                messages.success(request, 'Product updated successfully.')
+                return redirect('all_products')  # Redirect after saving
             else:
                 messages.error(request,
                                'Check your form  something is not right.')
-                return redirect('edit_class')
+                return redirect('all_products')
 
         elif 'delete' in request.POST:
             product_manage.delete()
             messages.success(request,
-                             'Class deleted successfully.')
+                             'Product deleted successfully.')
             return redirect('all_products')  # Redirect after deletion
         elif 'cancel' in request.POST:
             return redirect('all_products')  # Redirect on cancel
