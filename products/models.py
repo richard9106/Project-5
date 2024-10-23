@@ -35,7 +35,7 @@ class Product(models.Model):
     description = models.TextField()
     has_size=models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(0)])
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(max_digits=6, decimal_places=0, null=True, blank=True, validators=[MinValueValidator(0)])
     image = CloudinaryField('image', null=True, blank=True,
                              default="static/images/profile_images/default-product-image.png")
 
