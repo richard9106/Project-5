@@ -1,7 +1,14 @@
-{% load static %}
+
 # Project Name - Iron Haven Fitness
 
 # Resubmission
+
+  - Debug set to False
+  - SEO Meta description tags added to head in base.html and titles added to the anchor links
+  - E-commerce business model documentation and marketing strategy added to   the readme
+  - fix broken image links
+  - Robots.txt added 
+  - 404.html page 
 
 
 * [Link to Deployed Project](https://ironhavengym-225d29547ff8.herokuapp.com/)
@@ -11,7 +18,7 @@
   * [Purpose & target audience](#purpose-and-target-audience)
   * [Goals](#goals)
   * [E-commerce business model](#e-commerce-business-model-documentation)
-  * [Marketing startegy](#marketing-strategy)
+  * [Marketing strategy](#marketing-strategy)
 * [PROJECT DESIGN](#project-design)
   * [Wireframes](#wireframes)
   * [User Stories](#user-stories)
