@@ -9,6 +9,7 @@
   - fix broken image links
   - Robots.txt added 
   - 404.html page 
+  - Fix negative number in product price and rating
 
 
 * [Link to Deployed Project](https://ironhavengym-225d29547ff8.herokuapp.com/)
@@ -101,9 +102,7 @@ Iron Haven Fitness is a comprehensive gym website that not only offers membershi
     Business Goals
     List the primary goals of your e-commerce venture.
 
-    Example:
-
-    Achieve $X in sales within the first year.
+    Achieve $100 000 in sales within the first year.
     Obtain a customer satisfaction rating of at least 90%.
     Build a community of engaged fitness enthusiasts.
 
@@ -115,7 +114,7 @@ Iron Haven Fitness is a comprehensive gym website that not only offers membershi
     Value Proposition
     Describe what makes your business unique and why customers will choose you over competitors.
 
-    Example: "Iron Haven Fitness offers customized fitness plans, access to exclusive content, and a supportive community, all tailored to meet individual needs."
+    - "Iron Haven Fitness offers customized fitness plans, access to exclusive content, and a supportive community, all tailored to meet individual needs."
 
 3. ### Target Market
     
@@ -123,31 +122,26 @@ Iron Haven Fitness is a comprehensive gym website that not only offers membershi
     
     Conduct research on your target audience, including demographics, preferences, and behavior.
 
-    Example:
+    - Age: 18-45
+    - Gender: All
+    - Income: Middle to upper-middle class
+    - Fitness Enthusiasts and Beginners
+    - Customer Segmentation
 
-    Age: 18-45
-    Gender: All
-    Income: Middle to upper-middle class
-    Fitness Enthusiasts and Beginners
-    Customer Segmentation
     Segment your audience into different categories based on specific characteristics.
 
-    Example:
-
-    Beginner Gym-Goers: Seeking guidance and support.
-    Fitness Enthusiasts: Looking for advanced training and classes.
-    Families: Interested in group memberships.
+    - Beginner Gym-Goers: Seeking guidance and support.
+    - Fitness Enthusiasts: Looking for advanced training and classes.
+    - Families: Interested in group memberships.
 
 4. ### Revenue Model
     #### Revenue Streams
     Identify how your e-commerce business will generate income.
 
-    Example:
-
-    Membership Sales: Monthly and annual gym memberships.
-    Personal Training Packages: One-on-one training sessions.
-    Merchandise Sales: Fitness gear and supplements.
-    Online Classes: Virtual fitness courses.
+    - Membership Sales: Monthly and annual gym memberships.
+    - Personal Training Packages: One-on-one training sessions.
+    - Merchandise Sales: Fitness gear and supplements.
+    - Online Classes: Virtual fitness courses.
 
 ### Marketing Strategy
 
