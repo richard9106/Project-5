@@ -10,6 +10,7 @@
 * [USER EXPERIENCE (UX)](#user-experience)
   * [Purpose & target audience](#purpose-and-target-audience)
   * [Goals](#goals)
+  * [E-commerce business model](#e-commerce-business-model-documentation)
   * [Marketing startegy](#marketing-strategy)
 * [PROJECT DESIGN](#project-design)
   * [Wireframes](#wireframes)
@@ -80,6 +81,66 @@ Iron Haven Fitness is a comprehensive gym website that not only offers membershi
 
 
 * [Back to Contents](#contents)
+
+### E-Commerce Business Model Documentation
+
+1. ### Executive Summary
+     #### Overview
+
+    Provide a brief summary of your e-commerce business, including the mission statement, vision, and objectives.
+
+    Example: "Iron Haven Fitness aims to provide top-quality gym memberships, fitness classes, and personal training services through a user-friendly online platform, making fitness accessible and affordable for everyone."
+
+    Business Goals
+    List the primary goals of your e-commerce venture.
+
+    Example:
+
+    Achieve $X in sales within the first year.
+    Obtain a customer satisfaction rating of at least 90%.
+    Build a community of engaged fitness enthusiasts.
+
+2. ### Business Description
+    ####  Business Structure
+    
+    Define the structure of your business (e.g., sole proprietorship, LLC, corporation) and the rationale behind it.
+
+    Value Proposition
+    Describe what makes your business unique and why customers will choose you over competitors.
+
+    Example: "Iron Haven Fitness offers customized fitness plans, access to exclusive content, and a supportive community, all tailored to meet individual needs."
+
+3. ### Target Market
+    
+    #### Market Analysis
+    
+    Conduct research on your target audience, including demographics, preferences, and behavior.
+
+    Example:
+
+    Age: 18-45
+    Gender: All
+    Income: Middle to upper-middle class
+    Fitness Enthusiasts and Beginners
+    Customer Segmentation
+    Segment your audience into different categories based on specific characteristics.
+
+    Example:
+
+    Beginner Gym-Goers: Seeking guidance and support.
+    Fitness Enthusiasts: Looking for advanced training and classes.
+    Families: Interested in group memberships.
+
+4. ### Revenue Model
+    #### Revenue Streams
+    Identify how your e-commerce business will generate income.
+
+    Example:
+
+    Membership Sales: Monthly and annual gym memberships.
+    Personal Training Packages: One-on-one training sessions.
+    Merchandise Sales: Fitness gear and supplements.
+    Online Classes: Virtual fitness courses.
 
 ### Marketing Strategy
 
@@ -405,7 +466,7 @@ Due to time constraints on completing this project, I wasn’t able to refactor 
 
   5. Browser Compatibility tests.
     - The site was tested across multiple browsers, including Chrome, Firefox, and Safari, to ensure consistent behavior and display on different platforms.
-    
+
   6. Final Production user tests
     - In the final stages, I personally followed the user flow from start to finish: creating an account, reserving a class, managing profiles, and completing payments. This allowed me to verify that the full experience worked seamlessly and as intended in a live environment.
 
