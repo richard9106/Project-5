@@ -7,7 +7,7 @@
     <hr class="main-color opacity-100" style="height: 10px;">
     {% if request.user.is_superuser %}
     <div class=" text-start mb-5">
-        <a href="{% url 'create_class' %}" class="btn btn-color-two reserve-btn">Add new class</a> 
+        <a href="{% url 'create_class' %}" class="btn btn-color-two reserve-btn" rel="nofollow">Add new class</a> 
     </div>
     {% endif %}
     <div class="row">
@@ -35,13 +35,13 @@
                                 Reserve Class
                             </button>
                             {% if user.is_superuser %}
-                                <a href="{% url 'edit_class' gymclass.id %}" class="btn btn-large btn-outline orange-color reserve-btn">
+                                <a href="{% url 'edit_class' gymclass.id %}" class="btn btn-large btn-outline orange-color reserve-btn" rel="nofollow">
                                     Edit/Delete
                                 </a>
                             {% endif %}
                        
                         {% else %}
-                            <a href="{% url 'membership_list' %}" class="btn btn-large btn-custom text-white">
+                            <a href="{% url 'membership_list' %}" class="btn btn-large btn-custom text-white" rel="nofollow">
                                 Login to Reserve
                             </a>
                         {% endif %}
