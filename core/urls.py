@@ -18,7 +18,17 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import handler404
+from django.shortcuts import render
 
+
+# Vista personalizada para manejar errores 404
+def custom_404_view(request, exception):
+    """Render 404"""
+    return render(request, '404.html', status=404)
+
+# Configuración del manejador 404 para todo el proyecto
+handler404 = custom_404_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,10 +37,11 @@ urlpatterns = [
     path('', include("home.urls")),
     path('products/', include("products.urls")),
     path('memberships/', include("memberships.urls")),
-    path('classes', include("classes.urls")),
+    path('classes/', include("classes.urls")),
     path('bag/', include("bag.urls")),
     path('payments/', include("payments.urls")),
     path('profile/', include("profiles.urls")),
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
