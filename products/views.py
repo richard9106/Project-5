@@ -104,7 +104,7 @@ def manage_product(request, product_id):
                 return redirect('all_products')  # Redirect after saving
             else:
                 messages.error(request,
-                               'Check your form  something is not right.')
+                               'Check your form  something is not right. remember you can not add negaive numbers!')
                 return redirect('all_products')
 
         elif 'delete' in request.POST:
