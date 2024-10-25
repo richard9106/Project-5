@@ -474,6 +474,12 @@ Due to time constraints on completing this project, I wasn’t able to refactor 
 - In the final stages, I personally followed the user flow from start to finish: creating an account, reserving a class, managing profiles, and completing payments. This allowed me to verify that the full experience worked seamlessly and as intended in a live environment.
 
 <details>
+<summary><u>Manual testting</u></summary>
+ <img src="./static/doc_images/manual-testing.png" style="margin:0 auto;"/>
+
+</details>
+
+<details>
 <summary><u>HTML validaor</u></summary>
 
   ## Home page
