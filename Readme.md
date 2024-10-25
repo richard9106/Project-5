@@ -466,6 +466,13 @@ Due to time constraints on completing this project, I wasn’t able to refactor 
 - The website's HTML and CSS were validated for proper syntax and structure. Additionally, ESLint and Pylint were used to enforce coding standards and identify any potential issues in JavaScript and Python code.
 - Lighthouse was used to test the site’s performance, accessibility, and best practices. I also used browser developer tools and responsive design testing tools to ensure the site functioned well across various screen sizes.
 
+
+#### Browser Compatibility tests.
+- The site was tested across multiple browsers, including Chrome, Firefox, and Safari, to ensure consistent behavior and display on different platforms.
+
+#### Final Production user tests
+- In the final stages, I personally followed the user flow from start to finish: creating an account, reserving a class, managing profiles, and completing payments. This allowed me to verify that the full experience worked seamlessly and as intended in a live environment.
+
 <details>
 <summary><u>HTML validaor</u></summary>
 
@@ -488,41 +495,73 @@ Due to time constraints on completing this project, I wasn’t able to refactor 
 <details>
 <summary><u>CSS validaor</u></summary>
 
-  ## Home page
-  <img src="./static/doc_images/validator-index.png" style="margin:0 auto;"/>
+  ## Home page - products - and profiles (base.css)
+  <img src="./static/doc_images/index-css-validator.png" style="margin:0 auto;"/>
      
      
-  ## Classes page
-  <img src="./static/doc_images/validator-classes.png" style="margin:0 auto;"/>
+  ## Classes (classes.css)
+  <img src="./static/doc_images/classes-css-validator.png" style="margin:0 auto;"/>
      
-  ## Memberships page
-  <img src="./static/doc_images/validator-memberships.png" style="margin:0 auto;"/>
-     
-  ## Product page
-  <img src="./static/doc_images/validator-products.png" style="margin:0 auto;"/>
+  ## Memberships (memberships.css)
+  <img src="./static/doc_images/memberships-css-validator.png" style="margin:0 auto;"/>
      
 </details>
-#### Browser Compatibility tests.
-- The site was tested across multiple browsers, including Chrome, Firefox, and Safari, to ensure consistent behavior and display on different platforms.
 
-#### Final Production user tests
-- In the final stages, I personally followed the user flow from start to finish: creating an account, reserving a class, managing profiles, and completing payments. This allowed me to verify that the full experience worked seamlessly and as intended in a live environment.
+<details>
+<summary><u>Lighthouse validaor</u></summary>
+
+  ## Home page
+  <img src="./static/doc_images/index-lighthouse.png" style="margin:0 auto;"/>
+     
+     
+  ## Classes 
+  <img src="./static/doc_images/classes-lighthouse.png" style="margin:0 auto;"/>
+     
+  ## Memberships 
+  <img src="./static/doc_images/memberships-lighthouse.png" style="margin:0 auto;"/>
+
+  ## Products 
+  <img src="./static/doc_images/products-lighthouse.png" style="margin:0 auto;"/>
+
+   ## Profiles 
+  <img src="./static/doc_images/profile-lighthouse.png" style="margin:0 auto;"/>
+     
+</details>
+
+<details>
+<summary><u>CI Python Linter</u></summary>
+
+  ## Home page
+  <img src="./static/doc_images/index-lighthouse.png" style="margin:0 auto;"/>
+     
+     
+  ## Classes 
+  <img src="./static/doc_images/classes-lighthouse.png" style="margin:0 auto;"/>
+     
+  ## Memberships 
+  <img src="./static/doc_images/memberships-lighthouse.png" style="margin:0 auto;"/>
+
+  ## Products 
+  <img src="./static/doc_images/products-lighthouse.png" style="margin:0 auto;"/>
+     
+</details>
+
 
 
   * [Back to Contents](#contents)
 
-  ### Unresolved bugs:
+### Unresolved bugs:
 
-  There are no other known bugs at this time.
+There are no other known bugs at this time.
 
 
-  ### Improvements and future developments:
+### Improvements and future developments:
 
-  
-  I did my best with this website, but I’m still not fully satisfied with the result.
-  * Handle payment errors
-  * Improve design attractiveness
-  * Add a banner with offers
+
+I did my best with this website, but I’m still not fully satisfied with the result.
+* Handle payment errors
+* Improve design attractiveness
+* Add a banner with offers
 
 
   * [Back to Contents](#contents)

@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from memberships.models import Membership
 
 
-
 # User profile.
 class Profile(models.Model):
     """model user information"""
@@ -22,7 +21,8 @@ class Profile(models.Model):
     email = models.EmailField(max_length=254)
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
-    my_memberships = models.ForeignKey(Membership, on_delete=models.CASCADE, blank=True, null=True)
+    my_memberships = models.ForeignKey(Membership, on_delete=models.CASCADE,
+                                       blank=True, null=True)
     create_on = models.DateTimeField(
         auto_now_add=True,
         )
@@ -42,5 +42,6 @@ def create_user_profile(sender, instance, created, **kwargs):
     """create the user"""
     if created:
         Profile.objects.create(user=instance)
+
 
 post_save.connect(create_user_profile, sender=User)
