@@ -5,11 +5,13 @@
 
   - Debug set to False
   - SEO Meta description tags added to head in base.html and titles added to the anchor links
-  - E-commerce business model documentation and marketing strategy added to   the readme
+  - E-commerce business model documentation and marketing strategy added to the readme
   - fix broken image links
   - Robots.txt added 
   - 404.html page 
   - Fix negative number in product price and rating
+  - Test html and css validator, lighthouse and pylint
+  - Manual test added "spreadsheet image" 
 
 
 * [Link to Deployed Project](https://ironhavengym-225d29547ff8.herokuapp.com/)
