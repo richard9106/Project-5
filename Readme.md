@@ -453,23 +453,33 @@ Due to time constraints on completing this project, I wasn’t able to refactor 
 
   ### Tests performed
   The site was thoroughly tested during development with each feature tested before committing to GitHub.  The testing regime included the following:
-  1. Incremental development and live testing.
-    - During development, each functionality was tested in real-time, including login verification, profile creation and editing, payments, and other key features. This ensured that any issues were addressed immediately as they arose.
-    
-  2. Django Models Automated Testing using Jest.
-    - Automated tests were run on Django models to verify the correctness of the database structure and relationships, ensuring that all data was handled properly throughout the application. 
 
-  3. Early user observation test.
-    - The project was shared with several users to gather feedback on the usability and functionality of the site. They tested key actions such as navigating the website, completing tasks, and providing feedback on the user experience.
-  4. HTML, CSS, ESLINT, PYLINT, Lighthouse tests.
-    - The website's HTML and CSS were validated for proper syntax and structure. Additionally, ESLint and Pylint were used to enforce coding standards and identify any potential issues in JavaScript and Python code.
-    - Lighthouse was used to test the site’s performance, accessibility, and best practices. I also used browser developer tools and responsive design testing tools to ensure the site functioned well across various screen sizes.
+#### Incremental development and live testing.
+- During development, each functionality was tested in real-time, including login verification, profile creation and editing, payments, and other key features. This ensured that any issues were addressed immediately as they arose.
 
-  5. Browser Compatibility tests.
-    - The site was tested across multiple browsers, including Chrome, Firefox, and Safari, to ensure consistent behavior and display on different platforms.
+#### Django Models Automated Testing using Jest.
+- Automated tests were run on Django models to verify the correctness of the database structure and relationships, ensuring that all data was handled properly throughout the application. 
 
-  6. Final Production user tests
-    - In the final stages, I personally followed the user flow from start to finish: creating an account, reserving a class, managing profiles, and completing payments. This allowed me to verify that the full experience worked seamlessly and as intended in a live environment.
+#### Early user observation test.
+- The project was shared with several users to gather feedback on the usability and functionality of the site. They tested key actions such as navigating the website, completing tasks, and providing feedback on the user experience.
+#### HTML, CSS, ESLINT, PYLINT, Lighthouse tests.
+- The website's HTML and CSS were validated for proper syntax and structure. Additionally, ESLint and Pylint were used to enforce coding standards and identify any potential issues in JavaScript and Python code.
+- Lighthouse was used to test the site’s performance, accessibility, and best practices. I also used browser developer tools and responsive design testing tools to ensure the site functioned well across various screen sizes.
+
+<details>
+<summary><u>HTML validaor</u></summary>
+
+  ## home page
+  <img src="./static/doc_images/test1.png" style="margin:0 auto;"/>
+     
+
+</details>
+
+#### Browser Compatibility tests.
+- The site was tested across multiple browsers, including Chrome, Firefox, and Safari, to ensure consistent behavior and display on different platforms.
+
+#### Final Production user tests
+- In the final stages, I personally followed the user flow from start to finish: creating an account, reserving a class, managing profiles, and completing payments. This allowed me to verify that the full experience worked seamlessly and as intended in a live environment.
 
 
   * [Back to Contents](#contents)
