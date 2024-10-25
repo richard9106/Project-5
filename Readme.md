@@ -469,12 +469,39 @@ Due to time constraints on completing this project, I wasn’t able to refactor 
 <details>
 <summary><u>HTML validaor</u></summary>
 
-  ## home page
-  <img src="./static/doc_images/test1.png" style="margin:0 auto;"/>
+  ## Home page
+  <img src="./static/doc_images/validator-index.png" style="margin:0 auto;"/>
      
-
+     
+  ## Classes page
+  <img src="./static/doc_images/validator-classes.png" style="margin:0 auto;"/>
+     
+  ## Memberships page
+  <img src="./static/doc_images/validator-memberships.png" style="margin:0 auto;"/>
+     
+  ## Product page
+  <img src="./static/doc_images/validator-products.png" style="margin:0 auto;"/>
+     
 </details>
 
+
+<details>
+<summary><u>CSS validaor</u></summary>
+
+  ## Home page
+  <img src="./static/doc_images/validator-index.png" style="margin:0 auto;"/>
+     
+     
+  ## Classes page
+  <img src="./static/doc_images/validator-classes.png" style="margin:0 auto;"/>
+     
+  ## Memberships page
+  <img src="./static/doc_images/validator-memberships.png" style="margin:0 auto;"/>
+     
+  ## Product page
+  <img src="./static/doc_images/validator-products.png" style="margin:0 auto;"/>
+     
+</details>
 #### Browser Compatibility tests.
 - The site was tested across multiple browsers, including Chrome, Firefox, and Safari, to ensure consistent behavior and display on different platforms.
 
