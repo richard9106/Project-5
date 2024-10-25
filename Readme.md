@@ -531,20 +531,24 @@ Due to time constraints on completing this project, I wasn’t able to refactor 
 <details>
 <summary><u>CI Python Linter</u></summary>
 
-  ## Home page
-  <img src="./static/doc_images/index-lighthouse.png" style="margin:0 auto;"/>
+  ## Profile Model
+  <img src="./static/doc_images/profile-pylint.png" style="margin:0 auto;"/>
      
      
-  ## Classes 
-  <img src="./static/doc_images/classes-lighthouse.png" style="margin:0 auto;"/>
+  ## Classes Model
+  <img src="./static/doc_images/classes-pylint.png" style="margin:0 auto;"/>
      
-  ## Memberships 
-  <img src="./static/doc_images/memberships-lighthouse.png" style="margin:0 auto;"/>
+  ## Memberships Model
+  <img src="./static/doc_images/memberships-pylint.png" style="margin:0 auto;"/>
 
-  ## Products 
-  <img src="./static/doc_images/products-lighthouse.png" style="margin:0 auto;"/>
+  ## Products Model
+  <img src="./static/doc_images/product-pylint.png" style="margin:0 auto;"/>
+
+   ## Payments Model
+  <img src="./static/doc_images/payment-pylint.png" style="margin:0 auto;"/>
      
 </details>
+
 
 
 
