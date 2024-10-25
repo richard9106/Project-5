@@ -3,6 +3,7 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from memberships.models import Membership
+from cloudinary.models import CloudinaryField
 
 
 # User profile.
@@ -14,9 +15,8 @@ class Profile(models.Model):
                                 )
     first_name = models.CharField(max_length=254, default="Mi Name")
     last_name = models.CharField(max_length=254, default="Mi Last Name")
-    image = models.ImageField(
+    image = CloudinaryField(null=True, blank=True,
         default='static/images/profile_images/default_profile.png',
-        upload_to='static/images/profile_images/',
         )
     email = models.EmailField(max_length=254)
     phone_number = models.CharField(max_length=20, null=True, blank=True)

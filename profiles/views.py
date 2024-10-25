@@ -74,28 +74,23 @@ def delete_profile(request, user):
 
 @login_required
 def edit_profile(request):
-    """edit profile info"""
+    """Edit profile info"""
     profile = get_object_or_404(Profile, user=request.user)
-    edit_form_profile = UserProfileForm(instance=request.user)
+    form_profile = UserProfileForm(instance=profile)
 
     if request.method == 'POST':
         form_profile = UserProfileForm(request.POST, request.FILES, instance=profile)
         if form_profile.is_valid():
             profile.active = True
-            #profile.my_memberships = form_profile.cleaned_data['membership']
-            form_profile.save()
-            messages.add_message(
-                request,
-                messages.SUCCESS,
-                "Your profile was update successfully")
+            form_profile.save()  # Save without modifying `membership`
+            messages.success(request, "Your profile was updated successfully.")
             return redirect(reverse('my_profile'))
         else:
+            print("Errores del formulario:", form_profile.errors)
             messages.error(request, 'Error updating profile.')
-    else:
-        edit_form_profile = UserProfileForm(instance=profile)
-        edit_form_profile.fields['membership'].initial = profile.my_memberships
-    
+
     return redirect(reverse('my_profile'))
+
 
 @login_required
 def delete_booking(request, booking_id):

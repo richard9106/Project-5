@@ -433,8 +433,6 @@ The site has been built with the following tech, tools and libraries
 
 
 
-
-
 ### Refactoring Opportunities
 
 

@@ -7,6 +7,12 @@ from .models import Profile
 class UserProfileForm(forms.ModelForm):
     """Form to User profile page"""
 
+    birthday = forms.DateField(
+    input_formats=['%Y-%m-%d', '%d/%m/%Y', '%m/%d/%Y'],  
+    widget=forms.DateInput(attrs={'type': 'date'}) 
+    )
+
+
     class Meta:
         """define the model and exclude user name"""
         model = Profile
@@ -14,6 +20,7 @@ class UserProfileForm(forms.ModelForm):
         fields = ['image',
                   'first_name',
                   'last_name',
+                  'phone_number',
                   'birthday',
                   'email']
 
@@ -37,6 +44,7 @@ class UserProfileForm(forms.ModelForm):
                 'first_name': 'First Name',
                 'last_name': 'Lirst Name',
                 'email': 'Email',
+                'phone_number': 'Phone Number',
                 'birthday': 'Birthday',
             }
 

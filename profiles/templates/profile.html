@@ -17,8 +17,10 @@
                         <img src="{% static 'images/hero.png' %}" loading="lazy" alt="Default Profile Image" class="img-fluid rounded-circle mb-3 adjust-image" style="width: 150px; height: 150px;">
 
                         {% endif%}
-                        <h5 class="card-title">{{ user.get_full_name }}</h5>
-                        <p class="card-text text-black">{{ user.email }}</p>
+                        <h5 class="card-title">{{ user.profile.first_name }}</h5>
+                        <p class="text-muted m-0">{{ user.profile.birthday }}</p>
+                        <p class="text-muted m-0">{{ user.profile.phone_number }}</p>
+                        <p class="card-text text-black m-0">{{ user.email }}</p>
                         <p class="card-text text-black">Membership:<strong class="orange-color"> {{ user.profile.my_memberships }}</strong></p>
                         <p class="text-center text-black w-75 mx-auto">If you need to change your membership please contact the staff at the gym.
                             or send and email to <strong> ironHFt@fitness.com</strong>
