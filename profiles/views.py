@@ -13,7 +13,7 @@ from .forms import UserProfileForm, BookingForm, MembershipForm
 def profile(request, order=None):
     """Display Profile page for the Right User"""
     profile_model = get_object_or_404(Profile, user=request.user)
-    form_profile = UserProfileForm(instance=request.user)
+    form_profile = UserProfileForm(instance=request.user.profile)
     edit_booking_form = BookingForm(request.POST, instance=profile_model)
 
     # get all the order
@@ -41,14 +41,14 @@ def profile(request, order=None):
                 request,
                 messages.WARNING,
                 'Something has gone wrong check your form')
-    print(order_item)
-    return render(request, 'profile.html',
-                  {'form_profile': form_profile,
-                   'form_booking': edit_booking_form,
-                   'form_member': MembershipForm,
-                   'order_item': order_item,
-                   'user_orders': user_orders,
-                  })
+    
+    return render(request, 'profile.html',{
+                'form_profile': form_profile,
+                'form_booking': edit_booking_form,
+                'form_member': MembershipForm,
+                'order_item': order_item,
+                'user_orders': user_orders,
+                })
 
 
 @login_required
