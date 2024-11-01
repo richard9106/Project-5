@@ -5,12 +5,13 @@
 
   - Debug set to False
   - SEO Meta description tags added to head in base.html and titles added to the anchor links
-  - E-commerce business model documentation and marketing strategy added to the readme
-  - fix broken image links
-  - Robots.txt added 
-  - 404.html page 
-  - Fix negative number in product price and rating
-  - Test html and css validator, lighthouse and pylint
+  - E-commerce business model documentation and marketing strategy added to the readme.
+  - fix broken image links in Readme.md.
+  - Robots.txt added. 
+  - 404.html custom page added.
+  - Fix negative number in product price and rating.
+  - Test html and css validator, lighthouse and pylint images added to de Readme.md
+  - Automatic tests added to Readme.md.
   - Manual test added "spreadsheet image" 
 
 
@@ -460,6 +461,8 @@ Due to time constraints on completing this project, I wasn’t able to refactor 
 #### Django Models Automated Testing using Jest.
 - Automated tests were run on Django models to verify the correctness of the database structure and relationships, ensuring that all data was handled properly throughout the application. 
 
+
+
 #### Early user observation test.
 - The project was shared with several users to gather feedback on the usability and functionality of the site. They tested key actions such as navigating the website, completing tasks, and providing feedback on the user experience.
 #### HTML, CSS, ESLINT, PYLINT, Lighthouse tests.
@@ -472,6 +475,13 @@ Due to time constraints on completing this project, I wasn’t able to refactor 
 
 #### Final Production user tests
 - In the final stages, I personally followed the user flow from start to finish: creating an account, reserving a class, managing profiles, and completing payments. This allowed me to verify that the full experience worked seamlessly and as intended in a live environment.
+
+
+<details>
+<summary><u>Auto testting</u></summary>
+ <img src="./static/doc_images/auto_test.png" style="margin:0 auto;"/>
+
+</details>
 
 <details>
 <summary><u>Manual testting</u></summary>
